@@ -1,0 +1,30 @@
+#mainBorderPane {
+    -fx-border-width:5;
+    -fx-border-color:black;
+}
+#innerBorderPane {
+    -fx-background-image: url(images/bluesky.jpg);
+    -fx-background-size: cover;
+    -fx-background-color: blue;
+		-fx-background-radius: 100;
+}
+
+#titleHbox {
+    -fx-background-color:#cccccc;
+    -fx-border-color: transparent transparent gray transparent;
+}
+
+#menuButton {
+	 -fx-border-radius: 50;
+	 -fx-background-radius: 50;
+	 -fx-background-color: transparent;
+}
+
+#tempLabel {
+	 -fx-font-size: 64;
+}
+
+#infoLabel {
+	 -fx-font-size: 28;
+}
+    
