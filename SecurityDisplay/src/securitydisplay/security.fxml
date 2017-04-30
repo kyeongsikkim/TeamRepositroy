@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="securitydisplay.SecurityController">
+	<top>
+		<HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: CC9966;" BorderPane.alignment="CENTER">
+			<children>
+				<Label text="외출방범">
+					<effect>
+						<Blend />
+					</effect>
+					<font>
+						<Font size="21.0" />
+					</font>
+				</Label>
+			</children>
+		</HBox>
+	</top>
+	<center>
+		<BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+			<center>
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+					<children>
+						<VBox prefHeight="200.0" prefWidth="200.0">
+							<children>
+                        <HBox prefHeight="150.0" prefWidth="400.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="82.0" spacing="17.0">
+                                 <children>
+            								<Label text="입실시간">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Label>
+            								<Label text="퇴실시간">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Label>
+            								<Label text="동체감지">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="4.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="85.0" spacing="10.0">
+                                 <children>
+                                    <HBox prefHeight="30.0" prefWidth="100.0">
+                                       <children>
+                                          <Button fx:id="btnHighEnter" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
+                                          <TextField fx:id="txtGetInTime" disable="true" prefHeight="27.0" prefWidth="53.0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font></TextField>
+                                          <Button fx:id="btnLowEnter" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="30.0" prefWidth="100.0">
+                                       <children>
+                                          <Button fx:id="btnHighLeave" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
+                                          <TextField fx:id="txtGetoutTime" prefHeight="27.0" prefWidth="53.0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font></TextField>
+                                          <Button fx:id="btnLowLeave" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                       <children>
+                                          <CheckBox fx:id="checkMotion" mnemonicParsing="false" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="3.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+							</children>
+						</VBox>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+						<VBox prefHeight="200.0" prefWidth="200.0">
+							<children>
+                        <HBox prefHeight="150.0" prefWidth="400.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+                                 <children>
+            								<Label text="가스닫기">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Label>
+            								<Label text="난방닫기">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <MediaView fx:id="soundlock" />
+                                    <MediaView fx:id="soundunlock" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="12.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="22.0">
+                                 <children>
+                                    <CheckBox fx:id="checkGas" mnemonicParsing="false" />
+                                    <CheckBox fx:id="checkHeater" mnemonicParsing="false" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets top="3.0" />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets right="15.0" top="1.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+			</center>
+		</BorderPane>
+	</center>
+	<bottom>
+		<VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+			<children>
+				<HBox alignment="CENTER" prefWidth="200.0">
+					<children>
+                  <ToggleButton fx:id="btnExitSetting" mnemonicParsing="false" prefWidth="250.0" text="설정">
+                     <HBox.margin>
+                        <Insets bottom="6.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="setting" />
+                     </toggleGroup>
+                  </ToggleButton>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: CC9966;">
+					<children>
+						<Label text="재택방범">
+							<font>
+								<Font size="20.0" />
+							</font>
+						</Label>
+                  <Button fx:id="btnVisit" mnemonicParsing="false" text="방문기록" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+					<children>
+                  <ToggleButton fx:id="btnHouseSetting" mnemonicParsing="false" prefWidth="250.0" text="설정" toggleGroup="$setting" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: CC9966;">
+					<children>
+						<Label text="CCTV">
+							<font>
+								<Font size="21.0" />
+							</font>
+						</Label>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+					<children>
+                  <Button fx:id="btnAptDoor" mnemonicParsing="false" text="공동현관" />
+                  <Button fx:id="btnDoor" mnemonicParsing="false" text="현관문" />
+                  <Button fx:id="btnPlayground" mnemonicParsing="false" text="놀이터" />
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</bottom>
+</BorderPane>
