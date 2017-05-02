@@ -1,0 +1,10 @@
+#noticeBorder {
+    -fx-border-radius: 5;
+    -fx-border-color:#cccccc;
+    -fx-background-radius: 5;
+}
+
+#tableView {
+    -fx-border-radius: 5;
+    -fx-border-color:#cccccc;
+}

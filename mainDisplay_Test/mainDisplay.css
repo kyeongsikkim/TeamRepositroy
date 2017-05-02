@@ -1,0 +1,9 @@
+#mainBackground {
+    -fx-background-image:url("images/background2.jpg");
+/*    -fx-background-color:black;*/
+    -fx-background-size:stretch;
+}
+
+#mainButton {
+    -fx-background-color:transparent;
+}

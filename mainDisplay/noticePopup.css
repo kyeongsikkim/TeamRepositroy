@@ -1,0 +1,8 @@
+#popupBackground {
+    -fx-background-color: white;
+    -fx-border-color: black;
+}
+
+.popupLabel {
+    -fx-border-color: black;
+}

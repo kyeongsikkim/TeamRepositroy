@@ -1,0 +1,8 @@
+#buttonGroup {
+    -fx-background-color:aliceblue;
+}
+
+Button {
+    -fx-background-color: transparent;
+}
+
