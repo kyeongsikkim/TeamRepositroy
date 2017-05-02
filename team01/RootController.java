@@ -1,12 +1,10 @@
 package ch17.team01;
 
-import static ch17.exam40.RootController.rootPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -64,8 +62,6 @@ public class RootController implements Initializable {
     private Button btnBack;
     @FXML
     private ToggleButton btnCall;
-    @FXML
-    private ToggleGroup call;
 
     @FXML
     private Label lblRequest;
@@ -73,16 +69,14 @@ public class RootController implements Initializable {
     private Label lblState;
 
     @FXML
-    private Label lblTime;
-
-    @FXML
     private StackPane stackPane;
-
-    public static StackPane rootPane;
+    @FXML
+    private Label lblTime;
+    @FXML
+    private ToggleGroup callToggle;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        rootPane = stackPane;
 
         menu.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
@@ -112,26 +106,23 @@ public class RootController implements Initializable {
                     });
                     System.out.println("call2 호출중...");
                 } else if (newValue == call3) {
-                    lblRequest.setText("통화버튼을 누르세요.");
-                    call3.setOnAction(event -> handleBtnCall3(event));
 
                     System.out.println("call3 호출중...");
-                    
+
                     try {
-                        System.out.println("되냐마냐");
-                        Parent parent = FXMLLoader.load(getClass().getResource("security.fxml"));
-//            Scene scene = new Scene(parent);
-//            Stage primaryStage = (Stage) call3.getScene().getWindow();
-//            primaryStage.setScene(scene);
-                        stackPane.getChildren().add(parent);
+                        Parent parent = FXMLLoader.load(getClass().getResource("secure.fxml"));
+                        Scene scene = new Scene(parent);
+                        Stage primaryStage = (Stage) call3.getScene().getWindow();
+                        primaryStage.setScene(scene);
                     } catch (IOException ex) {
+                        ex.printStackTrace();
                     }
                 }
             }
 
         });
 
-        call.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+        callToggle.selectedToggleProperty().addListener(new ChangeListener<Toggle>()  {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
                 if (newValue == btnCall) {
@@ -185,16 +176,4 @@ public class RootController implements Initializable {
         });
 
     }
-
-    private void handleBtnCall3(ActionEvent e) {
-//        try {
-//            Parent parent = FXMLLoader.load(getClass().getResource("security.fxml"));
-//            stackPane.getChildren().add(parent);
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-
-        
-    }
-
 }

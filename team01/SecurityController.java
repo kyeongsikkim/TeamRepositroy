@@ -5,81 +5,98 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
 
 public class SecurityController implements Initializable {
 
     @FXML
-    private BorderPane security;
-    @FXML
-    private ToggleGroup menu;
+    private BorderPane secure;
     @FXML
     private ToggleButton call1;
+    @FXML
+    private ToggleGroup menu;
     @FXML
     private ToggleButton call2;
     @FXML
     private ToggleButton call3;
 
+    @FXML
+    private ToggleButton btnCall;
+    @FXML
+    private ImageView imageCall;
+    @FXML
+    private Label lblConnect;
+    @FXML
+    private ImageView imageOff;
+    @FXML
+    private ToggleGroup callToggle;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        //call1.setOnAction(event -> handleBtnCall(event));
-        //call2.setOnAction(event -> handleBtnCall(event));
         menu.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-
                 if (newValue == call1) {
-                    //StackPane rootPane = (StackPane) call1.getScene().getRoot(); 
-                    // rootPane.getChildren().remove(security);
-
-                } else if (newValue == call2) {
-                    //StackPane rootPane = (StackPane) call2.getScene().getRoot(); 
-                    //rootPane.getChildren().remove(security);
+                    try {
+                        Parent parent = FXMLLoader.load(getClass().getResource("root.fxml"));
+                        Scene scene = new Scene(parent);
+                        Stage primaryStage = (Stage) call1.getScene().getWindow();
+                        primaryStage.setScene(scene);
+                        
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }else if(newValue == call2){
                     try {
                         Parent parent = FXMLLoader.load(getClass().getResource("root.fxml"));
                         Scene scene = new Scene(parent);
                         Stage primaryStage = (Stage) call2.getScene().getWindow();
                         primaryStage.setScene(scene);
                     } catch (IOException ex) {
+                        ex.printStackTrace();
                     }
-                } else if (newValue == call3) {
-
+                }else if(newValue == call3){
+                    System.out.println("call3 호출중....");
                 }
             }
 
         });
-    }
-
-//    private void handleBtnCall(ActionEvent event) {
-//        try {
-//            Parent parent = FXMLLoader.load(getClass().getResource("root.fxml"));
-//            Scene scene = new Scene(parent);
-//            Stage primaryStage = (Stage) call1.getScene().getWindow();
-//            primaryStage.setScene(scene);
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//    }
+        
+        btnCall.toFront();
+        callToggle.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {              
+                
+                if (newValue == btnCall) {
+                    System.out.println("전화걸기");
+                    lblConnect.setText(".........");
+                   // imageCall.toBack();
+                    //imageOff.toFront();
+                    imageCall.setImage(new Image(getClass().getResource("images/calloff.png").toString()));
+                    
+                    
+                } else {
+                    System.out.println("전화끊기");
+                    lblConnect.setText("");
+                   //imageCall.toFront();
+                  // imageOff.toBack();
+                  imageCall.setImage(new Image(getClass().getResource("images/call03.png").toString()));
+                }
+            }
+        });
+    }    
+    
 }
-
-
-//                    try {
-//                        Parent parent = FXMLLoader.load(getClass().getResource("root.fxml"));
-//                        Scene scene = new Scene(parent);
-//                        Stage primaryStage = (Stage) call1.getScene().getWindow();
-//                        primaryStage.setScene(scene);
-//                    } catch (IOException ex) {
-//                    }

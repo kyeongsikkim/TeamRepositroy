@@ -11,7 +11,6 @@ public class AppMain extends Application {
     //start 재정의 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //AnchorPane객체가 나옴
         Parent parent = FXMLLoader.load(getClass().getResource("root.fxml"));
         Scene scene = new Scene(parent);
         
@@ -21,7 +20,6 @@ public class AppMain extends Application {
         primaryStage.setOnCloseRequest(event -> {
             System.out.println("Close...");
         });
-        
         
         primaryStage.show();
     }

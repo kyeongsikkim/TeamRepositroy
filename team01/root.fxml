@@ -9,46 +9,46 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.team01.RootController">
+<StackPane  stylesheets="@root.css" fx:id="stackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.team01.RootController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="785.0">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="800.0">
          <center>
-            <TilePane prefHeight="338.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+            <TilePane prefHeight="338.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn1" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="1" />
-                  <Button fx:id="btn2" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="2" />
-                  <Button fx:id="btn3" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="3" />
-                  <Button fx:id="btn4" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="4" />
-                  <Button fx:id="btn5" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="5" />
-                  <Button fx:id="btn6" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="6" />
-                  <Button fx:id="btn7" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="7" />
-                  <Button fx:id="btn8" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="8" />
-                  <Button fx:id="btn9" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="9" />
-                  <Button fx:id="btnStar" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="*" />
-                  <Button fx:id="btn0" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="0" />
-                  <Button fx:id="btnSharp" mnemonicParsing="false" prefHeight="90.0" prefWidth="140.0" text="#" />
+                  <Button styleClass="dial" fx:id="btn1" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="1" />
+                  <Button styleClass="dial" fx:id="btn2" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="2" />
+                  <Button styleClass="dial" fx:id="btn3" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="3" />
+                  <Button styleClass="dial" fx:id="btn4" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="4" />
+                  <Button styleClass="dial" fx:id="btn5" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="5" />
+                  <Button styleClass="dial" fx:id="btn6" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="6" />
+                  <Button styleClass="dial" fx:id="btn7" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="7" />
+                  <Button styleClass="dial" fx:id="btn8" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="8" />
+                  <Button styleClass="dial" fx:id="btn9" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="9" />
+                  <Button styleClass="dial" fx:id="btnStar" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="*" />
+                  <Button styleClass="dial" fx:id="btn0" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="0" />
+                  <Button styleClass="dial" fx:id="btnSharp" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" text="#" />
                </children>
                <BorderPane.margin>
-                  <Insets />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </BorderPane.margin>
             </TilePane>
          </center>
          <right>
             <VBox prefHeight="360.0" prefWidth="354.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="lblRequest" contentDisplay="CENTER" prefHeight="52.0" prefWidth="275.0" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" VBox.vgrow="ALWAYS">
+                  <Label fx:id="lblRequest" contentDisplay="CENTER" prefHeight="63.0" prefWidth="280.0" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" VBox.vgrow="ALWAYS">
                      <font>
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <HBox prefHeight="19.0" prefWidth="354.0">
+                  <HBox prefHeight="57.0" prefWidth="354.0">
                      <children>
-                        <Label fx:id="lblState" alignment="BOTTOM_LEFT" contentDisplay="TOP" prefHeight="44.0" prefWidth="172.0" text=" ">
+                        <Label fx:id="lblState" alignment="BOTTOM_LEFT" contentDisplay="TOP" prefHeight="58.0" prefWidth="172.0" text=" ">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblTime" alignment="BOTTOM_RIGHT" prefHeight="11.0" prefWidth="173.0" HBox.hgrow="ALWAYS">
+                        <Label fx:id="lblTime" alignment="BOTTOM_RIGHT" prefHeight="59.0" prefWidth="173.0" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -58,20 +58,23 @@
                         </Label>
                      </children>
                   </HBox>
-                  <TextField fx:id="textArea" alignment="TOP_LEFT" prefHeight="183.0" prefWidth="354.0">
+                  <TextField fx:id="textArea" alignment="TOP_LEFT" prefHeight="189.0" prefWidth="349.0">
                      <font>
                         <Font size="27.0" />
                      </font>
                      <VBox.margin>
-                        <Insets />
+                        <Insets bottom="5.0" right="5.0" />
                      </VBox.margin>
                   </TextField>
                   <HBox prefHeight="89.0" prefWidth="354.0">
                      <children>
                         <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="100.0" prefWidth="138.0" />
-                        <ToggleButton fx:id="btnCall" mnemonicParsing="false" prefHeight="110.0" prefWidth="260.0" text="연결">
+                        <ToggleButton fx:id="btnCall" mnemonicParsing="false" prefHeight="89.0" prefWidth="218.0" text="호출">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
                            <toggleGroup>
-                              <ToggleGroup fx:id="call" />
+                              <ToggleGroup fx:id="callToggle" />
                            </toggleGroup>
                         </ToggleButton>
                      </children>
@@ -85,13 +88,13 @@
          <top>
             <HBox prefHeight="70.0" prefWidth="785.0" BorderPane.alignment="CENTER">
                <children>
-                  <ToggleButton fx:id="call1" mnemonicParsing="false" prefHeight="70.0" prefWidth="261.0" text="일반 통화">
+                  <ToggleButton fx:id="call1" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" text="일반 통화">
                      <toggleGroup>
                         <ToggleGroup fx:id="menu" />
                      </toggleGroup>
                   </ToggleButton>
-                  <ToggleButton fx:id="call2" mnemonicParsing="false" prefHeight="70.0" prefWidth="262.0" text="세대 호출" toggleGroup="$menu" />
-                  <ToggleButton fx:id="call3" mnemonicParsing="false" prefHeight="70.0" prefWidth="262.0" text="경비실 호출" toggleGroup="$menu" />
+                  <ToggleButton fx:id="call2" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" text="세대 호출" toggleGroup="$menu" />
+                  <ToggleButton fx:id="call3" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" text="경비실 호출" toggleGroup="$menu" />
                </children>
             </HBox>
          </top>
