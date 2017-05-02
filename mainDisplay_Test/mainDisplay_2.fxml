@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="mainBackground" prefHeight="480.0" prefWidth="800.0" stylesheets="@mainDisplay_2.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.MainDisplayController">
+<AnchorPane id="mainBackground" prefHeight="480.0" prefWidth="800.0" stylesheets="@mainDisplay_2.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay_Test.MainDisplayController">
    <children>
       <StackPane fx:id="stackPane" prefHeight="480.0" prefWidth="800.0" style="-fx-background-color: transparent;">
          <children>
