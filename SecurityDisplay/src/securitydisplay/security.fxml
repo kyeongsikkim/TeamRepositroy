@@ -28,15 +28,15 @@
 	<center>
 		<BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
 			<center>
-				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="28.0" BorderPane.alignment="CENTER">
 					<children>
 						<VBox prefHeight="200.0" prefWidth="200.0">
 							<children>
                         <HBox prefHeight="150.0" prefWidth="400.0">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="82.0" spacing="17.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="120.0" spacing="17.0">
                                  <children>
-            								<Label text="입실시간">
+            								<Label text="입실지연시간">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -44,7 +44,7 @@
                                           <Insets top="2.0" />
                                        </VBox.margin>
                                     </Label>
-            								<Label text="퇴실시간">
+            								<Label text="퇴실지연시간">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -62,34 +62,34 @@
                                     </Label>
                                  </children>
                                  <HBox.margin>
-                                    <Insets right="4.0" />
+                                    <Insets right="4.0" top="18.0" />
                                  </HBox.margin>
                               </VBox>
                               <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="85.0" spacing="10.0">
                                  <children>
                                     <HBox prefHeight="30.0" prefWidth="100.0">
                                        <children>
-                                          <Button fx:id="btnHighEnter" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
+                                          <Button id="btnHighEnter" fx:id="btnHighEnter" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
                                           <TextField fx:id="txtGetInTime" disable="true" prefHeight="27.0" prefWidth="53.0">
                                              <font>
                                                 <Font name="System Bold" size="13.0" />
                                              </font></TextField>
-                                          <Button fx:id="btnLowEnter" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
+                                          <Button id="btnLowEnter" fx:id="btnLowEnter" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
                                        </children>
                                     </HBox>
                                     <HBox prefHeight="30.0" prefWidth="100.0">
                                        <children>
-                                          <Button fx:id="btnHighLeave" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
-                                          <TextField fx:id="txtGetoutTime" prefHeight="27.0" prefWidth="53.0">
+                                          <Button id="btnHighLeave" fx:id="btnHighLeave" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
+                                          <TextField id="txtGetoutTime" fx:id="txtGetoutTime" prefHeight="27.0" prefWidth="53.0">
                                              <font>
                                                 <Font name="System Bold" size="13.0" />
                                              </font></TextField>
-                                          <Button fx:id="btnLowLeave" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
+                                          <Button id="btnLowLeave" fx:id="btnLowLeave" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
                                        <children>
-                                          <CheckBox fx:id="checkMotion" mnemonicParsing="false" />
+                                          <CheckBox id="checkMotion" fx:id="checkMotion" mnemonicParsing="false" />
                                        </children>
                                        <VBox.margin>
                                           <Insets top="5.0" />
@@ -100,10 +100,13 @@
                                     </HBox>
                                  </children>
                                  <HBox.margin>
-                                    <Insets left="5.0" />
+                                    <Insets left="5.0" top="18.0" />
                                  </HBox.margin>
                               </VBox>
                            </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                         </HBox>
 							</children>
 						</VBox>
@@ -134,20 +137,23 @@
                                           <Insets top="2.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <MediaView fx:id="soundlock" />
-                                    <MediaView fx:id="soundunlock" />
+                                    <MediaView id="soundlock" />
+                                    <MediaView id="soundunlock" />
                                  </children>
                                  <padding>
                                     <Insets left="12.0" />
                                  </padding>
+                                 <HBox.margin>
+                                    <Insets top="16.0" />
+                                 </HBox.margin>
                               </VBox>
                               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="22.0">
                                  <children>
-                                    <CheckBox fx:id="checkGas" mnemonicParsing="false" />
-                                    <CheckBox fx:id="checkHeater" mnemonicParsing="false" />
+                                    <CheckBox id="checkGas" fx:id="checkGas" mnemonicParsing="false" />
+                                    <CheckBox id="checkHeater" fx:id="checkHeater" mnemonicParsing="false" />
                                  </children>
                                  <HBox.margin>
-                                    <Insets top="3.0" />
+                                    <Insets top="18.0" />
                                  </HBox.margin>
                                  <padding>
                                     <Insets right="15.0" top="1.0" />
@@ -167,7 +173,7 @@
 			<children>
 				<HBox alignment="CENTER" prefWidth="200.0">
 					<children>
-                  <Button fx:id="btnExitSetting" mnemonicParsing="false" prefWidth="250.0" text="설정">
+                  <Button id="btnExitSetting" fx:id="btnExitSetting" mnemonicParsing="false" prefWidth="250.0" text="설정">
                      <HBox.margin>
                         <Insets bottom="6.0" />
                      </HBox.margin>

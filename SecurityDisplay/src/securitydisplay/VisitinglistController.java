@@ -61,7 +61,7 @@ public class VisitinglistController implements Initializable {
 		tcDate.setStyle("-fx-alignment: CENTER;");
 
 		tableView.setItems(visiterList);
-
+		
 		// StackPane에 감시카메라 이미지 넣기
 		Visiter visiter = tableView.getSelectionModel().getSelectedItem();
 		tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Visiter>() {

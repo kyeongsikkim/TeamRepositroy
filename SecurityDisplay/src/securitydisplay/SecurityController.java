@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,7 +13,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
@@ -89,7 +87,7 @@ public class SecurityController implements Initializable {
 				}
 			}
 		});
-		
+
 		btnHouseSetting.setOnAction(event -> handleBtnHouseSetting(event));
 
 		// 현관문 cctv 화면 버튼 이벤트 처리
@@ -142,32 +140,36 @@ public class SecurityController implements Initializable {
 
 	// 외출방범 설정 코드
 	private void handleBtnExitSetting(ActionEvent event) throws IOException {
-		if (btnExitSetting.isFocused()) {
+		if (btnExitSetting.getText().equals("설정")) {
+			Stage primaryStage = (Stage) btnExitSetting.getScene().getWindow();
+			Parent parent = FXMLLoader.load(getClass().getResource("password.fxml"));
+			Popup popup = new Popup();
+			popup.getContent().add(parent);
+			Button button = (Button) parent.lookup("#popupClose");
+			button.setOnAction(new EventHandler<ActionEvent>() {
 
-			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("security.fxml"));
-			MediaView mediaView = (MediaView) parent.lookup("#soundlock");
-			Media media = new Media(getClass().getResource("media/audio.wav").toString());
-			MediaPlayer mediaPlayer = new MediaPlayer(media);              
-			mediaView.setMediaPlayer(mediaPlayer);
-			mediaPlayer.play();
-			btnExitSetting.setText("해제");
+				@Override
+				public void handle(ActionEvent event) {
+					popup.hide();
+				}
+				
+			});
 			
-			checkMotion.setDisable(true);
-			checkGas.setDisable(true);
-			checkHeater.setDisable(true);
-			btnLowEnter.setDisable(true);
-			btnHighEnter.setDisable(true);
-			btnLowLeave.setDisable(true);
-			btnHighLeave.setDisable(true);
-			btnAptDoor.setDisable(true);
-			btnDoor.setDisable(true);
-			btnPlayground.setDisable(true);
-
-		} else {
-			System.out.println("해제되었습니다");
+			popup.show(primaryStage);
+			
+			
+		} else if(btnExitSetting.getText().equals("해제")) {
+			
+			checkMotion.setDisable(false);
+			checkGas.setDisable(false);
+			checkHeater.setDisable(false);
+			btnLowEnter.setDisable(false);
+			btnHighEnter.setDisable(false);
+			btnLowLeave.setDisable(false);
+			btnHighLeave.setDisable(false);
 		}
 	}
-	
+
 	// 재택방범 설정 코드
 	private void handleBtnHouseSetting(ActionEvent event) {
 		System.out.println("재택방범이 설정되었습니다");
@@ -254,7 +256,7 @@ public class SecurityController implements Initializable {
 	private void handlePlaygroundPopup(ActionEvent event) throws Exception {
 		Stage primaryStage = (Stage) btnPlayground.getScene().getWindow();
 		Popup popup = new Popup();
-		Parent parent = (Parent) FXMLLoader.load(getClass().getResource("playground.fxml"));
+		Parent parent = FXMLLoader.load(getClass().getResource("playground.fxml"));
 		MediaView mediaView = (MediaView) parent.lookup("#cctv");
 		Media media = new Media(getClass().getResource("media/video.mp4").toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(media);
