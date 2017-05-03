@@ -25,8 +25,6 @@ import javafx.stage.Stage;
 
 public class SecurityController implements Initializable {
 
-	//public static Scene main;
-
 	@FXML
 	private CheckBox checkMotion;
 	@FXML
@@ -34,9 +32,9 @@ public class SecurityController implements Initializable {
 	@FXML
 	private CheckBox checkHeater;
 	@FXML
-	private ToggleButton btnExitSetting;
+	private Button btnExitSetting;
 	@FXML
-	private ToggleButton btnHouseSetting;
+	private Button btnHouseSetting;
 	@FXML
 	private Button btnAptDoor;
 	@FXML
@@ -77,10 +75,8 @@ public class SecurityController implements Initializable {
 
 		// 방문기록 리스트 버튼 이벤트 처리
 		btnVisit.setOnAction(event -> handleBtnVisit(event));
-		
-		// 외출방범 및 재택방범 설정, 해제 속성바인딩
-		// Bindings.bindBidirectional(btnExitSetting.selectedProperty(), btnHouseSetting.selectedProperty());
-		btnExitSetting.selectedProperty().bindBidirectional(btnHouseSetting.selectedProperty());
+
+		// 외출버튼 이벤트 처리
 		btnExitSetting.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -92,8 +88,8 @@ public class SecurityController implements Initializable {
 					e.printStackTrace();
 				}
 			}
-			
 		});
+		
 		btnHouseSetting.setOnAction(event -> handleBtnHouseSetting(event));
 
 		// 현관문 cctv 화면 버튼 이벤트 처리
@@ -138,21 +134,23 @@ public class SecurityController implements Initializable {
 			Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
 			BorderPane root = (BorderPane) btnVisit.getScene().getRoot();
 			root.getChildren().add(visitinglist);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			// 개발 끝나면 이거 지워주기!
 			e.printStackTrace();
 		}
 	}
 
+	// 외출방범 설정 코드
 	private void handleBtnExitSetting(ActionEvent event) throws IOException {
 		if (btnExitSetting.isFocused()) {
-			
-			Parent parent= (Parent) FXMLLoader.load(getClass().getResource("security.fxml"));
+
+			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("security.fxml"));
 			MediaView mediaView = (MediaView) parent.lookup("#soundlock");
 			Media media = new Media(getClass().getResource("media/audio.wav").toString());
-			MediaPlayer mediaPlayer = new MediaPlayer(media);
+			MediaPlayer mediaPlayer = new MediaPlayer(media);              
 			mediaView.setMediaPlayer(mediaPlayer);
 			mediaPlayer.play();
+			btnExitSetting.setText("해제");
 			
 			checkMotion.setDisable(true);
 			checkGas.setDisable(true);
@@ -164,13 +162,13 @@ public class SecurityController implements Initializable {
 			btnAptDoor.setDisable(true);
 			btnDoor.setDisable(true);
 			btnPlayground.setDisable(true);
-			
-			
+
 		} else {
 			System.out.println("해제되었습니다");
 		}
 	}
-
+	
+	// 재택방범 설정 코드
 	private void handleBtnHouseSetting(ActionEvent event) {
 		System.out.println("재택방범이 설정되었습니다");
 	}
@@ -262,9 +260,9 @@ public class SecurityController implements Initializable {
 		MediaPlayer mediaPlayer = new MediaPlayer(media);
 		mediaView.setMediaPlayer(mediaPlayer);
 		mediaPlayer.play();
-		
+
 		popup.getContent().add(parent);
-		
+
 		Button button = (Button) parent.lookup("#btnClose");
 		button.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -273,7 +271,7 @@ public class SecurityController implements Initializable {
 				mediaPlayer.stop();
 			}
 		});
-		
+
 		popup.show(primaryStage);
 	}
 }

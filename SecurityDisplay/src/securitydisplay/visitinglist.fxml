@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="securitydisplay.VisitinglistController">
+<AnchorPane layoutX="50.0" layoutY="50.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="securitydisplay.VisitinglistController">
    <children>
       <HBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -19,10 +20,13 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <StackPane fx:id="imageBackground" alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="200.0">
+            <StackPane fx:id="imageBackground" prefHeight="300.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="btnClose" mnemonicParsing="false" text="X" />
+                  <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                  <Button fx:id="btnClose" mnemonicParsing="false" text="X">
+                     <StackPane.margin>
+                        <Insets bottom="273.0" left="172.0" />
+                     </StackPane.margin></Button>
                </children>
             </StackPane>
          </children>

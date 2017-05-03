@@ -167,14 +167,11 @@
 			<children>
 				<HBox alignment="CENTER" prefWidth="200.0">
 					<children>
-                  <ToggleButton fx:id="btnExitSetting" mnemonicParsing="false" prefWidth="250.0" text="설정">
+                  <Button fx:id="btnExitSetting" mnemonicParsing="false" prefWidth="250.0" text="설정">
                      <HBox.margin>
                         <Insets bottom="6.0" />
                      </HBox.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="setting" />
-                     </toggleGroup>
-                  </ToggleButton>
+                  </Button>
 					</children>
 				</HBox>
 				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: CC9966;">
@@ -189,7 +186,7 @@
 				</HBox>
 				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
 					<children>
-                  <ToggleButton fx:id="btnHouseSetting" mnemonicParsing="false" prefWidth="250.0" text="설정" toggleGroup="$setting" />
+                  <Button fx:id="btnHouseSetting" mnemonicParsing="false" prefWidth="250.0" text="설정" />
 					</children>
 				</HBox>
 				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: CC9966;">
