@@ -57,6 +57,8 @@ public class PasswordController implements Initializable {
 
 	@FXML
 	private TextField txtNumber;
+	
+	private String password;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -138,6 +140,8 @@ public class PasswordController implements Initializable {
 
 	// 확인버튼 이벤트 처리
 	private void handleBtnConfirm(ActionEvent event) throws IOException {
+		password = "1234";
+		if(password.equals(txtNumber.getText())) {
 		Parent parent = FXMLLoader.load(getClass().getResource("security.fxml"));
 		Button btnExitSetting = (Button) parent.lookup("#btnExitSetting");
 		CheckBox checkMotion = (CheckBox) parent.lookup("#checkMotion");
@@ -150,7 +154,7 @@ public class PasswordController implements Initializable {
 		
 		btnExitSetting.setText("해제");
 		MediaView mediaView = (MediaView) parent.lookup("#soundlock");
-		Media media = new Media(getClass().getResource("media/외출설정이_되었습니다.mp3").toString());
+		Media media = new Media(getClass().getResource("media/외출방범이_설정되었습니다.mp3").toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(media);              
 		mediaView.setMediaPlayer(mediaPlayer);
 		mediaPlayer.play();
@@ -162,5 +166,9 @@ public class PasswordController implements Initializable {
 		btnHighEnter.setDisable(true);
 		btnLowLeave.setDisable(true);
 		btnHighLeave.setDisable(true);
+		
+		} else {
+			System.out.println("비밀번호가 맞지 않습니다");
+		}
 	}
 }
