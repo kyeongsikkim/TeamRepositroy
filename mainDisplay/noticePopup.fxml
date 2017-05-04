@@ -10,7 +10,7 @@
 
 <BorderPane id="popupBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@noticePopup.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <TextArea id="areaNotice" fx:id="areaNotice" prefHeight="150.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
+      <TextArea id="areaNotice" fx:id="areaNotice" prefHeight="150.0" prefWidth="400.0" style="-fx-focus-traversable: transparent;" BorderPane.alignment="CENTER" />
    </center>
    <top>
       <VBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="400.0" spacing="5.0" BorderPane.alignment="CENTER">
@@ -20,8 +20,14 @@
                   <Font size="9.0" />
                </font>
             </Button>
-            <Label id="labelTitle" fx:id="labelTitle" prefHeight="18.0" prefWidth="400.0" styleClass="popupLabel" text="Label" />
-            <Label id="labelDate" fx:id="labelDate" prefHeight="19.0" prefWidth="400.0" styleClass="popupLabel" text="Label" />
+            <Label id="labelTitle" fx:id="labelTitle" prefHeight="18.0" prefWidth="400.0" styleClass="popupLabel" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label id="labelDate" fx:id="labelDate" prefHeight="19.0" prefWidth="400.0" styleClass="popupLabel" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
          <BorderPane.margin>
             <Insets />

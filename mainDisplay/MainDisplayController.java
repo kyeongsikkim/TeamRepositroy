@@ -27,8 +27,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
+import javafx.stage.Popup;
 import javafx.util.Duration;
 
 public class MainDisplayController implements Initializable {
@@ -36,6 +40,8 @@ public class MainDisplayController implements Initializable {
     private Parent parent;
     private TableView<Notice> noticeTable;
     public static ObservableList<Notice> list;
+    private Media media;
+    private MediaPlayer mediaPlayer;
     
     @FXML
     private StackPane stackPane;
@@ -87,6 +93,8 @@ public class MainDisplayController implements Initializable {
     private ImageView imgConnect;
     @FXML
     private Label labelNew;
+    @FXML
+    private Label labelSlide;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -98,21 +106,25 @@ public class MainDisplayController implements Initializable {
             list = FXCollections.observableArrayList();
         } catch (IOException ex) {}
         //폰트 선언
-        Font timeFont = Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-DemiLight.otf").toExternalForm(), 56);
-        Font dateFont = Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-DemiLight.otf").toExternalForm(), 28);
-        Font nameFont = Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-Medium.otf").toExternalForm(), 16);
-        Font subFont = Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-Medium.otf").toExternalForm(), 12);
+        Font timeFont = Font.loadFont(getClass().getResource("fonts/NanumBarunGothicBold.ttf").toExternalForm(), 56);
+        Font dateFont = Font.loadFont(getClass().getResource("fonts/NanumBarunGothicBold.ttf").toExternalForm(), 28);
+        Font nameFont = Font.loadFont(getClass().getResource("fonts/NanumBarunGothicBold.ttf").toExternalForm(), 16);
+        Font slideFont = Font.loadFont(getClass().getResource("fonts/NanumBarunGothicBold.ttf").toExternalForm(), 15);
+        Font subFont = Font.loadFont(getClass().getResource("fonts/NanumBarunGothicBold.ttf").toExternalForm(), 13);
         //버튼 라벨&서브 버튼 라벨 폰트 설정   
         labelName1.setFont(nameFont);
         labelName2.setFont(nameFont);
         labelName3.setFont(nameFont);
         labelName4.setFont(nameFont);
         labelNew.setFont(nameFont);
+        labelSlide.setFont(slideFont);
         labelSub1.setFont(subFont);
         labelSub2.setFont(subFont);
         labelSub3.setFont(subFont);
         labelSub4.setFont(subFont);
         labelSub5.setFont(subFont);
+        //슬라이드 라벨 초기 위치 설정
+        labelSlide.setLayoutY(-30);
         //시간&날짜 출력 및 시간&날짜 라벨 위치 조정
         Thread timeThread = new Thread() {
             @Override
@@ -132,7 +144,7 @@ public class MainDisplayController implements Initializable {
                         labelTime.setLayoutY(0);
 
                         labelDate.setFont(dateFont);
-                        labelDate.setLayoutX(labelTime.getLayoutX() - labelDate.getWidth() - 10);
+                        labelDate.setLayoutX(labelTime.getLayoutX() - labelDate.getWidth() - 5);
                         labelDate.setLayoutY(10);
                     });
 
@@ -149,6 +161,8 @@ public class MainDisplayController implements Initializable {
         btnMenu.setOnAction(e -> handleBtnMenu(e));
         btnNotice.setOnAction(e -> handleBtnNotice(e));
         btnConnect.setOnAction(e -> handleBtnConnect(e));
+        btnOpenDoor.setOnAction(e -> handleBtnOpenDoor(e));
+        btnElevator.setOnAction(e -> handleBtnElevator(e));
     }
     
     //menu버튼 이벤트 메소드 선언
@@ -250,7 +264,14 @@ public class MainDisplayController implements Initializable {
             anchorPane.getChildren().remove(parent);
             btnNotice.setUserData("close");
         }
+    }
+    
+    private void handleBtnOpenDoor(ActionEvent e) {
+        media = new Media(getClass().getResource("sounds/openDoor.mp3").toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
         
+        setLabelSlide("현관문이 열렸습니다");
     }
     
     private void handleBtnConnect(ActionEvent e) {
@@ -259,7 +280,55 @@ public class MainDisplayController implements Initializable {
         } else if(btnConnect.getUserData().equals("connect")) {
             stopClient();
         }
-        
+    }
+    
+    private void handleBtnElevator(ActionEvent e) {
+        Popup popup = new Popup();
+        try {
+            BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("elevatorPopup.fxml"));
+            Button btnElevatorUp = (Button) borderPane.lookup("#mainButtonUp");
+            Button btnElevatorDown = (Button) borderPane.lookup("#mainButtonDown");
+            Label labelDisplay = (Label) borderPane.lookup("#labelDisplay");
+           
+            Font numFont = Font.loadFont(getClass().getResource("fonts/DS-DIGI.TTF").toExternalForm(), 108);
+            labelDisplay.setFont(numFont);
+            
+            int floorNum = (int)(Math.random() * 15) + 1;
+            labelDisplay.setText(String.valueOf(floorNum));
+            
+            popup.getContent().add(borderPane);
+            popup.setAutoHide(true);
+            popup.show(AppMain.primaryStage);
+        } catch (IOException ex) {}
+    }
+    
+    private void setLabelSlide(String message) {
+        Thread slideThread = new Thread() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    labelSlide.setText(message);
+                    KeyValue keyValue = new KeyValue(labelSlide.layoutYProperty(), 18);
+                    KeyFrame keyFrame = new KeyFrame(Duration.seconds(0.4), keyValue);
+                    Timeline timeline = new Timeline();
+                    timeline.getKeyFrames().add(keyFrame);
+                    timeline.play();
+                });
+                
+                try {
+                    Thread.sleep(2500);
+                } catch (InterruptedException ex) {}
+                
+                Platform.runLater(() -> {
+                    KeyValue keyValue = new KeyValue(labelSlide.layoutYProperty(), -30);
+                    KeyFrame keyFrame = new KeyFrame(Duration.seconds(0.4), keyValue);
+                    Timeline timeline = new Timeline();
+                    timeline.getKeyFrames().add(keyFrame);
+                    timeline.play();
+                });
+            }
+        };
+        slideThread.start();
     }
     
     private void startClient() {
@@ -274,6 +343,7 @@ public class MainDisplayController implements Initializable {
                         btnConnect.setUserData("connect");
                         imgConnect.setImage(new Image(getClass().getResource("images/disconnect.png").toString()));
                         labelSub5.setText("공지서버 연결 중지");
+                        setLabelSlide("공지서버에 연결되었습니다.");
                     });
                     
 		    receive();
@@ -294,6 +364,7 @@ public class MainDisplayController implements Initializable {
             btnConnect.setUserData("disconnect");
             imgConnect.setImage(new Image(getClass().getResource("images/connect.png").toString()));
             labelSub5.setText("공지서버 연결");
+            setLabelSlide("공지서버와의 연결이 끊겼습니다.");
         });
 
     }
@@ -331,7 +402,7 @@ public class MainDisplayController implements Initializable {
                     SimpleDateFormat sdf = new SimpleDateFormat("MM월 dd일(E) HH:mm");
                     list.add(new Notice(sdf.format(new Date()), strData1, strData2));
                     noticeTable.setItems(list);
-                    
+
                     if(btnNotice.getUserData().equals("close")) {
                         labelNew.setText("N");
                     }

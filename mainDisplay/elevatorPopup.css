@@ -1,0 +1,53 @@
+#elevatorBorderPane {
+    -fx-background-color: white;
+    -fx-background-radius: 70;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 20;
+    -fx-border-radius: 30;
+}
+
+#mainButtonUp {
+    -fx-background-radius:100 100 2 2;
+    -fx-border-radius:100 100 2 2; 
+}
+
+#buttonLabelUp {
+    -fx-background-color:linear-gradient(#99ffff, #009999);
+    -fx-background-radius: 65 65 2 2;
+}
+
+#buttonLabelUpSub {
+    -fx-background-radius: 85 85 2 2;
+    -fx-border-radius: 85 85 2 2;
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+}
+
+#mainButtonDown {
+    -fx-background-radius: 2 2 100 100;
+    -fx-border-radius: 2 2 100 100; 
+}
+
+#buttonLabelDown {
+    -fx-background-color:linear-gradient(#99ffff, #009999);
+    -fx-background-radius: 2 2 65 65;
+}
+
+#buttonLabelDownSub {
+    -fx-background-radius: 2 2 85 85;
+    -fx-border-radius: 2 2 85 85;
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+}
+
+#labelDisplay {
+    -fx-background-color: black;
+    -fx-background-radius:15;
+    -fx-border-color:#dddddd;
+    -fx-border-width:15;
+    -fx-border-radius:5;
+}
+
+/*reference {
+    -fx-background-color:linear-gradient(#00cc00); 
+}*/

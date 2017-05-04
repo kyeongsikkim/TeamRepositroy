@@ -127,6 +127,10 @@ public class NoticeServerController implements Initializable {
                 os2.write(byteArr2);
                 os2.flush();
                 
+                Platform.runLater(() -> {
+                    textTitle.clear();
+                    textContent.clear();
+                });
             } catch (IOException ex) {
                 connections.remove(Client.this);
                 try {
