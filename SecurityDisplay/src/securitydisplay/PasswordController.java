@@ -85,7 +85,7 @@ public class PasswordController implements Initializable {
 			}
 			});
 
-		// 키패드 버튼 이벤트 처리(1~0번까지)
+		// 키패드 버튼 이벤트 처리(0~9번까지)
 		btn1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {

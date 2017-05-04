@@ -1,0 +1,10 @@
+.mainbackground {
+	-fx-background-radius: 15.0px;
+	-fx-background-image: url("image/graybackground.jpg"); 
+}
+
+/*
+#horizontalSep {
+	-fx-region-background: #5B7484;
+}
+*/

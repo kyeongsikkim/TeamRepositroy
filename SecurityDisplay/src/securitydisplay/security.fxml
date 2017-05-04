@@ -70,7 +70,7 @@
                                     <HBox prefHeight="30.0" prefWidth="100.0">
                                        <children>
                                           <Button id="btnHighEnter" fx:id="btnHighEnter" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
-                                          <TextField fx:id="txtGetInTime" prefHeight="27.0" prefWidth="53.0">
+                                          <TextField fx:id="txtGetInTime" editable="false" prefHeight="27.0" prefWidth="53.0">
                                              <font>
                                                 <Font name="System Bold" size="13.0" />
                                              </font></TextField>
@@ -80,7 +80,7 @@
                                     <HBox prefHeight="30.0" prefWidth="100.0">
                                        <children>
                                           <Button id="btnHighLeave" fx:id="btnHighLeave" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
-                                          <TextField id="txtGetoutTime" fx:id="txtGetoutTime" prefHeight="27.0" prefWidth="53.0">
+                                          <TextField id="txtGetoutTime" fx:id="txtGetoutTime" editable="false" prefHeight="27.0" prefWidth="53.0">
                                              <font>
                                                 <Font name="System Bold" size="13.0" />
                                              </font></TextField>
