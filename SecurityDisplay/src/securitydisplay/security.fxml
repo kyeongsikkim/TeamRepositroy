@@ -65,12 +65,12 @@
                                     <Insets right="4.0" top="18.0" />
                                  </HBox.margin>
                               </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="85.0" spacing="10.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="96.0" spacing="10.0">
                                  <children>
                                     <HBox prefHeight="30.0" prefWidth="100.0">
                                        <children>
                                           <Button id="btnHighEnter" fx:id="btnHighEnter" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" />
-                                          <TextField fx:id="txtGetInTime" disable="true" prefHeight="27.0" prefWidth="53.0">
+                                          <TextField fx:id="txtGetInTime" prefHeight="27.0" prefWidth="53.0">
                                              <font>
                                                 <Font name="System Bold" size="13.0" />
                                              </font></TextField>
@@ -187,7 +187,6 @@
 								<Font size="20.0" />
 							</font>
 						</Label>
-                  <Button fx:id="btnVisit" mnemonicParsing="false" text="방문기록" />
 					</children>
 				</HBox>
 				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -195,13 +194,14 @@
                   <Button fx:id="btnHouseSetting" mnemonicParsing="false" prefWidth="250.0" text="설정" />
 					</children>
 				</HBox>
-				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: CC9966;">
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: CC9966;">
 					<children>
 						<Label text="CCTV">
 							<font>
 								<Font size="21.0" />
 							</font>
 						</Label>
+                  <Button fx:id="btnVisit" mnemonicParsing="false" text="방문기록" />
 					</children>
 				</HBox>
 				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">

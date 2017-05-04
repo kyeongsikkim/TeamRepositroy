@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -88,6 +89,7 @@ public class SecurityController implements Initializable {
 			}
 		});
 
+		// 재택방범 설정 버튼 이벤트 처리
 		btnHouseSetting.setOnAction(event -> handleBtnHouseSetting(event));
 
 		// 현관문 cctv 화면 버튼 이벤트 처리
@@ -127,6 +129,7 @@ public class SecurityController implements Initializable {
 		});
 	}
 
+	// 방문기록 리스트 이벤트 코드
 	private void handleBtnVisit(ActionEvent event) {
 		try {
 			Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
@@ -143,22 +146,18 @@ public class SecurityController implements Initializable {
 		if (btnExitSetting.getText().equals("설정")) {
 			Stage primaryStage = (Stage) btnExitSetting.getScene().getWindow();
 			Parent parent = FXMLLoader.load(getClass().getResource("password.fxml"));
-			Popup popup = new Popup();
-			popup.getContent().add(parent);
-			Button button = (Button) parent.lookup("#popupClose");
-			button.setOnAction(new EventHandler<ActionEvent>() {
+			Scene scene = new Scene(parent);
+			
+			primaryStage.setScene(scene);
 
-				@Override
-				public void handle(ActionEvent event) {
-					popup.hide();
-				}
-				
-			});
+		} else if (btnExitSetting.getText().equals("해제")) {
 			
-			popup.show(primaryStage);
-			
-			
-		} else if(btnExitSetting.getText().equals("해제")) {
+			Parent parent = FXMLLoader.load(getClass().getResource("security.fxml"));
+			MediaView mediaView = (MediaView) parent.lookup("#soundunlock");
+			Media media = new Media(getClass().getResource("media/해제되었습니다.mp3").toString());
+			MediaPlayer mediaPlayer = new MediaPlayer(media);
+			mediaView.setMediaPlayer(mediaPlayer);
+			mediaPlayer.play();
 			
 			checkMotion.setDisable(false);
 			checkGas.setDisable(false);
@@ -167,6 +166,8 @@ public class SecurityController implements Initializable {
 			btnHighEnter.setDisable(false);
 			btnLowLeave.setDisable(false);
 			btnHighLeave.setDisable(false);
+			
+			btnExitSetting.setText("설정");
 		}
 	}
 
