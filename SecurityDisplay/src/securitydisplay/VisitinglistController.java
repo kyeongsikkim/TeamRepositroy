@@ -18,11 +18,11 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
 public class VisitinglistController implements Initializable {
@@ -80,8 +80,10 @@ public class VisitinglistController implements Initializable {
 
 	private void handlebtnClose(ActionEvent event) {
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("security.fxml"));
-			BorderPane root = (BorderPane) btnClose.getScene().getRoot();
+			Parent parent = FXMLLoader.load(getClass().getResource("security_main.fxml"));
+			ToggleButton btnReturn = (ToggleButton) parent.lookup("#btnCctv");
+			btnReturn.setSelected(true);
+			AnchorPane root = (AnchorPane) btnClose.getScene().getRoot();
 			root.getChildren().clear();
 			root.getChildren().add(parent);
 		} catch (IOException ioe) {

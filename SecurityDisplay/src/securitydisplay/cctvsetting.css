@@ -1,11 +1,7 @@
-.exitbackground {
+.mainbackground {
 	-fx-border-radius: 5;
     -fx-border-color:#cccccc;
     -fx-border-width: 10px;
     -fx-background-radius: 20;
-    -fx-background-color: #ffffff;
-}
-
-.btnColor {
-	-fx-background-color: #ffffff;
+    -fx-background-color:#ffffff;
 }

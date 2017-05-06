@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<BorderPane styleClass="mainbackground" stylesheets="@cctvsetting.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="securitydisplay.CctvsettingController">
+   <center>
+      <AnchorPane prefHeight="365.0" prefWidth="750.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="109.0" layoutY="108.0" prefHeight="200.0" prefWidth="100.0" />
+            <Button fx:id="btnList" layoutX="91.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" />
+            <ImageView fitHeight="55.0" fitWidth="68.0" layoutX="100.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/clipboard.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="102.0" layoutY="82.0" text="방문기록" />
+            <HBox layoutX="209.0" layoutY="76.0" prefHeight="100.0" prefWidth="400.0">
+               <children>
+                  <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+                  <VBox prefHeight="200.0" prefWidth="130.0">
+                     <children>
+                        <Button fx:id="btnApt" mnemonicParsing="false" text="공동현관" />
+                        <Button fx:id="btnDoor" mnemonicParsing="false" text="현관문" />
+                        <Button fx:id="btnPlayground" mnemonicParsing="false" text="놀이터" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
-
