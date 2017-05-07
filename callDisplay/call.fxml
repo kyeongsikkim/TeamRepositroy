@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="call" stylesheets="@call.css" prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="callDisplay.CallController">
+   <children>
+      <HBox prefWidth="800.0">
+         <children>
+            <ToggleButton fx:id="call1" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" styleClass="menu-button" text="일반 통화" textFill="WHITE">
+               <toggleGroup>
+                  <ToggleGroup fx:id="menu" />
+               </toggleGroup>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="call2" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" styleClass="menu-button" text="세대 호출" textFill="WHITE" toggleGroup="$menu">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="call3" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" styleClass="menu-button" text="경비실 호출" textFill="WHITE" toggleGroup="$menu">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </ToggleButton>
+         </children>
+      </HBox>
+      <StackPane fx:id="stack" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" />
+   </children>
+</AnchorPane>
