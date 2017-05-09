@@ -1,0 +1,29 @@
+#interphoneBorderPane {
+    -fx-background-color: white;
+    -fx-background-radius: 70;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 20;
+    -fx-border-radius: 30;
+}
+
+#viewPane {
+    -fx-border-color: #999999;
+    -fx-border-width: 10;
+}
+
+#btnInterphoneColor {
+    -fx-background-radius: 45;
+    -fx-background-color:linear-gradient(#99ff99, #00cc00); 
+}
+
+#btnInterphone {
+    -fx-background-radius:75;
+    -fx-border-radius:75; 
+}
+
+#labelBtnInterphone {
+    -fx-background-color: white;
+    -fx-background-radius: 60;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 60;
+}

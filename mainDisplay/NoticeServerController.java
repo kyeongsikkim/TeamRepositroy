@@ -25,28 +25,28 @@ public class NoticeServerController implements Initializable {
     private ExecutorService executorService;
     private ServerSocket serverSocket;
     private List<Client> connections = new Vector<Client>();
- 
+
     @FXML
-    private TextField textTitle;
+    private TextField textNoticeTitle;
     @FXML
-    private Button btnStartStop;
+    private Button btnServerStartStop;
     @FXML
-    private Button btnSend;
+    private Label labelServerStatus;
     @FXML
-    private TextArea textContent;
+    private Button btnServerSend;
     @FXML
-    private Label labelStatus;
+    private TextArea textNoticeContent;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        btnStartStop.setOnAction(e -> handleBtnStartStop(e));
-        btnSend.setOnAction(e -> handleBtnSend(e));
+        btnServerStartStop.setOnAction(e -> handleBtnServerStartStop(e));
+        btnServerSend.setOnAction(e -> handleBtnServerSend(e));
     }    
     
-    private void handleBtnStartStop(ActionEvent e) {
-        if (btnStartStop.getText().equals("start")) {
+    private void handleBtnServerStartStop(ActionEvent e) {
+        if (btnServerStartStop.getText().equals("start")) {
             startServer();
-        } else if (btnStartStop.getText().equals("stop")) {
+        } else if (btnServerStartStop.getText().equals("stop")) {
             stopServer();
         }
     }
@@ -64,8 +64,8 @@ public class NoticeServerController implements Initializable {
         
         Runnable acceptTask = () -> {
             Platform.runLater(() -> {
-                btnStartStop.setText("stop");
-                labelStatus.setText("연결 중");
+                btnServerStartStop.setText("stop");
+                labelServerStatus.setText("연결 중");
             });
             while (true) {
                 try {
@@ -94,14 +94,14 @@ public class NoticeServerController implements Initializable {
         } catch (IOException ex) {}
         
         Platform.runLater(() -> {
-            btnStartStop.setText("start");
-            labelStatus.setText("연결되지 않음");
+            btnServerStartStop.setText("start");
+            labelServerStatus.setText("연결되지 않음");
         });
     }
 
-    private void handleBtnSend(ActionEvent e) {
-        String title = textTitle.getText();
-        String content = textContent.getText();
+    private void handleBtnServerSend(ActionEvent e) {
+        String title = textNoticeTitle.getText();
+        String content = textNoticeContent.getText();
         
         for (Client client : connections) {
             client.send(title, content);
@@ -128,8 +128,8 @@ public class NoticeServerController implements Initializable {
                 os2.flush();
                 
                 Platform.runLater(() -> {
-                    textTitle.clear();
-                    textContent.clear();
+                    textNoticeTitle.clear();
+                    textNoticeContent.clear();
                 });
             } catch (IOException ex) {
                 connections.remove(Client.this);
