@@ -23,6 +23,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.scene.text.Font;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -82,16 +83,16 @@ public class ExitsettingController implements Initializable {
 
 	@FXML
 	private TextField txtGetoutTime;
-	
+
 	@FXML
 	private CheckBox btnFlame;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// Font font =
-		// Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-Medium.otf").toExternalForm(),
-		// 12);
+		// Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-Medium.otf").toExternalForm(),6);
 		// lblGetinText.setFont(font);
+
 		// 입실(퇴실)지연조절 화살표 이미지 처리 코드
 		Image upperImage = new Image(getClass().getResource("image/upper arrow.png").toString());
 		Image lowerImage = new Image(getClass().getResource("image/lower arrow.png").toString());
@@ -165,7 +166,7 @@ public class ExitsettingController implements Initializable {
 			}
 		});
 	}
-	
+
 	// 외출/재택방범 설정 버튼 이벤트 처리
 	private void handleBtnExitSetting(ActionEvent event) throws IOException {
 
@@ -198,7 +199,7 @@ public class ExitsettingController implements Initializable {
 						MediaPlayer mediaPlayer = new MediaPlayer(media);
 						soundlock.setMediaPlayer(mediaPlayer);
 						mediaPlayer.play();
-
+						
 						checkMotion.setDisable(true);
 						checkGas.setDisable(true);
 						checkHeater.setDisable(true);
@@ -209,6 +210,7 @@ public class ExitsettingController implements Initializable {
 						btnFlame.setDisable(true);
 
 						popup.hide();
+						
 					} else {
 						try {
 							Parent parent = FXMLLoader.load(getClass().getResource("errorpopup.fxml"));
@@ -218,13 +220,21 @@ public class ExitsettingController implements Initializable {
 							} else {
 								message.setText("비밀번호가 맞지 않습니다");
 							}
+							
+							if(!errorPopup.getChildren().isEmpty()) {
+								errorPopup.getChildren().clear();
+							}
+							
 							errorPopup.getChildren().add(parent);
+							
 
-							parent.setTranslateX(150);
+							
+
+							parent.setTranslateX(225);
 							parent.setTranslateY(0);
 
 							Timeline timeline = new Timeline();
-							KeyValue keyValue = new KeyValue(parent.translateYProperty(), 2);
+							KeyValue keyValue = new KeyValue(parent.translateYProperty(), 20);
 							KeyFrame keyFrame = new KeyFrame(Duration.millis(1000), keyValue);
 							timeline.getKeyFrames().add(keyFrame);
 							timeline.play();

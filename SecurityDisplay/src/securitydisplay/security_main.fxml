@@ -14,6 +14,6 @@
       </ToggleButton>
       <ToggleButton id="btnCctv" fx:id="btnCctv" layoutX="166.0" layoutY="22.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="140.0" style="-fx-background-radius: 10;" text="CCTV" toggleGroup="$menu" />
       <Separator id="horizontalSep" layoutX="84.0" layoutY="67.0" prefHeight="10.0" prefWidth="635.0" />
-      <StackPane id="securityDisplay" fx:id="securityContents" layoutX="26.0" layoutY="86.0" prefHeight="381.0" prefWidth="750.0" />
+      <StackPane id="securityDisplay" fx:id="securityContents" layoutX="26.0" layoutY="86.0" prefHeight="381.0" prefWidth="750.0" styleClass="stackContents" />
    </children>
 </AnchorPane>

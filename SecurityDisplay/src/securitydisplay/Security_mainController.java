@@ -42,6 +42,9 @@ public class Security_mainController implements Initializable {
 			@Override
 			public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
 				if(newValue == btnExitSettingTab) {
+					if(!securityContents.getChildren().isEmpty()) {
+						securityContents.getChildren().clear();
+					}
 					try {
 						Parent parent = FXMLLoader.load(getClass().getResource("exitsetting.fxml"));
 						securityContents.getChildren().add(parent);
@@ -50,6 +53,9 @@ public class Security_mainController implements Initializable {
 						ioe.printStackTrace();
 					}
 				} else if(newValue == btnCctv) {
+					if(!securityContents.getChildren().isEmpty()) {
+						securityContents.getChildren().clear();
+					}
 					try {
 						Parent parent = FXMLLoader.load(getClass().getResource("cctvsetting.fxml"));
 						securityContents.getChildren().add(parent);
