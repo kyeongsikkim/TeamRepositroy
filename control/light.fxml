@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="light" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.LightController">
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="785.0" BorderPane.alignment="CENTER">
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="785.0" spacing="30.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="true" fx:id="btn1" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fx:id="btnImg1" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/light_off.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button id="true" fx:id="btn2" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fx:id="btnImg2" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/light_off.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button id="true" fx:id="btn3" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fx:id="btnImg3" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/light_off.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button id="true" fx:id="lightAll" mnemonicParsing="false" styleClass="btnOnOff" stylesheets="@light.css" text="Turn On">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+<!--               <padding>`
+                  <Insets left="50.0" />
+               </padding>-->
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </center>
+   <bottom>
+      <BorderPane prefHeight="193.0" prefWidth="785.0" BorderPane.alignment="CENTER">
+         <center>
+            <HBox alignment="CENTER" prefHeight="192.0" prefWidth="785.0" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="785.0" spacing="30.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="true" fx:id="btn4" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fx:id="btnImg4" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/light_off.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button id="true" fx:id="btn5" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fx:id="btnImg5" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/light_off.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button id="true" fx:id="btn6" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fx:id="btnImg6" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/light_off.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" />
+               </padding>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </bottom>
+</BorderPane>

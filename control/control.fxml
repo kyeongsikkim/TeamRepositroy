@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="785.0" styleClass="controlbackground" stylesheets="@control.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.ControlController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <ToggleButton fx:id="btnLight" mnemonicParsing="false" prefHeight="70.0" prefWidth="255.0" styleClass="toggle" stylesheets="@control.css" userData="light">
+               <toggleGroup>
+                  <ToggleGroup fx:id="menuGroup" />
+               </toggleGroup>
+               <graphic>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="L i g h t" HBox.hgrow="ALWAYS" />
+                        <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <image>
+                              <Image url="@images/toggle_light.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnGas" mnemonicParsing="false" prefHeight="70.0" prefWidth="255.0" styleClass="toggle" stylesheets="@control.css" toggleGroup="$menuGroup" userData="gas">
+               <graphic>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="G a s" HBox.hgrow="ALWAYS" />
+                        <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <image>
+                              <Image url="@images/toggle_gas.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="btnHeat" mnemonicParsing="false" prefHeight="70.0" prefWidth="255.0" styleClass="toggle" stylesheets="@control.css" toggleGroup="$menuGroup" userData="heat">
+               <graphic>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="H e a t" HBox.hgrow="ALWAYS" />
+                        <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <image>
+                              <Image url="@images/toggle_heat.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic></ToggleButton>
+<!--               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="BLACK" offset="0.7517482517482518" />
+                        <Stop color="BLACK" offset="0.7902097902097901" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </ToggleButton>-->
+        </items>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </ToolBar>
+   </top>
+   <center>
+      <StackPane fx:id="stackPane" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
