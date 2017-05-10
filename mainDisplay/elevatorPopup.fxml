@@ -16,18 +16,18 @@
     <center>
       <VBox spacing="10.0">
          <children>
-              <Button id="mainButtonUp" fx:id="btnElevatorUp" alignment="BOTTOM_CENTER" layoutX="95.0" layoutY="145.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0">
+              <Button id="btnElevatorUp" fx:id="btnElevatorUp" alignment="BOTTOM_CENTER" layoutX="95.0" layoutY="145.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0">
                   <graphic>
-                      <Label id="buttonLabelUpSub" alignment="BOTTOM_CENTER" prefHeight="85.0" prefWidth="170.0">
+                      <Label id="labelBtnElevatorUp" alignment="BOTTOM_CENTER" prefHeight="85.0" prefWidth="170.0">
                           <effect>
                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                           </effect>
                           <graphic>
-                              <Label id="buttonLabelUp" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="130.0">
+                              <Label id="btnElevatorUpColor" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="130.0">
                                   <graphic>
                                       <ImageView fitHeight="60.0" fitWidth="80.0" pickOnBounds="true">
                                           <image>
-                                              <Image url="@images/up.png" />
+                                              <Image url="@images/elevatorUp.png" />
                                           </image>
                                       </ImageView>
                                   </graphic>
@@ -39,18 +39,18 @@
                       </Label>
                   </graphic>
               </Button>
-            <Button id="mainButtonDown" fx:id="btnElevatorDown" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0">
+            <Button id="btnElevatorDown" fx:id="btnElevatorDown" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0">
                <graphic>
-                  <Label id="buttonLabelDownSub" alignment="TOP_CENTER" prefHeight="85.0" prefWidth="170.0">
+                  <Label id="labelBtnElevatorDown" alignment="TOP_CENTER" prefHeight="85.0" prefWidth="170.0">
                      <effect>
                         <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                      </effect>
                      <graphic>
-                        <Label id="buttonLabelDown" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="130.0">
+                        <Label id="btnElevatorDownColor" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="130.0">
                            <graphic>
                               <ImageView fitHeight="60.0" fitWidth="80.0" pickOnBounds="true">
                                  <image>
-                                    <Image url="@images/down.png" />
+                                    <Image url="@images/elevatorDown.png" />
                                  </image>
                               </ImageView>
                            </graphic>

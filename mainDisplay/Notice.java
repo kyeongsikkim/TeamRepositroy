@@ -1,6 +1,7 @@
 package mainDisplay;
 
 public class Notice {
+
     private String date;
     private String title;
     private String content;
@@ -35,5 +36,4 @@ public class Notice {
         this.content = content;
     }
 
-    
 }

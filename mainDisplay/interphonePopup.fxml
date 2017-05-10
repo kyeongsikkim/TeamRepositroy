@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane id="interphoneBorderPane" stylesheets="@interphonePopup.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.InterphonePopupController">
+    <center>
+        <StackPane id="viewPane">
+            <children>
+                <MediaView id="mediaViewInterphone" fx:id="mediaViewInterphone" fitHeight="300.0" fitWidth="400.0" BorderPane.alignment="CENTER" />
+            </children>
+        </StackPane>
+    </center>
+    <right>
+        <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+           <children>
+               <Button id="btnInterphone" fx:id="btnInterphoneOpenDoor" alignment="CENTER" layoutX="555.0" layoutY="145.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="120.0">
+                   <graphic>
+                       <Label id="labelBtnInterphone" alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                           <effect>
+                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
+                           </effect>
+                           <graphic>
+                               <Label id="btnInterphoneColor" alignment="CENTER" prefHeight="75.0" prefWidth="75.0">
+                                   <graphic>
+                                       <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@images/openDoor.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Label>
+                           </graphic>
+                       </Label>
+                   </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               </Button>
+            <Button id="btnInterphone" fx:id="btnInterphoneSave" alignment="CENTER" mnemonicParsing="false" prefHeight="120.0" prefWidth="120.0">
+               <graphic>
+                  <Label id="labelBtnInterphone" alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
+                     </effect>
+                     <graphic>
+                        <Label id="btnInterphoneColor" alignment="CENTER" prefHeight="75.0" prefWidth="75.0" style="-fx-background-radius: 50;">
+                           <graphic>
+                              <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/save.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+           </children>
+        </VBox>
+    </right>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>

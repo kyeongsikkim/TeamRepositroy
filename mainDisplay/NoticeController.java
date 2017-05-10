@@ -19,33 +19,33 @@ import javafx.stage.Popup;
 public class NoticeController implements Initializable {
 
     @FXML
-    private Button btnDelete;
-    @FXML
-    private Button btnOpen;
-    @FXML
-    private TableView<Notice> tableView;
-    @FXML
     private Label labelNoticeName;
+    @FXML
+    private Button btnNoticeDelete;
+    @FXML
+    private Button btnNoticeOpen;
+    @FXML
+    private TableView<Notice> tableViewNotice;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Font subFont = Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-DemiLight.otf").toExternalForm(), 12);
-        btnDelete.setFont(subFont);
-        btnOpen.setFont(subFont);
+        btnNoticeDelete.setFont(subFont);
+        btnNoticeOpen.setFont(subFont);
         labelNoticeName.setFont(subFont);
 
-        tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Notice>() {
+        tableViewNotice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Notice>() {
             @Override
             public void changed(ObservableValue<? extends Notice> observable, Notice oldValue, Notice newValue) {
                 Popup popup = new Popup();
 
-                btnOpen.setOnAction((e) -> {
+                btnNoticeOpen.setOnAction((e) -> {
                     try {
                         Parent parent = FXMLLoader.load(getClass().getResource("noticePopup.fxml"));
-                        Label labelTitle = (Label) parent.lookup("#labelTitle");
-                        Label labelDate = (Label) parent.lookup("#labelDate");
-                        TextArea areaNotice = (TextArea) parent.lookup("#areaNotice");
-                        Button btnClose = (Button) parent.lookup("#btnClose");
+                        Label labelTitle = (Label) parent.lookup("#labelNoticePopupTitle");
+                        Label labelDate = (Label) parent.lookup("#labelNoticePopupDate");
+                        TextArea areaNotice = (TextArea) parent.lookup("#areaNoticePopup");
+                        Button btnClose = (Button) parent.lookup("#btnNoticePopupClose");
 
                         labelTitle.setText("제목: " + newValue.getTitle());
                         labelDate.setText("일시: " + newValue.getDate());
@@ -53,7 +53,7 @@ public class NoticeController implements Initializable {
 
                         popup.getContent().add(parent);
                         popup.setAutoHide(true);
-                        popup.show(tableView.getScene().getWindow());
+                        popup.show(AppMain.primaryStage);
                         
                         btnClose.setOnAction((event) -> {
                             popup.hide();
@@ -62,7 +62,7 @@ public class NoticeController implements Initializable {
                     }
                 });
                 
-                btnDelete.setOnAction((e) -> {
+                btnNoticeDelete.setOnAction((e) -> {
                     MainDisplayController.list.remove(newValue);
                 });
             }

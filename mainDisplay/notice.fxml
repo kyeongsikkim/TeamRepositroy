@@ -8,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="noticeBorder" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@notice.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.NoticeController">
+<BorderPane id="noticeBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@notice.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.NoticeController">
    <center>
-      <TableView id="tableView" fx:id="tableView" prefHeight="108.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+      <TableView id="tableView" fx:id="tableViewNotice" prefHeight="108.0" prefWidth="400.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="143.0" text="날짜" />
           <TableColumn prefWidth="256.0" text="제목" />
@@ -20,8 +20,8 @@
    <top>
       <ToolBar id="noticeBorder" nodeOrientation="RIGHT_TO_LEFT" prefHeight="12.0" prefWidth="400.0" BorderPane.alignment="CENTER">
         <items>
-            <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="0.0" prefWidth="45.0" text="삭제" />
-            <Button fx:id="btnOpen" mnemonicParsing="false" prefHeight="0.0" prefWidth="45.0" text="열기" />
+            <Button fx:id="btnNoticeDelete" mnemonicParsing="false" prefHeight="0.0" prefWidth="45.0" text="삭제" />
+            <Button fx:id="btnNoticeOpen" mnemonicParsing="false" prefHeight="0.0" prefWidth="45.0" text="열기" />
             <Label fx:id="labelNoticeName" nodeOrientation="LEFT_TO_RIGHT" prefHeight="15.0" prefWidth="285.0" text="공지" />
         </items>
          <BorderPane.margin>
