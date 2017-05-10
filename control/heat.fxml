@@ -8,22 +8,84 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="heat" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.HeatController">
+<BorderPane fx:id="heat" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.HeatController">
    <left>
-      <ImageView fx:id="heatImage" fitHeight="280.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets left="80.0" />
-         </BorderPane.margin>
-         <image>
-            <Image url="@images/gas-pipe_off_off.png" />
-         </image>
-      </ImageView>
+      <VBox alignment="CENTER" prefHeight="390.0" prefWidth="249.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="true" fx:id="btnPower" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fx:id="btnPowerImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/heat_power_off.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="true" fx:id="btnOut" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fx:id="btnOutImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/heat_out.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="true" fx:id="btnHotwater" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fx:id="btnHotwaterImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/heat_hotwater.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" text="거실" />
+            <Button mnemonicParsing="false" text="방 1" />
+            <Button mnemonicParsing="false" text="방 2" />
+            <Button mnemonicParsing="false" text="방 3" />
+         </children>
+      </VBox>
    </left>
    <right>
-      <ToggleButton fx:id="btnOnOff" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="On/Off" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets right="100.0" />
-         </BorderPane.margin>
-      </ToggleButton>
+      <BorderPane fx:id="heatChange" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <left>
+            <VBox alignment="CENTER" prefHeight="390.0" prefWidth="282.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/toggle_heat.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="현재온도" />
+                  <Label fx:id="lblTemp" text="25 ' C" />
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox alignment="CENTER" prefHeight="390.0" prefWidth="286.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/heat_up.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label fx:id="lblTempControl" text="0 ' C" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/heat_down.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
    </right>
 </BorderPane>
