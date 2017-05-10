@@ -6,18 +6,19 @@ import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import static javafx.scene.text.Font.font;
+import static javafx.scene.text.Font.font;
 
 public class CallController implements Initializable {
 
@@ -34,8 +35,16 @@ public class CallController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        Font font = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 16);
+        call1.setFont(font);
+        call2.setFont(font);
+        call3.setFont(font);
+        
+        
+        call1.setSelected(true);
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("telephone.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("phone.fxml"));
             stack.getChildren().add(parent);
         } catch (IOException ex) {
         }
@@ -45,44 +54,32 @@ public class CallController implements Initializable {
                 if (newValue == call1) {
                     try {
                         stack.getChildren().clear();
-                        Parent parent = FXMLLoader.load(getClass().getResource("telephone.fxml"));
+                        Parent parent = FXMLLoader.load(getClass().getResource("callphone.fxml"));
                         Button btnStar = (Button) parent.lookup("#btnStar");
                         Button btnSharp = (Button) parent.lookup("#btnSharp");
                         btnStar.setText("*");
                         btnSharp.setText("#");
                         stack.getChildren().add(parent);
-                        
+
                     } catch (IOException ex) {
                     }
                 } else if (newValue == call2) {
                     try {
                         stack.getChildren().clear();
-                        Parent parent = FXMLLoader.load(getClass().getResource("telephone.fxml"));
+                        Parent parent = FXMLLoader.load(getClass().getResource("callphone.fxml"));
                         Button btnStar = (Button) parent.lookup("#btnStar");
-                        Button btnSharp = (Button) parent.lookup("#btnSharp");
-                        TextField textArea = (TextField) parent.lookup("#textArea");
-                        
+                        Button btnSharp = (Button) parent.lookup("#btnSharp");;
+                        Label lblRequest = (Label) parent.lookup("#lblRequest");
                         btnStar.setText("동");
-                        btnSharp.setText("호수");
-                        btnStar.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								textArea.appendText("동");
-							}
-                        });
-                        btnSharp.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								textArea.appendText("호");
-							}
-                        });
+                        btnSharp.setText("호");
+                        lblRequest.setText("동과 호수를 입력해주세요.");
                         stack.getChildren().add(parent);
                     } catch (IOException ex) {
                     }
                 } else if (newValue == call3) {
                     try {
                         stack.getChildren().clear();
-                        Parent parent = FXMLLoader.load(getClass().getResource("security.fxml"));
+                        Parent parent = FXMLLoader.load(getClass().getResource("callguard.fxml"));
                         stack.getChildren().add(parent);
                     } catch (IOException ex) {
                     }
