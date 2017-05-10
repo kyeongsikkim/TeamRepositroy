@@ -9,11 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="785.0" styleClass="controlbackground" stylesheets="@control.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.ControlController">
+<BorderPane prefHeight="480.0" prefWidth="800.0" styleClass="controlbackground" stylesheets="@control.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.ControlController">
    <top>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-            <ToggleButton fx:id="btnLight" mnemonicParsing="false" prefHeight="70.0" prefWidth="255.0" styleClass="toggle" stylesheets="@control.css" userData="light">
+            <ToggleButton fx:id="btnLight" mnemonicParsing="false" prefHeight="70.0" prefWidth="260.0" styleClass="toggle" stylesheets="@control.css" userData="light">
                <toggleGroup>
                   <ToggleGroup fx:id="menuGroup" />
                </toggleGroup>
@@ -33,7 +33,7 @@
                   </HBox>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="btnGas" mnemonicParsing="false" prefHeight="70.0" prefWidth="255.0" styleClass="toggle" stylesheets="@control.css" toggleGroup="$menuGroup" userData="gas">
+            <ToggleButton fx:id="btnGas" mnemonicParsing="false" prefHeight="70.0" prefWidth="260.0" styleClass="toggle" stylesheets="@control.css" toggleGroup="$menuGroup" userData="gas">
                <graphic>
                   <HBox alignment="CENTER">
                      <children>
@@ -49,7 +49,7 @@
                      </children>
                   </HBox>
                </graphic></ToggleButton>
-            <ToggleButton fx:id="btnHeat" mnemonicParsing="false" prefHeight="70.0" prefWidth="255.0" styleClass="toggle" stylesheets="@control.css" toggleGroup="$menuGroup" userData="heat">
+            <ToggleButton fx:id="btnHeat" mnemonicParsing="false" prefHeight="70.0" prefWidth="260.0" styleClass="toggle" stylesheets="@control.css" toggleGroup="$menuGroup" userData="heat">
                <graphic>
                   <HBox alignment="CENTER">
                      <children>
