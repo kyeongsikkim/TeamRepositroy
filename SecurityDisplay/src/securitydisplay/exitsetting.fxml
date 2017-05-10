@@ -124,7 +124,4 @@
 	<left>
 		<MediaView id="soundlock" fx:id="soundlock" BorderPane.alignment="CENTER" />
 	</left>
-	<right>
-		<MediaView id="soundunlock" fx:id="soundunlock" BorderPane.alignment="CENTER" />
-	</right>
 </BorderPane>

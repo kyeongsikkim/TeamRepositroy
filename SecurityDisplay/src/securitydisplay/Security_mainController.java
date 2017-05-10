@@ -37,10 +37,12 @@ public class Security_mainController implements Initializable {
 		//btnExitSettingTab.setFont(font);
 		
 		// togglebutton 속성 감시(외출방범, 재택방범, CCTV)
+		
 		menu.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-
+			
 			@Override
 			public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+				
 				if(newValue == btnExitSettingTab) {
 					if(!securityContents.getChildren().isEmpty()) {
 						securityContents.getChildren().clear();

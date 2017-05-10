@@ -22,8 +22,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
-import javafx.scene.text.Font;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -73,12 +71,6 @@ public class ExitsettingController implements Initializable {
 	private Button btnLowLeave;
 
 	@FXML
-	private MediaView soundlock;
-
-	@FXML
-	private MediaView soundunlock;
-
-	@FXML
 	private TextField txtGetinTime;
 
 	@FXML
@@ -87,6 +79,10 @@ public class ExitsettingController implements Initializable {
 	@FXML
 	private CheckBox btnFlame;
 
+	private MediaPlayer mediaPlayer1;
+	
+	private MediaPlayer mediaPlayer2;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// Font font =
@@ -169,7 +165,16 @@ public class ExitsettingController implements Initializable {
 
 	// 외출/재택방범 설정 버튼 이벤트 처리
 	private void handleBtnExitSetting(ActionEvent event) throws IOException {
-
+		// audio파일 재생 초기화
+		if(btnExitSetting.getText().equals("설정")) {
+			Media media = new Media(getClass().getResource("media/외출-재택방범이_설정되었습니다.mp3").toString());
+			mediaPlayer1 = new MediaPlayer(media);
+			
+		} else if(btnExitSetting.getText().equals("해제")) {
+			Media media = new Media(getClass().getResource("media/해제되었습니다.mp3").toString());
+			mediaPlayer2 = new MediaPlayer(media);
+		}
+		
 		if (btnExitSetting.getText().equals("설정")) {
 			Stage primaryStage = (Stage) btnExitSetting.getScene().getWindow();
 			Parent root = FXMLLoader.load(getClass().getResource("password.fxml"));
@@ -189,16 +194,18 @@ public class ExitsettingController implements Initializable {
 				}
 
 			});
+			
 			confirm.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override
 				public void handle(ActionEvent event) {
 					if (PasswordController.password.equals(password.getText())) {
 						btnExitSetting.setText("해제");
-						Media media = new Media(getClass().getResource("media/외출-재택방범이_설정되었습니다.mp3").toString());
-						MediaPlayer mediaPlayer = new MediaPlayer(media);
-						soundlock.setMediaPlayer(mediaPlayer);
-						mediaPlayer.play();
+						mediaPlayer1.play();
+						
+						if(mediaPlayer2 != null) {
+							mediaPlayer2.stop();
+						}
 						
 						checkMotion.setDisable(true);
 						checkGas.setDisable(true);
@@ -235,7 +242,7 @@ public class ExitsettingController implements Initializable {
 
 							Timeline timeline = new Timeline();
 							KeyValue keyValue = new KeyValue(parent.translateYProperty(), 20);
-							KeyFrame keyFrame = new KeyFrame(Duration.millis(1000), keyValue);
+							KeyFrame keyFrame = new KeyFrame(Duration.millis(30), keyValue);
 							timeline.getKeyFrames().add(keyFrame);
 							timeline.play();
 
@@ -249,11 +256,12 @@ public class ExitsettingController implements Initializable {
 			});
 
 		} else if (btnExitSetting.getText().equals("해제")) {
-
-			Media media = new Media(getClass().getResource("media/해제되었습니다.mp3").toString());
-			MediaPlayer mediaPlayer = new MediaPlayer(media);
-			soundunlock.setMediaPlayer(mediaPlayer);
-			mediaPlayer.play();
+			
+			mediaPlayer2.play();
+			
+			if(mediaPlayer1 != null) {
+				mediaPlayer1.stop();
+			}
 
 			checkMotion.setDisable(false);
 			checkGas.setDisable(false);

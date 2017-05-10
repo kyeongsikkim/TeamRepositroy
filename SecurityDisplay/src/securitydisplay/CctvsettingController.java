@@ -70,6 +70,7 @@ public class CctvsettingController implements Initializable {
 								mediaPlayer.stop();
 							}
 						});
+						
 						btnPlayground.setOnAction(new EventHandler<ActionEvent>() {
 							@Override
 							public void handle(ActionEvent event) {
@@ -91,6 +92,11 @@ public class CctvsettingController implements Initializable {
 								}
 							}
 						});
+						
+						if(btnExitTab.isSelected()) {
+							mediaPlayer.stop();
+						}
+						
 					}
 					// 현관문 ToggleButton 눌렀을 때
 					else if (newValue == btnDoor) {

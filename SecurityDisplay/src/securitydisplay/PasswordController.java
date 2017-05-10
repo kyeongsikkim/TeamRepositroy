@@ -20,7 +20,7 @@ public class PasswordController implements Initializable {
 
 	@FXML
 	private Button btnCancel;
-	
+
 	@FXML
 	private Button btn1;
 
@@ -59,7 +59,7 @@ public class PasswordController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		btnDelete.setOnAction(event -> handleBtnDelete(event));
-	
+
 		// 키패드 버튼 이벤트 처리(0~9번까지)
 		btn1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
