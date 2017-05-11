@@ -11,17 +11,17 @@
     -fx-border-width: 10;
 }
 
-#btnInterphoneColor {
+.btnInterphoneColor {
     -fx-background-radius: 45;
     -fx-background-color:linear-gradient(#99ff99, #00cc00); 
 }
 
-#btnInterphone {
+.btnInterphone {
     -fx-background-radius:75;
     -fx-border-radius:75; 
 }
 
-#labelBtnInterphone {
+.labelBtnInterphone {
     -fx-background-color: white;
     -fx-background-radius: 60;
     -fx-border-color: #cccccc;

@@ -16,7 +16,7 @@
     <center>
       <VBox spacing="10.0">
          <children>
-              <Button id="btnElevatorUp" fx:id="btnElevatorUp" alignment="BOTTOM_CENTER" layoutX="95.0" layoutY="145.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0">
+              <Button id="btnElevatorUp" alignment="BOTTOM_CENTER" layoutX="95.0" layoutY="145.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0">
                   <graphic>
                       <Label id="labelBtnElevatorUp" alignment="BOTTOM_CENTER" prefHeight="85.0" prefWidth="170.0">
                           <effect>
@@ -39,7 +39,7 @@
                       </Label>
                   </graphic>
               </Button>
-            <Button id="btnElevatorDown" fx:id="btnElevatorDown" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0">
+            <Button id="btnElevatorDown" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0">
                <graphic>
                   <Label id="labelBtnElevatorDown" alignment="TOP_CENTER" prefHeight="85.0" prefWidth="170.0">
                      <effect>
@@ -69,7 +69,7 @@
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
    <right>
-      <Label id="labelDisplay" fx:id="labelDisplay" alignment="CENTER" opacity="0.8" prefHeight="160.0" prefWidth="180.0" textFill="#fff700" BorderPane.alignment="CENTER">
+      <Label id="labelDisplay" alignment="CENTER" opacity="0.8" prefHeight="160.0" prefWidth="180.0" textFill="#fff700" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="10.0" />
          </BorderPane.margin>

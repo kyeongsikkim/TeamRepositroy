@@ -22,6 +22,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class NoticeServerController implements Initializable {
+
     private ExecutorService executorService;
     private ServerSocket serverSocket;
     private List<Client> connections = new Vector<Client>();
@@ -41,8 +42,8 @@ public class NoticeServerController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         btnServerStartStop.setOnAction(e -> handleBtnServerStartStop(e));
         btnServerSend.setOnAction(e -> handleBtnServerSend(e));
-    }    
-    
+    }
+
     private void handleBtnServerStartStop(ActionEvent e) {
         if (btnServerStartStop.getText().equals("start")) {
             startServer();
@@ -50,18 +51,18 @@ public class NoticeServerController implements Initializable {
             stopServer();
         }
     }
-    
+
     private void startServer() {
         executorService = Executors.newFixedThreadPool(100);
 
         try {
             serverSocket = new ServerSocket();
-            serverSocket.bind(new InetSocketAddress("localhost", 50001));
+            serverSocket.bind(new InetSocketAddress("192.168.43.213", 50001));
         } catch (IOException ex) {
             stopServer();
             return;
         }
-        
+
         Runnable acceptTask = () -> {
             Platform.runLater(() -> {
                 btnServerStartStop.setText("stop");
@@ -80,7 +81,7 @@ public class NoticeServerController implements Initializable {
         };
         executorService.submit(acceptTask);
     }
-    
+
     public void stopServer() {
         try {
             Iterator<Client> iterator = connections.iterator();
@@ -91,8 +92,9 @@ public class NoticeServerController implements Initializable {
             }
             executorService.shutdownNow();
             serverSocket.close();
-        } catch (IOException ex) {}
-        
+        } catch (IOException ex) {
+        }
+
         Platform.runLater(() -> {
             btnServerStartStop.setText("start");
             labelServerStatus.setText("연결되지 않음");
@@ -102,13 +104,14 @@ public class NoticeServerController implements Initializable {
     private void handleBtnServerSend(ActionEvent e) {
         String title = textNoticeTitle.getText();
         String content = textNoticeContent.getText();
-        
+
         for (Client client : connections) {
             client.send(title, content);
         }
     }
-    
+
     class Client {
+
         Socket socket;
 
         public Client(Socket socket) {
@@ -121,12 +124,12 @@ public class NoticeServerController implements Initializable {
                 byte[] byteArr = title.getBytes();
                 os.write(byteArr);
                 os.flush();
-                
+
                 OutputStream os2 = socket.getOutputStream();
                 byte[] byteArr2 = content.getBytes();
                 os2.write(byteArr2);
                 os2.flush();
-                
+
                 Platform.runLater(() -> {
                     textNoticeTitle.clear();
                     textNoticeContent.clear();
@@ -139,6 +142,7 @@ public class NoticeServerController implements Initializable {
                 }
             }
         }
-
+        
     }
+    
 }

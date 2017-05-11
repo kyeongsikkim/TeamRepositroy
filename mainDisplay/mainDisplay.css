@@ -1,11 +1,25 @@
 #mainBackground {
-    -fx-background-image: url("images/graybackground.jpg");
-    -fx-background-size: stretch;
+/*    -fx-background-image: url("images/graybackground.jpg");
+    -fx-background-size: stretch;*/
+    -fx-background-color: #aaaaaa;
 }
 
-#mainBtn {
+.mainBtn{
     -fx-background-radius: 75;
     -fx-border-radius: 75;
+    
+}
+
+.mainSubBtn {
+    -fx-background-radius: 45;
+    -fx-border-radius: 45;
+}
+
+.mainBtnLabel {
+    -fx-background-color: white;
+    -fx-background-radius: 60;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 60;
 }
 
 #btnMainNotice {
@@ -36,18 +50,3 @@
     -fx-background-color: linear-gradient(#ffff66, #ff9900);
     -fx-background-radius: 45;
 }
-
-#mainBtnLabel {
-    -fx-background-color: white;
-    -fx-background-radius: 60;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 60;
-}
-
-#mainSubBtn {
-    -fx-background-radius: 45;
-    -fx-border-radius: 45; 
-}
-/*reference {
-    -fx-background-color:linear-gradient(#00cc00); 
-}*/
