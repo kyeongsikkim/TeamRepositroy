@@ -8,8 +8,8 @@
     -fx-border-color: khaki; 
     -fx-background-color: transparent;
     -fx-font-size: 30;
-    -fx-font-family: "Arial Black";
-    -fx-text-fill: linear-gradient(lightgray, white);
+    -fx-font-family: "Arial";
+    -fx-text-fill: white;
     -fx-effect:innershadow(three-pass-box,rgba(0,0,0,0.7), 3, 0, 2, 2.1);
 }
 

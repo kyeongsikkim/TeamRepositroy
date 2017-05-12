@@ -17,8 +17,6 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
-import static javafx.scene.text.Font.font;
-import static javafx.scene.text.Font.font;
 
 public class CallController implements Initializable {
 
@@ -36,16 +34,13 @@ public class CallController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        Font font = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 16);
-        call1.setFont(font);
-        call2.setFont(font);
-        call3.setFont(font);
-        
-        
         call1.setSelected(true);
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("phone.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("callphone.fxml"));
             stack.getChildren().add(parent);
+            call1.setDisable(true);
+            call2.setDisable(false);
+            call3.setDisable(false);
         } catch (IOException ex) {
         }
         menu.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
@@ -60,7 +55,9 @@ public class CallController implements Initializable {
                         btnStar.setText("*");
                         btnSharp.setText("#");
                         stack.getChildren().add(parent);
-
+                        call1.setDisable(true);
+                        call2.setDisable(false);
+                        call3.setDisable(false);
                     } catch (IOException ex) {
                     }
                 } else if (newValue == call2) {
@@ -74,6 +71,9 @@ public class CallController implements Initializable {
                         btnSharp.setText("호");
                         lblRequest.setText("동과 호수를 입력해주세요.");
                         stack.getChildren().add(parent);
+                        call1.setDisable(false);
+                        call2.setDisable(true);
+                        call3.setDisable(false);
                     } catch (IOException ex) {
                     }
                 } else if (newValue == call3) {
@@ -81,9 +81,12 @@ public class CallController implements Initializable {
                         stack.getChildren().clear();
                         Parent parent = FXMLLoader.load(getClass().getResource("callguard.fxml"));
                         stack.getChildren().add(parent);
+                        call1.setDisable(false);
+                       call2.setDisable(false);
+                        call3.setDisable(true);
                     } catch (IOException ex) {
                     }
-                }
+                } 
             }
 
         });

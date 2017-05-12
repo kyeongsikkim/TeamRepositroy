@@ -73,13 +73,20 @@
                         <Insets />
                      </HBox.margin>
                   </Button>
-                  <ToggleButton id="call-button" fx:id="btnCall" mnemonicParsing="false" prefHeight="89.0" prefWidth="235.0" text="호출" textFill="WHITE">
+                  <ToggleButton id="call-button" fx:id="btnCall" mnemonicParsing="false" prefHeight="89.0" prefWidth="235.0" textFill="WHITE">
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>
                      <toggleGroup>
                         <ToggleGroup fx:id="callToggle" />
                      </toggleGroup>
+                     <graphic>
+                        <ImageView fx:id="imgCall" fitHeight="44.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/connect.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </ToggleButton>
                </children>
                <VBox.margin>

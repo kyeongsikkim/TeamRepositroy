@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.TilePane;
 import javafx.scene.text.Font;
 
@@ -55,13 +57,17 @@ public class CallPhoneController implements Initializable {
     private ToggleGroup callToggle;
     @FXML
     private TilePane dial;
+    @FXML
+    private ImageView imgCall;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Font font = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 16);
-        lblRequest.setFont(font);
-        lblState.setFont(font);
-        btnCall.setFont(font);
+        Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 20);
+        Font font2 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 16);
+        Font font3 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 27);
+        lblRequest.setFont(font1);
+        lblState.setFont(font2);
+        textArea.setFont(font3);
         
         
         callToggle.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
@@ -70,14 +76,15 @@ public class CallPhoneController implements Initializable {
                 if (newValue == btnCall) {
                     System.out.println("전화걸기");
                     lblState.setText("연결 중...");
-                    btnCall.setText("호출 종료");
+                    imgCall.setImage(new Image(getClass().getResource("images/disconnect.png").toString()));
+                    //btnCall.setText("호출 종료");
                     btnBack.setDisable(true);
                     dial.setDisable(true);
                 } else {
                     System.out.println("전화끊기");
                     btnBack.setDisable(false);
-                    btnCall.setText("호출");
-                    //lblState.setText("연결 종료...");
+                    //btnCall.setText("호출");
+                    imgCall.setImage(new Image(getClass().getResource("images/connect.png").toString()));
                     lblState.setText("             ");
                     textArea.clear();
                     dial.setDisable(false);

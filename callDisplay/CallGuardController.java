@@ -12,6 +12,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
 
 public class CallGuardController implements Initializable {
 
@@ -26,6 +27,7 @@ public class CallGuardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+                
         btnCall.toFront();
         connect.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override

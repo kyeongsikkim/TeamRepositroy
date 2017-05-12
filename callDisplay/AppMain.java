@@ -11,7 +11,6 @@ public class AppMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //Font.loadFont(getClass().getResourceAsStream("yangfont05.ttf"),14);
         Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 16);
         
         Parent parent = FXMLLoader.load(getClass().getResource("call.fxml"));

@@ -13,7 +13,7 @@
    <children>
       <HBox prefWidth="800.0">
          <children>
-            <ToggleButton fx:id="call1" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" styleClass="menu-button" text="일반 통화" textFill="WHITE">
+            <ToggleButton fx:id="call1" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" styleClass="menu-button" textFill="WHITE">
                <toggleGroup>
                   <ToggleGroup fx:id="menu" />
                </toggleGroup>
@@ -21,23 +21,41 @@
                   <Font name="System Bold" size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/call1icon.png" />
-                     </image>
-                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="18.0" prefWidth="267.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/call1icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="44.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/telephone.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
                </graphic>
             </ToggleButton>
-            <ToggleButton fx:id="call2" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" styleClass="menu-button" text="세대 호출" textFill="WHITE" toggleGroup="$menu">
+            <ToggleButton fx:id="call2" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" styleClass="menu-button" textFill="WHITE" toggleGroup="$menu">
                <font>
                   <Font size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/call2icon.png" />
-                     </image>
-                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="18.0" prefWidth="267.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/call2icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="43.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/interphone.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
                </graphic>
             </ToggleButton>
             <ToggleButton fx:id="call3" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" styleClass="menu-button" text="경비실 호출" textFill="WHITE" toggleGroup="$menu">
@@ -45,11 +63,20 @@
                   <Font size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/call3icon.png" />
-                     </image>
-                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="18.0" prefWidth="267.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/call3icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="45.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/security.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
                </graphic>
             </ToggleButton>
          </children>
