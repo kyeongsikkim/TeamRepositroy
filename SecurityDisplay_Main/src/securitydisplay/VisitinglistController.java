@@ -1,16 +1,21 @@
 package securitydisplay;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,71 +29,108 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import mainDisplay.Notice;
 
 public class VisitinglistController implements Initializable {
 
-	@FXML
-	private TableView<Visiter> tableView;
-	@FXML
-	private ImageView imageView;
-	@FXML
-	private StackPane imageBackground;
-	@FXML
-	private Button btnClose;
+    @FXML
+    private TableView<Visiter> tableView;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private StackPane imageBackground;
+    @FXML
+    private Button btnClose;
+    @FXML
+    private Button btnReset;
 
-	private SimpleDateFormat sdf;
+    private SimpleDateFormat sdf;
+    private Socket socket;
+    private TableView<Visiter> visiterTable;
+    public static ObservableList<Visiter> list;
+    private ObservableList visiterList;
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        
+        // 클라이언트 시작
+        btnReset.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                startClient();
+            }
+        });
+        
 
-		// BorderPane 중앙정렬
+        // BorderPane 중앙정렬
+        // StackPane 숨기기
+        // visiterList 초기화 & 객체 넣기
+        // StackPane에 감시카메라 이미지 넣기
+        Visiter visiter = tableView.getSelectionModel().getSelectedItem();
+        
+        tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Visiter>() {
 
-		// StackPane 숨기기
+            @Override
+            public void changed(ObservableValue<? extends Visiter> observable, Visiter oldValue, Visiter newValue) {
+                if (newValue != null) {
+                    imageView.setImage(new Image(getClass().getResource("image/" + newValue.getImage()).toString()));
+                }
+            }
+        });
+    }
 
-		// visiterList 초기화 & 객체 넣기
-		sdf = new SimpleDateFormat("yyyy-MM-dd(E) HH:mm:ss");
-		ObservableList visiterList = FXCollections.observableArrayList(
-				new Visiter("택배", sdf.format(new Date()), "member01.png"),
-				new Visiter("지인", sdf.format(new Date()), "member01.png"),
-				new Visiter("기타", sdf.format(new Date()), "member02.png"));
+    private void startClient() {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    socket = new Socket();
+                    socket.connect(new InetSocketAddress("localhost", 50002));
+                    receive();
+                } catch (Exception e) {
+                    return;
+                }
+            }
+        };
+        thread.start();
+    }
 
-		TableColumn tcVisiterName = tableView.getColumns().get(0);
-		tcVisiterName.setCellValueFactory(new PropertyValueFactory("visiter"));
-		tcVisiterName.setStyle("-fx-alignment: CENTER;");
+    private void receive() throws Exception {
+        try {
+            while (true) {
+                InputStream is1 = socket.getInputStream();
+                byte[] btyArr = new byte[100];
+                int btyLength = btyArr.length;
+                is1.read(btyArr);
+                if (btyLength == -1) {
+                    throw new Exception();
+                }
+                String str1 = new String(btyArr, 0, btyLength);
 
-		TableColumn tcDate = tableView.getColumns().get(1);
-		tcDate.setCellValueFactory(new PropertyValueFactory("date"));
-		tcDate.setStyle("-fx-alignment: CENTER;");
+                InputStream is2 = socket.getInputStream();
+                byte[] btyArr1 = new byte[100];
+                int btyLength1 = btyArr1.length;
+                is2.read(btyArr1);
+                if (btyLength1 == -1) {
+                    throw new Exception();
+                }
+                String str2 = new String(btyArr1, 0, btyLength1);
 
-		tableView.setItems(visiterList);
-		
-		// StackPane에 감시카메라 이미지 넣기
-		Visiter visiter = tableView.getSelectionModel().getSelectedItem();
-		tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Visiter>() {
+                Platform.runLater(() -> {
+                    TableColumn tcVisiterName = tableView.getColumns().get(0);
+                    tcVisiterName.setCellValueFactory(new PropertyValueFactory<Visiter, String>("visiter"));
+                    tcVisiterName.setStyle("-fx-alignment: CENTER;");
 
-			@Override
-			public void changed(ObservableValue<? extends Visiter> observable, Visiter oldValue, Visiter newValue) {
-				if (newValue != null) {
-					imageView.setImage(new Image(getClass().getResource("image/" + newValue.getImage()).toString()));
-				}
-			}
-		});
+                    TableColumn tcDate = tableView.getColumns().get(1);
+                    tcDate.setCellValueFactory(new PropertyValueFactory<Visiter, String>("date"));
+                    tcDate.setStyle("-fx-alignment: CENTER;");
 
-		// btnClose 버튼 이벤트 처리
-		btnClose.setOnAction(event -> handlebtnClose(event));
-	}
+                    visiterList.add(new Visiter(str1, str2, "member01.png"));
+                    tableView.setItems(visiterList);
+                });
+            }
+        } catch (IOException ioe) {
 
-	private void handlebtnClose(ActionEvent event) {
-		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("security_main.fxml"));
-			ToggleButton btnReturn = (ToggleButton) parent.lookup("#btnCctv");
-			btnReturn.setSelected(true);
-			AnchorPane root = (AnchorPane) btnClose.getScene().getRoot();
-			root.getChildren().clear();
-			root.getChildren().add(parent);
-		} catch (IOException ioe) {
-			// 개발 끝나면 지워주기!
-			ioe.printStackTrace();
-		}
-	}
+        }
+    }
 }

@@ -20,165 +20,161 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
 
 public class CctvsettingController implements Initializable {
 
-	@FXML
-	private MediaView mediaView;
+    @FXML
+    private MediaView mediaView;
 
-	@FXML
-	private ToggleButton btnApt;
+    @FXML
+    private ToggleButton btnApt;
 
-	@FXML
-	private ToggleButton btnDoor;
+    @FXML
+    private ToggleButton btnDoor;
 
-	@FXML
-	private ToggleButton btnPlayground;
+    @FXML
+    private ToggleButton btnPlayground;
 
-	@FXML
-	private Button btnList;
+    @FXML
+    private Button btnList;
 
-	@FXML
-	private ToggleGroup menu1;
+    @FXML
+    private ToggleGroup menu1;
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		btnList.setOnAction(event -> handleBtnList(event));
+    public static MediaPlayer mediaPlayerApt;
 
-		// ToggleButton ToggleGroup으로 이벤트 처리(mediaPlayer 음소거로 설정하여 영상만 보이게 함)
-		menu1.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-			@Override
-			public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-				try {
-					Media media = new Media(getClass().getResource("media/video.mp4").toString());
-					MediaPlayer mediaPlayer = new MediaPlayer(media);
-					mediaView.setMediaPlayer(mediaPlayer);
+    public static MediaPlayer mediaPlayerDoor;
 
-					 //이 버튼이 제대로 작동하지 않음. 이거 질문
-					 Parent root = FXMLLoader.load(getClass().getResource("security_main.fxml"));
-					 ToggleButton btnExitTab = (ToggleButton) root.lookup("#btnExitSettingTab");
+    public static MediaPlayer mediaPlayerPlayground;
 
-					
-					// 공동현관 ToggleButton 눌렀을 때
-					if (newValue == btnApt) {
+    public static AnchorPane listRoot;
 
-						mediaPlayer.play();
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        btnList.setOnAction(event -> handleBtnList(event));
 
-						btnDoor.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-							}
-						});
-						
-						btnPlayground.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-							}
-						});
+        // ToggleButton ToggleGroup으로 이벤트 처리(mediaPlayer 음소거로 설정하여 영상만 보이게 함)
+        menu1.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+                try {
 
-						btnList.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-								try {
-									Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
-									AnchorPane root = (AnchorPane) btnList.getScene().getRoot();
-									root.getChildren().add(visitinglist);
-								} catch (Exception e) {
-									// 개발 끝나면 이거 지워주기!
-									e.printStackTrace();
-								}
-							}
-						});
-						
-						if(btnExitTab.isSelected()) {
-							mediaPlayer.stop();
-						}
-						
-					}
-					// 현관문 ToggleButton 눌렀을 때
-					else if (newValue == btnDoor) {
+                    //이 버튼이 제대로 작동하지 않음. 이거 질문
+                    Parent securityMain = FXMLLoader.load(getClass().getResource("security_main.fxml"));
+                    ToggleButton btnExitTab = (ToggleButton) securityMain.lookup("#btnExitSettingTab");
+                    
+                    // 공동현관 ToggleButton 눌렀을 때
+                    if (newValue == btnApt) {
+                        Media media = new Media(getClass().getResource("media/video.mp4").toString());
+                        mediaPlayerApt = new MediaPlayer(media);
+                        mediaView.setMediaPlayer(mediaPlayerApt);
+                        mediaPlayerApt.setAutoPlay(true);
 
-						mediaPlayer.play();
+                        btnDoor.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerApt.stop();
+                            }
+                        });
 
-						btnApt.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-							}
-						});
-						btnPlayground.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-							}
-						});
-						btnList.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-								try {
-									Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
-									AnchorPane root = (AnchorPane) btnList.getScene().getRoot();
-									root.getChildren().add(visitinglist);
-								} catch (Exception e) {
-									// 개발 끝나면 이거 지워주기!
-									e.printStackTrace();
-								}
-							}
-						});
-					}
-					// 놀이터 ToggleButton 눌렀을 때
-					else if (newValue == btnPlayground) {
+                        btnPlayground.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerApt.stop();
+                            }
+                        });
 
-						mediaPlayer.play();
+                        btnList.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerApt.stop();
+                                handleBtnList(event);
+                            }
+                        });
+                    } // 현관문 ToggleButton 눌렀을 때
+                    else if (newValue == btnDoor) {
 
-						btnApt.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-							}
-						});
-						btnDoor.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-							}
-						});
-						btnList.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								mediaPlayer.stop();
-								try {
-									Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
-									AnchorPane root = (AnchorPane) btnList.getScene().getRoot();
-									root.getChildren().add(visitinglist);
-								} catch (Exception e) {
-									// 개발 끝나면 이거 지워주기!
-									e.printStackTrace();
-								}
-							}
-						});
-					}
-				} catch (IOException ioe) {
-					// 개발 끝나면 지워주기
-					ioe.printStackTrace();
-				}
-			}
-		});
-	}
+                        Media media = new Media(getClass().getResource("media/video.mp4").toString());
+                        mediaPlayerDoor = new MediaPlayer(media);
+                        mediaView.setMediaPlayer(mediaPlayerDoor);
+                        mediaPlayerDoor.setAutoPlay(true);
 
-	// 방문목록 버튼 이벤트 처리
-	private void handleBtnList(ActionEvent event) {
-		try {
-			Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
-			AnchorPane root = (AnchorPane) btnList.getScene().getRoot();
-			root.getChildren().add(visitinglist);
-		} catch (Exception e) {
-			// 개발 끝나면 이거 지워주기!
-			e.printStackTrace();
-		}
-	}
+                        btnApt.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerDoor.stop();
+                            }
+                        });
+                        btnPlayground.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerDoor.stop();
+                            }
+                        });
+                        btnList.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerDoor.stop();
+                                handleBtnList(event);
+                            }
+                        });
+                    } // 놀이터 ToggleButton 눌렀을 때
+                    else if (newValue == btnPlayground) {
+                        Media media = new Media(getClass().getResource("media/video.mp4").toString());
+                        mediaPlayerPlayground = new MediaPlayer(media);
+                        mediaView.setMediaPlayer(mediaPlayerPlayground);
+
+                        mediaPlayerPlayground.setAutoPlay(true);
+
+                        btnApt.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerPlayground.stop();
+                            }
+                        });
+                        btnDoor.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerPlayground.stop();
+                            }
+                        });
+                        btnList.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                mediaPlayerPlayground.stop();
+                                handleBtnList(event);
+                            }
+                        });
+                    }
+                } catch (IOException ioe) {
+                    // 개발 끝나면 지워주기
+                    ioe.printStackTrace();
+                }
+            }
+        });
+    }
+
+    // 방문목록 버튼 이벤트 처리
+    private void handleBtnList(ActionEvent event) {
+        try {
+            Stage primaryStage = (Stage) btnList.getScene().getWindow();
+            Popup popup = new Popup();
+            Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
+            Button popupClose = (Button) visitinglist.lookup("#btnClose");
+            popupClose.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    popup.hide();
+                }
+            });
+            popup.setHideOnEscape(true);
+            popup.getContent().add(visitinglist);
+            popup.show(primaryStage);
+        } catch (Exception e) {
+            // 개발 끝나면 이거 지워주기!
+            e.printStackTrace();
+        }
+    }
 }

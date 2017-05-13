@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="noticeBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@notice.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.NoticeController">
+   <center>
+      <TableView id="tableView" fx:id="tableViewNotice" prefHeight="108.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="143.0" text="날짜" />
+          <TableColumn prefWidth="256.0" text="제목" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <ToolBar id="noticeBorder" nodeOrientation="RIGHT_TO_LEFT" prefHeight="12.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+        <items>
+            <Button fx:id="btnNoticeDelete" mnemonicParsing="false" prefHeight="0.0" prefWidth="45.0" text="삭제" />
+            <Button fx:id="btnNoticeOpen" mnemonicParsing="false" prefHeight="0.0" prefWidth="45.0" text="열기" />
+            <Label fx:id="labelNoticeName" nodeOrientation="LEFT_TO_RIGHT" prefHeight="15.0" prefWidth="285.0" text="공지" />
+        </items>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </ToolBar>
+   </top>
+</BorderPane>

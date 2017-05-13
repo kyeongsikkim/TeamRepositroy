@@ -3,30 +3,30 @@ package securitydisplay;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Visiter {
-	private SimpleStringProperty visiter;
-	private SimpleStringProperty date;
+	private String visiter;
+	private String date;
 	private SimpleStringProperty image;
 	
 	public Visiter(String visiter, String date, String image) {
-		this.visiter = new SimpleStringProperty(visiter);
-		this.date = new SimpleStringProperty(date);
+		this.visiter = visiter;
+		this.date = date;
 		this.image = new SimpleStringProperty(image);
 	}
 	
 	public String getVisiter() {
-		return visiter.get();
+		return visiter;
 	}
 	
 	public void setVisiter(String visiter) {
-		this.visiter.set(visiter);
+		this.visiter = visiter;
 	}
 	
 	public String getDate() {
-		return date.get();
+		return date;
 	}
 	
 	public void setDate(String date) {
-		this.date.set(date);
+		this.date = date;
 	}
 	
 	public String getImage() {
