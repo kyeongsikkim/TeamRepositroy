@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
@@ -16,10 +17,12 @@ import javafx.stage.Stage;
  * @author Administrator
  */
 public class AppMain extends Application{
-
+    
+    
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent parent=FXMLLoader.load(AppMain.class.getResource("control.fxml")); //fxml불러옴 
+        
         //Parent parent=FXMLLoader.load(getClass().getResource("root.fxml"));
         //parent.getStylesheets().add(getClass().getResource("root.css").toString());
         

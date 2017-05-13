@@ -5,6 +5,8 @@
  */
 package ch17.control;
 
+import static ch17.control.ControlController.gasvalue;
+import static ch17.control.ControlController.lightvalue;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -28,32 +30,24 @@ public class GasController implements Initializable {
     private ToggleButton btnOnOff;
     @FXML
     private ImageView gasImage;
-    
+
     //private boolean endOfMedia;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        Media media=new Media(getClass().getResource("media/video.m4v").toString());
-//        MediaPlayer mediaPlayer=new MediaPlayer(media);
-//        mediaView.setMediaPlayer(mediaPlayer);
-//        
-//        btnOnOff.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                if(endOfMedia=false)
-//                mediaPlayer.play();
-//                
-//                btnOnOff.setDisable(true);
-//            }
-//        });
-//        mediaPlayer.setOnEndOfMedia(()->{
-//            btnOnOff.setDisable(false);
-//        });
-Image image = new Image(getClass().getResource("images/gas_off.png").toString());
-gasImage.setImage(image);
-            btnOnOff.setOnAction(e -> handleBtnOnOffAction(e));
+        if (gasvalue.getGasImage()==null) {
+            gasImage.setImage(new Image(getClass().getResource("images/gas_off.png").toString()));
+        } else{
+            gasImage.setImage(new Image(gasvalue.getGasImage()));
+        }
+        
+        if (gasvalue.getGasOnOff()!= null) {
+            btnOnOff.setText(gasvalue.getGasOnOff());
+        } 
+        
+        btnOnOff.setOnAction(e -> handleBtnOnOffAction(e));
 
     }
 
@@ -61,11 +55,16 @@ gasImage.setImage(image);
         if (btnOnOff.getText().equals("ON")) {
             btnOnOff.setText("OFF");
             gasImage.setImage(new Image(getClass().getResource("images/gas_on.png").toString()));
+            gasvalue.setGasImage(getClass().getResource("images/gas_on.png").toString());
+            gasvalue.setGasOnOff(btnOnOff.getText());
+
             return;
         } else if (btnOnOff.getText().equals("OFF")) {
             btnOnOff.setText("ON");
-            
             gasImage.setImage(new Image(getClass().getResource("images/gas_off.png").toString()));
+            gasvalue.setGasImage(getClass().getResource("images/gas_off.png").toString());
+            gasvalue.setGasOnOff(btnOnOff.getText());
+
         }
     }
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -8,81 +11,97 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="heat" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.HeatController">
+<BorderPane fx:id="heat" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" stylesheets="@heat.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.HeatController">
    <left>
       <VBox alignment="CENTER" prefHeight="390.0" prefWidth="249.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="true" fx:id="btnPower" mnemonicParsing="false" style="-fx-background-color: transparent;">
-               <graphic>
-                  <ImageView fx:id="btnPowerImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/heat_power_off.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="true" fx:id="btnOut" mnemonicParsing="false" style="-fx-background-color: transparent;">
-               <graphic>
-                  <ImageView fx:id="btnOutImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/heat_out.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="true" fx:id="btnHotwater" mnemonicParsing="false" style="-fx-background-color: transparent;">
-               <graphic>
-                  <ImageView fx:id="btnHotwaterImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/heat_hotwater.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" text="거실" />
-            <Button mnemonicParsing="false" text="방 1" />
-            <Button mnemonicParsing="false" text="방 2" />
-            <Button mnemonicParsing="false" text="방 3" />
+            <AnchorPane>
+              
+               <children>
+                  <Label fx:id="lblPower" layoutX="52.0" layoutY="18.0" styleClass="labelLeft" text="전 원" />  
+                  <Rectangle fx:id="background1" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="149.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fx:id="trigger1" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" AnchorPane.leftAnchor="100.0">
+                     <effect>
+                        <DropShadow />
+                     </effect></Circle>
+               </children>
+              
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <Label fx:id="lblOut" layoutX="52.0" layoutY="18.0" styleClass="labelLeft" text="외 출" />
+                  <Rectangle fx:id="background2" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="149.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fx:id="trigger2" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" AnchorPane.leftAnchor="100.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+               </children>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <Label fx:id="lblHotwater" layoutX="52.0" layoutY="18.0" styleClass="labelLeft" text="온 수" />
+                  <Rectangle fx:id="background3" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="149.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fx:id="trigger3" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" AnchorPane.leftAnchor="100.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+               </children>
+            </AnchorPane>
+            <Button fx:id="btnLivingroom" mnemonicParsing="false" styleClass="button" text="거실">
+               <VBox.margin>
+                  <Insets right="30.0" />
+               </VBox.margin></Button>
+            <Button fx:id="btnRoom1" mnemonicParsing="false" styleClass="button" text="방 1">
+               <VBox.margin>
+                  <Insets right="30.0" />
+               </VBox.margin></Button>
+            <Button fx:id="btnRoom2" mnemonicParsing="false" styleClass="button" text="방 2">
+               <VBox.margin>
+                  <Insets right="30.0" />
+               </VBox.margin></Button>
+            <Button fx:id="btnRoom3" mnemonicParsing="false" styleClass="button" stylesheets="@heat.css" text="방 3">
+               <VBox.margin>
+                  <Insets right="30.0" />
+               </VBox.margin></Button>
          </children>
       </VBox>
    </left>
    <right>
       <BorderPane fx:id="heatChange" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <left>
-            <VBox alignment="CENTER" prefHeight="390.0" prefWidth="282.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="390.0" prefWidth="282.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="180.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/toggle_heat.png" />
                      </image>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
                   </ImageView>
-                  <Label text="현재온도" />
-                  <Label fx:id="lblTemp" text="25 ' C" />
+                  <Label fx:id="lblNowTemp" styleClass="labelLeft" text="현재온도" />
+                  <AnchorPane>
+                     <children>
+                        <Label fx:id="lblTempC" layoutX="136.0" styleClass="labelLeft" text="' C" />
+                        <Label fx:id="lblTemp" layoutX="114.0" styleClass="labelLeft" text="25" />
+                     </children>
+                  </AnchorPane>
                </children>
             </VBox>
          </left>
          <right>
             <VBox alignment="CENTER" prefHeight="390.0" prefWidth="286.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
-                     <graphic>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/heat_up.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Label fx:id="lblTempControl" text="0 ' C" />
-                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
-                     <graphic>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/heat_down.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
+                  <Button fx:id="btnTempUp" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: transparent;" styleClass="btnup" />
+                  <AnchorPane>
+                     <children>
+                        <Label fx:id="lblTempControlC" layoutX="143.0" styleClass="labelLeft" text="' C" />
+                        <Label fx:id="lblTempControl" layoutX="131.0" styleClass="labelLeft" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="btnTempDown" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: transparent;" styleClass="btndown" />
                </children>
             </VBox>
          </right>

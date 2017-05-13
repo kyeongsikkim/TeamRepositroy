@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
@@ -11,9 +13,9 @@
 
 <BorderPane fx:id="light" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.LightController">
    <center>
-      <BorderPane prefHeight="200.0" prefWidth="785.0" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="210.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <center>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="150.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="800.0" spacing="150.0" BorderPane.alignment="CENTER">
                <children>
                   <Label text="Room 1" />
                   <Label text="Room 2" />
@@ -24,7 +26,7 @@
                </padding></HBox>
          </center>
          <top>
-            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="785.0" spacing="30.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_LEFT" prefHeight="175.0" prefWidth="800.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
                   <Button id="true" fx:id="btn1" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
@@ -67,9 +69,9 @@
       </BorderPane>
    </center>
    <bottom>
-      <BorderPane prefHeight="193.0" prefWidth="785.0" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="210.0" prefWidth="785.0" BorderPane.alignment="CENTER">
          <center>
-            <HBox alignment="CENTER" prefHeight="192.0" prefWidth="785.0" spacing="150.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="800.0" spacing="150.0" BorderPane.alignment="CENTER">
                <children>
                   <Label text="Room 4" />
                   <Label text="Room 5" />
@@ -80,7 +82,7 @@
                </padding></HBox>
          </center>
          <top>
-            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="785.0" spacing="30.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_LEFT" prefHeight="175.0" prefWidth="800.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
                   <Button id="true" fx:id="btn4" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
@@ -107,6 +109,16 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle fx:id="background" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" />
+                        <Circle fx:id="trigger" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" userData="true">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Circle>
+                     </children>
+                  </AnchorPane>
                </children>
                <padding>
                   <Insets left="50.0" />
