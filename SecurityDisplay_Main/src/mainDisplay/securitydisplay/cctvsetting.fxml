@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.scene.control.*?>
@@ -12,7 +13,7 @@
    <center>
       <AnchorPane prefHeight="365.0" prefWidth="750.0" styleClass="cctvbackground" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnList" alignment="BOTTOM_CENTER" layoutX="57.0" layoutY="22.0" mnemonicParsing="false" styleClass="btnVisit">
+            <Button fx:id="btnList" alignment="BOTTOM_CENTER" layoutX="25.0" layoutY="8.0" mnemonicParsing="false" styleClass="btnVisit">
                <graphic>
                   <ImageView fitHeight="55.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -20,21 +21,24 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Label id="lblVisitlist" fx:id="lblVisitlist" layoutX="68.0" layoutY="14.0" text="방문기록" />
-            <HBox alignment="CENTER" layoutX="125.0" layoutY="33.0" prefHeight="294.0" prefWidth="500.0" styleClass="mediabox">
+            <Label id="lblVisitlist" fx:id="lblVisitlist" layoutX="36.0" text="방문기록">
+               <font>
+                  <Font size="12.0" />
+               </font></Label>
+            <HBox alignment="CENTER" layoutX="98.0" layoutY="33.0" prefHeight="300.0" prefWidth="592.0" styleClass="mediabox">
                <children>
-                  <MediaView fx:id="mediaView" fitHeight="280.0" fitWidth="370.0" preserveRatio="false" HBox.hgrow="ALWAYS">
+                  <MediaView fx:id="mediaView" fitHeight="280.0" fitWidth="450.0" preserveRatio="false" HBox.hgrow="ALWAYS">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></MediaView>
                   <VBox prefHeight="280.0" prefWidth="175.0">
                      <children>
-                        <ToggleButton fx:id="btnApt" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" text="공동현관">
+                        <ToggleButton fx:id="btnApt" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" styleClass="btnCctvToggle" text="공동현관">
                            <toggleGroup>
                               <ToggleGroup fx:id="menu1" />
                            </toggleGroup></ToggleButton>
-                        <ToggleButton fx:id="btnDoor" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" text="주차장" toggleGroup="$menu1" />
-                        <ToggleButton fx:id="btnPlayground" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" text="놀이터" toggleGroup="$menu1" />
+                        <ToggleButton fx:id="btnDoor" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" styleClass="btnCctvToggle" text="주차장" toggleGroup="$menu1" />
+                        <ToggleButton fx:id="btnPlayground" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" styleClass="btnCctvToggle" text="놀이터" toggleGroup="$menu1" />
                      </children>
                      <HBox.margin>
                         <Insets />

@@ -21,3 +21,14 @@
 #lblVisitlist {
     -fx-text-fill: #ffffff;
 }
+
+.btnCctvToggle {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: transparent;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;
+}
+
+.btnCctvToggle:pressed {
+    -fx-background-color:lightcoral;
+}

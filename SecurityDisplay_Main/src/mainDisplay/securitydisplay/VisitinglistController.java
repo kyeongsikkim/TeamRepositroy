@@ -140,9 +140,9 @@ public class VisitinglistController implements Initializable {
                     tcDate.setCellValueFactory(new PropertyValueFactory<Visiter, String>("date"));
                     tcDate.setStyle("-fx-alignment: CENTER;");
 
-                    int number = (int) (Math.random() * 8) + 1;
+                    int number = (int) (Math.random() * 2) + 1;
 
-                    list.add(new Visiter(str1, str2, "cctvlist0" + number + ".png"));
+                    list.add(new Visiter(str1, str2, "cctvlist0" + number + ".jpg"));
                     tableView.setItems(list);
                 });
             }
