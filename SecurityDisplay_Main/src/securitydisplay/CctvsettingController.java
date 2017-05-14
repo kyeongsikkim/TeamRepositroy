@@ -59,18 +59,14 @@ public class CctvsettingController implements Initializable {
         menu1.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-                try {
 
-                    //이 버튼이 제대로 작동하지 않음. 이거 질문
-                    Parent securityMain = FXMLLoader.load(getClass().getResource("security_main.fxml"));
-                    ToggleButton btnExitTab = (ToggleButton) securityMain.lookup("#btnExitSettingTab");
-                    
+                while (true) {
                     // 공동현관 ToggleButton 눌렀을 때
                     if (newValue == btnApt) {
                         Media media = new Media(getClass().getResource("media/video.mp4").toString());
                         mediaPlayerApt = new MediaPlayer(media);
                         mediaView.setMediaPlayer(mediaPlayerApt);
-                        mediaPlayerApt.setAutoPlay(true);
+                        mediaPlayerApt.play();
 
                         btnDoor.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
@@ -86,20 +82,12 @@ public class CctvsettingController implements Initializable {
                             }
                         });
 
-                        btnList.setOnAction(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                mediaPlayerApt.stop();
-                                handleBtnList(event);
-                            }
-                        });
                     } // 현관문 ToggleButton 눌렀을 때
                     else if (newValue == btnDoor) {
-
                         Media media = new Media(getClass().getResource("media/video.mp4").toString());
                         mediaPlayerDoor = new MediaPlayer(media);
                         mediaView.setMediaPlayer(mediaPlayerDoor);
-                        mediaPlayerDoor.setAutoPlay(true);
+                        mediaPlayerDoor.play();
 
                         btnApt.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
@@ -111,13 +99,6 @@ public class CctvsettingController implements Initializable {
                             @Override
                             public void handle(ActionEvent event) {
                                 mediaPlayerDoor.stop();
-                            }
-                        });
-                        btnList.setOnAction(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                mediaPlayerDoor.stop();
-                                handleBtnList(event);
                             }
                         });
                     } // 놀이터 ToggleButton 눌렀을 때
@@ -125,8 +106,7 @@ public class CctvsettingController implements Initializable {
                         Media media = new Media(getClass().getResource("media/video.mp4").toString());
                         mediaPlayerPlayground = new MediaPlayer(media);
                         mediaView.setMediaPlayer(mediaPlayerPlayground);
-
-                        mediaPlayerPlayground.setAutoPlay(true);
+                        mediaPlayerPlayground.play();
 
                         btnApt.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
@@ -140,19 +120,20 @@ public class CctvsettingController implements Initializable {
                                 mediaPlayerPlayground.stop();
                             }
                         });
-                        btnList.setOnAction(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                mediaPlayerPlayground.stop();
-                                handleBtnList(event);
-                            }
-                        });
                     }
-                } catch (IOException ioe) {
-                    // 개발 끝나면 지워주기
-                    ioe.printStackTrace();
+                    
+                    btnList.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            mediaPlayerApt.stop();
+                            mediaPlayerDoor.stop();
+                            mediaPlayerPlayground.stop();
+                            handleBtnList(event);
+                        }
+                    });
                 }
             }
+
         });
     }
 
@@ -172,6 +153,7 @@ public class CctvsettingController implements Initializable {
             popup.setHideOnEscape(true);
             popup.getContent().add(visitinglist);
             popup.show(primaryStage);
+
         } catch (Exception e) {
             // 개발 끝나면 이거 지워주기!
             e.printStackTrace();

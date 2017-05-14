@@ -65,9 +65,7 @@ public class Security_mainController implements Initializable {
                     btnExitSettingTab.setDisable(true);
                     if (!securityContents.getChildren().isEmpty()) {
                         securityContents.getChildren().remove(0);
-                        //if (CctvsettingController.mediaPlayer.isAutoPlay()) {
-                        //    CctvsettingController.mediaPlayer.stop();
-                        //}
+                        
                     }
                     try {
                         Parent parent = FXMLLoader.load(getClass().getResource("exitsetting.fxml"));

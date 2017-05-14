@@ -63,6 +63,7 @@ public class VisiterdisplayController implements Initializable {
         try {
             serverSocket = new ServerSocket();
             serverSocket.bind(new InetSocketAddress("localhost", 50002));
+            System.out.println("Server is running...");
         } catch (IOException ex) {
             System.out.println("1");
         }
@@ -73,6 +74,7 @@ public class VisiterdisplayController implements Initializable {
                     Socket socket = serverSocket.accept();
                     Client client = new Client(socket);
                     connections.add(client);
+                    System.out.println("Connection success");
                 } catch (IOException ioe) {
                 }
             }
@@ -94,13 +96,11 @@ public class VisiterdisplayController implements Initializable {
                 byte[] byteArr = visiter.getBytes();
                 os.write(byteArr);
                 os.flush();
-                System.out.println("success");
 
                 OutputStream os1 = socket.getOutputStream();
                 byte[] byteArr1 = date.getBytes();
                 os.write(byteArr1);
                 os.flush();
-
             } catch (IOException ex) {
                 connections.remove(Client.this);
                 try {

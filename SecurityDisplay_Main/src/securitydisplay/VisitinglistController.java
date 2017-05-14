@@ -47,27 +47,33 @@ public class VisitinglistController implements Initializable {
     private SimpleDateFormat sdf;
     private Socket socket;
     private TableView<Visiter> visiterTable;
-    public static ObservableList<Visiter> list;
-    private ObservableList visiterList;
+    public static ObservableList<Visiter> list = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
-        // 클라이언트 시작
+
+        // 닫기버튼 실행 시 클라이언트 종료
         btnReset.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                startClient();
+                if (btnReset.getText().equals("연결끊기")) {
+                    stopClient();
+                    btnReset.setText("재시작");
+                } else {
+                    startClient();
+                    btnReset.setText("연결끊기");
+                }
             }
         });
         
+        // 클라이언트 시작
+        startClient();
 
         // BorderPane 중앙정렬
         // StackPane 숨기기
         // visiterList 초기화 & 객체 넣기
         // StackPane에 감시카메라 이미지 넣기
-        Visiter visiter = tableView.getSelectionModel().getSelectedItem();
-        
+        //Visiter visiter = tableView.getSelectionModel().getSelectedItem();
         tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Visiter>() {
 
             @Override
@@ -84,6 +90,7 @@ public class VisitinglistController implements Initializable {
             @Override
             public void run() {
                 try {
+                    System.out.println("Client start");
                     socket = new Socket();
                     socket.connect(new InetSocketAddress("localhost", 50002));
                     receive();
@@ -93,6 +100,16 @@ public class VisitinglistController implements Initializable {
             }
         };
         thread.start();
+    }
+
+    private void stopClient() {
+        try {
+            socket.close();
+            System.out.println("Client close");
+        } catch (IOException ioe) {
+            // 개발 끝나면 지워주기
+            ioe.printStackTrace();
+        }
     }
 
     private void receive() throws Exception {
@@ -125,8 +142,10 @@ public class VisitinglistController implements Initializable {
                     tcDate.setCellValueFactory(new PropertyValueFactory<Visiter, String>("date"));
                     tcDate.setStyle("-fx-alignment: CENTER;");
 
-                    visiterList.add(new Visiter(str1, str2, "member01.png"));
-                    tableView.setItems(visiterList);
+                    int number = (int) (Math.random() * 8) + 1;
+
+                    list.add(new Visiter(str1, str2, "member0" + number + ".png"));
+                    tableView.setItems(list);
                 });
             }
         } catch (IOException ioe) {
