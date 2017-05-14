@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="800.0" stylesheets="@popup.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="call.CallReceiveController">
+   <children>
+      <Pane fx:id="select" layoutX="22.0" layoutY="30.0" prefHeight="270.0" prefWidth="210.0" styleClass="back">
+         <children>
+            <VBox layoutX="-2.0" layoutY="1.0" prefHeight="270.0" prefWidth="210.0">
+               <children>
+                  <Button fx:id="btn1" mnemonicParsing="false" prefHeight="90.0" prefWidth="227.0" styleClass="call-menu" text="일반 통화" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font></Button>
+                  <Button fx:id="btn2" mnemonicParsing="false" prefHeight="90.0" prefWidth="220.0" styleClass="call-menu" text="세대 통화" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font></Button>
+                  <Button fx:id="btn3" mnemonicParsing="false" prefHeight="90.0" prefWidth="246.0" styleClass="call-menu" text="경비실" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+         </children></Pane>
+      <Pane layoutX="242.0" layoutY="30.0" prefHeight="270.0" prefWidth="530.0" styleClass="back">
+         <children>
+            <Label id="call-text" layoutX="296.0" layoutY="211.0" prefHeight="49.0" prefWidth="231.0" text="여기 통화지속 시간" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="title" layoutX="13.0" layoutY="11.0" prefHeight="58.0" prefWidth="503.0" text=" 발신자 : " textFill="WHITE" />
+            <Label fx:id="lblReceive" layoutX="122.0" layoutY="7.0" prefHeight="66.0" prefWidth="349.0" text="010-1234-5678" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="title2" layoutX="28.0" layoutY="73.0" text="연결을 원하시면 통화 버튼을 눌러주세요." textFill="WHITE" />
+         </children></Pane>
+      <Pane layoutX="243.0" layoutY="313.0" prefHeight="100.0" prefWidth="270.0" styleClass="back">
+         <children>
+            <ToggleButton fx:id="accept" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="통화" textFill="WHITE">
+               <toggleGroup>
+                  <ToggleGroup fx:id="callState" />
+               </toggleGroup>
+            </ToggleButton>
+         </children>
+      </Pane>
+      <Pane layoutX="520.0" layoutY="313.0" prefHeight="100.0" prefWidth="270.0" styleClass="back">
+         <children>
+            <Button id="reject" fx:id="reject" layoutX="-1.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="거절" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font></Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

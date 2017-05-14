@@ -1,0 +1,36 @@
+#background{
+    -fx-background-image:url("images/background07.jpg");
+    -fx-background-size:stretch;
+}
+
+.back{
+    -fx-background-color: rgba( 0,0, 0, 0.3 );
+}
+
+.call-menu{
+    -fx-background-color: transparent;
+}
+
+.call-menu:hover{
+    -fx-background-color: rgba( 0,0, 0, 0.3 );
+}
+
+.call-menu:selected{
+    -fx-background-color: rgba( 0,0, 0, 0.6 );
+}
+
+#accept{
+    -fx-background-color : transparent;
+}
+#accept:pressed{
+-fx-background-color: rgba( 0,0, 0, 0.6 );
+}
+
+
+#reject{
+    -fx-background-color:transparent;
+}
+
+#reject:pressed{
+    -fx-background-color: rgba( 0,0, 0, 0.6 );
+}
