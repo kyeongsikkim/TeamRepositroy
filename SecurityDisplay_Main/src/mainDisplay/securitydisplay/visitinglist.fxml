@@ -11,10 +11,10 @@
    <children>
       <HBox alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" styleClass="listbox">
          <children>
-            <TableView fx:id="tableView" focusTraversable="false" prefHeight="200.0" prefWidth="360.0" scaleShape="false">
+            <TableView id="tableView" fx:id="tableView" focusTraversable="false" prefHeight="200.0" prefWidth="360.0" scaleShape="false">
               <columns>
-                <TableColumn prefWidth="98.0" text="방문자" />
-                <TableColumn prefWidth="260.0" text="날짜" />
+                <TableColumn id="tableColumn0" prefWidth="98.0" text="방문자" />
+                <TableColumn id="tableColumn1" prefWidth="260.0" text="날짜" />
               </columns>
                
             </TableView>
@@ -25,11 +25,6 @@
                      <StackPane.margin>
                         <Insets bottom="273.0" left="172.0" />
                      </StackPane.margin></Button>
-                  <Button fx:id="btnReset" mnemonicParsing="false" text="새로고침">
-                     <StackPane.margin>
-                        <Insets right="27.0" />
-                     </StackPane.margin>
-                  </Button>
                </children>
             </StackPane>
          </children>

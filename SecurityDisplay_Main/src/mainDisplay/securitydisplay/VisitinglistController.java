@@ -41,8 +41,7 @@ public class VisitinglistController implements Initializable {
     private StackPane imageBackground;
     @FXML
     private Button btnClose;
-    @FXML
-    private Button btnReset;
+    
 
     private SimpleDateFormat sdf;
     private Socket socket;
@@ -54,16 +53,7 @@ public class VisitinglistController implements Initializable {
         // 폰트 설정
           Font font = new Font(getClass().getResource("fonts/Seoulnamsan_EB.otf").toExternalForm(), 14);
           btnClose.setFont(font);
-          btnReset.setFont(font);
-        
-        // '새로고침' 버튼 실행 시 tablieView list 삭제
-        btnReset.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                list.clear();
-            }
-        });
-        
+          
         // 클라이언트 시작
         startClient();
 
