@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox id="hboxHome" fx:id="hboxHome" alignment="CENTER" prefHeight="80.0" spacing="10.0" stylesheets="@homeButton.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="btnSlide" fx:id="btnSlide" mnemonicParsing="false" prefHeight="80.0" prefWidth="40.0" />
+      <Button id="btnHome" fx:id="btnHome" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" />
+   </children>
+</HBox>
