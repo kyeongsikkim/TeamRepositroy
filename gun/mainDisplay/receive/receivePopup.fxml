@@ -15,18 +15,12 @@
          <children>
             <VBox layoutX="-2.0" layoutY="1.0" prefHeight="270.0" prefWidth="210.0">
                <children>
-                  <Button fx:id="btn1" mnemonicParsing="false" prefHeight="90.0" prefWidth="227.0" styleClass="call-menu" text="일반 통화" textFill="WHITE">
-                     <font>
-                        <Font size="25.0" />
-                     </font></Button>
-                  <Button fx:id="btn2" mnemonicParsing="false" prefHeight="90.0" prefWidth="220.0" styleClass="call-menu" text="세대 통화" textFill="WHITE">
-                     <font>
-                        <Font size="25.0" />
-                     </font></Button>
-                  <Button fx:id="btn3" mnemonicParsing="false" prefHeight="90.0" prefWidth="246.0" styleClass="call-menu" text="경비실" textFill="WHITE">
-                     <font>
-                        <Font size="25.0" />
-                     </font></Button>
+                  <ToggleButton styleClass="call-menu" fx:id="btn1" mnemonicParsing="false" prefHeight="90.0" prefWidth="227.0" text="일반 통화">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="callMenu" />
+                     </toggleGroup></ToggleButton>
+                  <ToggleButton styleClass="call-menu" fx:id="btn2" mnemonicParsing="false" prefHeight="90.0" prefWidth="227.0" text="세대 통화" toggleGroup="$callMenu" />
+                  <ToggleButton styleClass="call-menu" fx:id="btn3" mnemonicParsing="false" prefHeight="90.0" prefWidth="227.0" text="경비실" toggleGroup="$callMenu" />
                </children>
             </VBox>
          </children></Pane>
