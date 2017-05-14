@@ -26,11 +26,10 @@
 -fx-background-color: rgba( 0,0, 0, 0.6 );
 }
 
-
 #reject{
     -fx-background-color:transparent;
 }
 
-#reject:pressed{
+#reject:focused{
     -fx-background-color: rgba( 0,0, 0, 0.6 );
 }

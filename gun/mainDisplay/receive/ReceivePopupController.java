@@ -1,32 +1,25 @@
-package call;
+package mainDisplay.receive;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.animation.KeyValue;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.effect.Blend;
-import javafx.scene.effect.BlendMode;
-import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.InnerShadow;
-import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import static javafx.scene.paint.Color.color;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
+import javafx.util.Duration;
 
-public class CallReceiveController implements Initializable {
+public class ReceivePopupController implements Initializable {
 
     @FXML
     private Pane select;
@@ -49,9 +42,15 @@ public class CallReceiveController implements Initializable {
     @FXML
     private ToggleGroup callState;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    @FXML
+    private Label lblCallTime;
 
+    private Timeline timeline;
+    private Duration time = Duration.ZERO;
+    private boolean active;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {       
         Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 20);
         Font font2 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 25);
         btn1.setFont(font1);
@@ -73,6 +72,7 @@ public class CallReceiveController implements Initializable {
         title.setEffect(ds1);
         title2.setEffect(ds1);
         lblReceive.setEffect(ds1);
+        lblCallTime.setEffect(ds1);
 
         DropShadow ds2 = new DropShadow();
         ds2.setColor(Color.web("#ccccff"));
@@ -80,8 +80,6 @@ public class CallReceiveController implements Initializable {
         ds2.setSpread(0.3);
         accept.setEffect(ds2);
         reject.setEffect(ds2);
-        
-          
 
         btn1.setOnAction(event -> {
             lblReceive.setText("010-1234-5678");
@@ -95,23 +93,68 @@ public class CallReceiveController implements Initializable {
             lblReceive.setText("경비실입니다. ");
         });
 
-        callState.selectedToggleProperty().addListener(new ChangeListener<Toggle>(){
+        callState.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-                if(newValue == accept){
-                    accept.setText("통화 종료");
+                if (newValue == accept) {
+                    title2.setText("통화중...");
                     reject.setDisable(true);
-                }else{
-                    accept.setText("통화");
+                } else {
+                    title2.setText("통화 종료");
+                    accept.setDisable(true);
+                    reject.setText("나가기");
                     reject.setDisable(false);
                 }
             }
-        
-        });
-        reject.setOnAction(event -> {
-            
         });
 
+        accept.setOnAction(eve -> {
+            accept.setText(isActive() ? "통화" : "통화 종료");
+            start();
+        });
+
+    }
+
+    public void start() {
+        if (active) {
+            timeline.stop();
+            active = false;
+            lblCallTime.setText(makeText(time));
+            return;
+        }
+        active = true;
+        if (timeline == null) {
+            timeline = new Timeline(
+                    new KeyFrame(Duration.millis(100),
+                            e2 -> {
+                                if (!active) {
+                                    return;
+                                }
+                                final Duration duration = ((KeyFrame) e2.getSource()).getTime();
+                                time = time.add(duration);
+                                lblCallTime.setText(makeText(time));
+                            }
+                    )
+            );
+        }
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+    }
+
+    private String makeText(final Duration duration) {
+        return String.format("%02d:%02d",
+                (long) (duration.toMinutes() % 60.0),
+                (long) (duration.toSeconds() % 60.0)
+        );
+    }
+
+    public void reset() {
+        time = Duration.ZERO;
+        lblCallTime.setText(makeText(time));
+    }
+
+    public boolean isActive() {
+        return active;
     }
 
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="800.0" stylesheets="@popup.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="call.CallReceiveController">
+<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="800.0" stylesheets="@receivePopup.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.receive.ReceivePopupController">
    <children>
       <Pane fx:id="select" layoutX="22.0" layoutY="30.0" prefHeight="270.0" prefWidth="210.0" styleClass="back">
          <children>
@@ -32,7 +32,7 @@
          </children></Pane>
       <Pane layoutX="242.0" layoutY="30.0" prefHeight="270.0" prefWidth="530.0" styleClass="back">
          <children>
-            <Label id="call-text" layoutX="296.0" layoutY="211.0" prefHeight="49.0" prefWidth="231.0" text="여기 통화지속 시간" textFill="WHITE">
+            <Label id="call-text" fx:id="lblCallTime" layoutX="453.0" layoutY="221.0" prefHeight="49.0" prefWidth="77.0" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
@@ -47,7 +47,7 @@
          </children></Pane>
       <Pane layoutX="243.0" layoutY="313.0" prefHeight="100.0" prefWidth="270.0" styleClass="back">
          <children>
-            <ToggleButton fx:id="accept" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="통화" textFill="WHITE">
+            <ToggleButton id="accept" fx:id="accept" mnemonicParsing="false" prefHeight="100.0" prefWidth="270.0" text="통화" textFill="WHITE">
                <toggleGroup>
                   <ToggleGroup fx:id="callState" />
                </toggleGroup>
