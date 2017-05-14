@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane styleClass="mainbackground" stylesheets="@cctvsetting.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.CctvsettingController">
+<BorderPane styleClass="mainbackground" stylesheets="@cctvsetting.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.securitydisplay.CctvsettingController">
    <center>
       <AnchorPane prefHeight="365.0" prefWidth="750.0" styleClass="cctvbackground" BorderPane.alignment="CENTER">
          <children>

@@ -1,4 +1,4 @@
-package mainDisplay;
+package mainDisplay.securitydisplay;
 
 import java.io.IOException;
 import java.net.URL;

@@ -1,4 +1,4 @@
-package mainDisplay;
+package mainDisplay.securitydisplay;
 
 import javafx.scene.control.CheckBox;
 

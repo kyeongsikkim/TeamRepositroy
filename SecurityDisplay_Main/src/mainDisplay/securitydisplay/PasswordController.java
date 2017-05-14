@@ -1,4 +1,4 @@
-package mainDisplay;
+package mainDisplay.securitydisplay;
 
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane styleClass="exitbackground" stylesheets="@exitsetting.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.ExitsettingController">
+<BorderPane styleClass="exitbackground" stylesheets="@exitsetting.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.securitydisplay.ExitsettingController">
 	<center>
 		<AnchorPane prefHeight="365.0" prefWidth="750.0" BorderPane.alignment="CENTER">
 			<children>

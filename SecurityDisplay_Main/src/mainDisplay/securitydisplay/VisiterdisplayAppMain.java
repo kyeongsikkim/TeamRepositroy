@@ -1,4 +1,4 @@
-package mainDisplay;
+package mainDisplay.securitydisplay;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

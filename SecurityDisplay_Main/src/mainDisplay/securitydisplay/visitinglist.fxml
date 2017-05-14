@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane layoutX="85.0" layoutY="110.0" prefHeight="330.0" styleClass="mainbackground" stylesheets="@visitinglist.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.VisitinglistController">
+<AnchorPane layoutY="113.0" prefHeight="330.0" styleClass="mainbackground" stylesheets="@visitinglist.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.securitydisplay.VisitinglistController">
    <children>
       <HBox alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" styleClass="listbox">
          <children>
