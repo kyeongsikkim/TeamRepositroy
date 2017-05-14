@@ -107,12 +107,37 @@ public class HeatController implements Initializable {
         lblTempControl.setFont(font3);
         lblTempControlC.setFont(font3);
         
-        if (heatvalue.getBtnAllSwitch()== false) {
+        if (heatvalue.getBtnAllSwitch() == false) {
             trigger1.setUserData("false");
+
+            trigger2.setDisable(true);
+            background2.setDisable(true);
+            trigger3.setDisable(true);
+            background3.setDisable(true);
+            btnLivingroom.setDisable(true);
+            btnRoom1.setDisable(true);
+            btnRoom2.setDisable(true);
+            btnRoom3.setDisable(true);
+            btnTempUp.setDisable(true);
+            btnTempDown.setDisable(true);
         } else {
             trigger1.setUserData("true");
-            trigger1.setCenterX(150);
+            trigger1.setLayoutX(175);
             background1.setFill(Color.LIGHTSALMON);
+
+            trigger2.setDisable(false);
+            background2.setDisable(false);
+            trigger3.setDisable(false);
+            background3.setDisable(false);
+            btnLivingroom.setDisable(false);
+            btnRoom1.setDisable(false);
+            btnRoom2.setDisable(false);
+            btnRoom3.setDisable(false);
+            btnTempUp.setDisable(false);
+            btnTempDown.setDisable(false);
+            
+            System.out.println("d=ddd");
+            
         }
         
         if (heatvalue.getLblTemp()== null || heatvalue.getLblTemp().equals("OFF")) {
@@ -163,16 +188,7 @@ public class HeatController implements Initializable {
         trigger1.setOnMouseClicked(e ->handletrigger1(e));
         background1.setOnMouseClicked(e ->handletrigger1(e));
 
-        trigger2.setDisable(true);
-        background2.setDisable(true);
-        trigger3.setDisable(true);
-        background3.setDisable(true);
-        btnLivingroom.setDisable(true);
-        btnRoom1.setDisable(true);
-        btnRoom2.setDisable(true);
-        btnRoom3.setDisable(true);
-        btnTempUp.setDisable(true);
-        btnTempDown.setDisable(true);
+        
         
         trigger2.setOnMouseClicked(event -> {switchedOn2.set(!switchedOn2.get());});
         background2.setOnMouseClicked(event -> {switchedOn2.set(!switchedOn2.get());});
