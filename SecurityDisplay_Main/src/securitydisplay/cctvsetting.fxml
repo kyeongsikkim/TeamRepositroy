@@ -20,7 +20,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Label layoutX="68.0" layoutY="14.0" text="방문기록" />
+            <Label fx:id="lblVisitlist" layoutX="68.0" layoutY="14.0" text="방문기록" />
             <HBox alignment="CENTER" layoutX="155.0" layoutY="33.0" prefHeight="294.0" prefWidth="440.0" styleClass="mediabox">
                <children>
                   <MediaView fx:id="mediaView" fitHeight="280.0" fitWidth="280.0" preserveRatio="false" HBox.hgrow="ALWAYS">

@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -25,6 +24,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Font;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -87,6 +87,17 @@ public class ExitsettingController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // 폰트 설정 
+        Font font = new Font(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 14);
+        lblGetinText.setFont(font);
+        lblGetoutText.setFont(font);
+        checkGas.setFont(font);
+        checkHeater.setFont(font);
+        checkFlame.setFont(font);
+        btnExitSetting.setFont(font);
+        txtGetinTime.setFont(font);
+        txtGetoutTime.setFont(font);
+
         // 초기 설정값 불러오기
         if (data.getTxtGetin() == null) {
             data.setTxtGetin("10분");
@@ -102,16 +113,16 @@ public class ExitsettingController implements Initializable {
         }
         checkGas.selectedProperty().set(data.getCheckGas());
 
-        if(data.getCheckHeater() == null) {
+        if (data.getCheckHeater() == null) {
             data.setCheckHeater(false);
         }
         checkHeater.selectedProperty().set(data.getCheckHeater());
-        
-        if(data.getCheckFlame() == null) {
+
+        if (data.getCheckFlame() == null) {
             data.setCheckFlame(false);
         }
         checkFlame.selectedProperty().set(data.getCheckFlame());
-        
+
         if (data.getBtnExitSetting() == null) {
             data.setBtnExitSetting("설정");
         }

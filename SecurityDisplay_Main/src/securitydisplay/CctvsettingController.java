@@ -1,6 +1,5 @@
 package securitydisplay;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
@@ -20,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.scene.text.Font;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
@@ -38,6 +39,9 @@ public class CctvsettingController implements Initializable {
     private ToggleButton btnPlayground;
 
     @FXML
+    private Label lblVisitlist;
+    
+    @FXML
     private Button btnList;
 
     @FXML
@@ -54,13 +58,19 @@ public class CctvsettingController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnList.setOnAction(event -> handleBtnList(event));
+        
+        // 폰트 설정 코드
+        Font font = new Font(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 14);
+        btnApt.setFont(font);
+        btnDoor.setFont(font);
+        btnPlayground.setFont(font);
+        lblVisitlist.setFont(font);
 
         // ToggleButton ToggleGroup으로 이벤트 처리(mediaPlayer 음소거로 설정하여 영상만 보이게 함)
         menu1.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
 
-                while (true) {
                     // 공동현관 ToggleButton 눌렀을 때
                     if (newValue == btnApt) {
                         Media media = new Media(getClass().getResource("media/video.mp4").toString());
@@ -132,8 +142,6 @@ public class CctvsettingController implements Initializable {
                         }
                     });
                 }
-            }
-
         });
     }
 

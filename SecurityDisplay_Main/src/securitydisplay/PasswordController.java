@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Font;
 
 public class PasswordController implements Initializable {
 
@@ -58,6 +59,22 @@ public class PasswordController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // 폰트 설정 코드
+        Font font = new Font(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 14);
+        btnDelete.setFont(font);
+        btnConfirm.setFont(font);
+        btnCancel.setFont(font);
+        btn1.setFont(font);
+        btn2.setFont(font);
+        btn3.setFont(font);
+        btn4.setFont(font);
+        btn5.setFont(font);
+        btn6.setFont(font);
+        btn7.setFont(font);
+        btn8.setFont(font);
+        btn9.setFont(font);
+        btn0.setFont(font);
+        
         btnDelete.setOnAction(event -> handleBtnDelete(event));
 
         // 키패드 버튼 이벤트 처리(0~9번까지)

@@ -50,8 +50,8 @@ public class Security_mainController implements Initializable {
 
                 if (newValue == btnExitSettingTab) {
                     handle();
-                    btnCctv.setDisable(false);
                     btnExitSettingTab.setDisable(true);
+                    btnCctv.setDisable(false);
                     if (!securityContents.getChildren().isEmpty()) {
                         securityContents.getChildren().remove(0);
                         //if (CctvsettingController.mediaPlayer.isAutoPlay()) {
