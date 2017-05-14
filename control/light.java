@@ -1,6 +1,6 @@
 package mainDisplay.control;
 
-public class light {
+public class Light {
     private String btnImage1;
     private String btnImage2;
     private String btnImage3;

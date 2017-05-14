@@ -12,15 +12,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="light" prefHeight="420.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.control.LightController">
+<BorderPane fx:id="light" prefHeight="420.0" prefWidth="800.0" stylesheets="@light.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.control.LightController">
    <center>
       <BorderPane prefHeight="210.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <center>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0" spacing="145.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="lblRoomName1" text="Room 1" />
-                  <Label fx:id="lblRoomName2" text="Room 2" />
-                  <Label fx:id="lblRoomName3" text="Room 3" />
+                  <Label fx:id="lblRoomName1" styleClass="label" text="Room 1" />
+                  <Label fx:id="lblRoomName2" styleClass="label" text="Room 2" />
+                  <Label fx:id="lblRoomName3" styleClass="label" text="Room 3" />
                </children>
                <padding>
                   <Insets right="153.0" />

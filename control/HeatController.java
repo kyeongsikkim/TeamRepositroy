@@ -19,6 +19,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
+import static mainDisplay.control.ControlController.heatvalue;
 
 public class HeatController implements Initializable {
 
@@ -46,7 +47,7 @@ public class HeatController implements Initializable {
     @FXML
     private Circle trigger3;
     
-    private BooleanProperty switchedOn = new SimpleBooleanProperty(false);
+    private BooleanProperty switchedOn = new SimpleBooleanProperty(heatvalue.getBtnAllSwitch());
     private TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(0.25));
     private FillTransition fillAnimation = new FillTransition(Duration.seconds(0.25));
     private ParallelTransition animation = new ParallelTransition(translateAnimation, fillAnimation);
@@ -106,7 +107,21 @@ public class HeatController implements Initializable {
         lblTempControl.setFont(font3);
         lblTempControlC.setFont(font3);
         
-
+        if (heatvalue.getBtnAllSwitch()== false) {
+            trigger1.setUserData("false");
+        } else {
+            trigger1.setUserData("true");
+            trigger1.setCenterX(150);
+            background1.setFill(Color.LIGHTSALMON);
+        }
+        
+        if (heatvalue.getLblTemp()== null || heatvalue.getLblTemp().equals("OFF")) {
+            lblTemp.setText("25");
+           
+        } else {
+            
+        }
+        
         btnLivingroom.setOnAction(e -> handleBtnLivingroom(e));
         btnRoom1.setOnAction(e -> handleBtnroom1(e));
         btnRoom2.setOnAction(e -> handleBtnroom2(e));
@@ -125,23 +140,23 @@ public class HeatController implements Initializable {
 
         switchedOn.addListener((obs, oldState, newState) -> {
             boolean isOn = newState.booleanValue();
-            translateAnimation.setToX(isOn ? 100 - 50 : 0);
-            fillAnimation.setFromValue(isOn ? Color.WHITE : Color.LIGHTGREEN);
-            fillAnimation.setToValue(isOn ? Color.WHEAT : Color.WHITE);
+            translateAnimation.setByX(isOn ?  50 : -50);
+            fillAnimation.setFromValue(isOn ? Color.WHITE : Color.LIGHTSALMON);
+            fillAnimation.setToValue(isOn ? Color.LIGHTSALMON : Color.WHITE);
             animation.play();
         });
         switchedOn2.addListener((obs, oldState, newState) -> {
             boolean isOn2 = newState.booleanValue();
             translateAnimation2.setToX(isOn2 ? 100 - 50 : 0);
-            fillAnimation2.setFromValue(isOn2 ? Color.WHITE : Color.LIGHTGREEN);
-            fillAnimation2.setToValue(isOn2 ? Color.CORAL : Color.WHITE);
+            fillAnimation2.setFromValue(isOn2 ? Color.WHITE : Color.LIGHTSALMON);
+            fillAnimation2.setToValue(isOn2 ? Color.LIGHTSALMON : Color.WHITE);
             animation2.play();
         });
         switchedOn3.addListener((obs, oldState, newState) -> {
             boolean isOn3 = newState.booleanValue();
             translateAnimation3.setToX(isOn3 ? 100 - 50 : 0);
-            fillAnimation3.setFromValue(isOn3 ? Color.WHITE : Color.LIGHTGREEN);
-            fillAnimation3.setToValue(isOn3 ? Color.TOMATO : Color.WHITE);
+            fillAnimation3.setFromValue(isOn3 ? Color.WHITE : Color.LIGHTSALMON);
+            fillAnimation3.setToValue(isOn3 ? Color.LIGHTSALMON : Color.WHITE);
             animation3.play();
         });
 
@@ -170,6 +185,9 @@ public class HeatController implements Initializable {
         int Temp=(int)(Math.random()*9)+17;
         lblTemp.setText(String.valueOf(Temp));
         lblTempControl.setText(lblTemp.getText());
+        
+        heatvalue.setLblTemp(lblTemp.getText());
+        
     }
 
     private void handleBtnroom1(ActionEvent e) {
@@ -201,11 +219,12 @@ public class HeatController implements Initializable {
     }
 
     private void handletrigger1(MouseEvent e) {
-        switchedOn.set(!switchedOn.get());
+        switchedOn.setValue(!switchedOn.getValue());
         
         if (trigger1.getUserData().equals("false")){
             trigger1.setUserData("true");
-            
+            heatvalue.setBtnAllSwitch(Boolean.valueOf(trigger1.getUserData().toString()));
+
             trigger2.setDisable(false);
             background2.setDisable(false);
             trigger3.setDisable(false);
@@ -219,6 +238,8 @@ public class HeatController implements Initializable {
         }
         else if(trigger1.getUserData().equals("true")){
             trigger1.setUserData("false");
+            heatvalue.setBtnAllSwitch(Boolean.valueOf(trigger1.getUserData().toString()));
+
             
             trigger2.setDisable(true);
             background2.setDisable(true);

@@ -1,6 +1,6 @@
 package mainDisplay.control;
 
-public class gas {
+public class Gas {
     private String gasImage;
     private String gasOnOff;
 

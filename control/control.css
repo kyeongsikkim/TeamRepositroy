@@ -1,27 +1,18 @@
-.controlbackground {
-	-fx-background-radius: 15.0px;
-/*	-fx-background-image: url("images/graybackground.jpg"); */
-        -fx-background-color:white;
+#control {	
+	-fx-background-image: url("images/background01.jpg"); 
+        -fx-background-size:stretch;
 }
 
 .toggle{
-    -fx-color: paleturquoise;
-
    
-    -fx-background-color: linear-gradient(wheat,blanchedalmond);
-    -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); 
+    -fx-background-color: rgba(68,68,68,0.5);
+/*   -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); */
 }
 
 .toggle:selected {
-    -fx-background-color:
-        -fx-shadow-highlight-color,
-        linear-gradient(to bottom, derive(-fx-color,-22%) 0%, derive(-fx-color,-15%) 100%),
-        linear-gradient(to bottom, derive(-fx-color,-15%) 0%, derive(-fx-color,-10%) 50%, derive(-fx-color,-8%) 98%, derive(-fx-color,-12%) 100%);
+    -fx-background-color:lightcoral;
 }
 
 .toggle:hover {
-    -fx-background-color:
-        -fx-shadow-highlight-color,
-        linear-gradient(to bottom, derive(-fx-color,-22%) 0%, derive(-fx-color,-15%) 100%),
-        linear-gradient(to bottom, derive(-fx-color,-15%) 0%, derive(-fx-color,-10%) 50%, derive(-fx-color,-8%) 98%, derive(-fx-color,-12%) 100%);
+    -fx-background-color:lightcoral;
 }

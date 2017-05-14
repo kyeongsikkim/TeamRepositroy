@@ -13,7 +13,6 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Font;
 
 public class ControlController implements Initializable {
 
@@ -28,9 +27,9 @@ public class ControlController implements Initializable {
     @FXML
     private StackPane stackPane;
 
-    static light lightvalue = new light();
-    static gas gasvalue = new gas();
-    static heat heatvalue = new heat();
+    static Light lightvalue = new Light();
+    static Gas gasvalue = new Gas();
+    static Heat heatvalue = new Heat();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -38,11 +37,7 @@ public class ControlController implements Initializable {
 //		btnLight.setOnAction(e->handleBtnLight(e));
 //		btnGas.setOnAction(e->handleBtnGas(e));
 //		btnHeat.setOnAction(e->handleBtnHeat(e));
-        Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 35);
-
-        btnLight.setFont(font1);
-        btnGas.setFont(font1);
-        btnHeat.setFont(font1);
+       
 
         btnLight.setSelected(true);
 
@@ -72,7 +67,7 @@ public class ControlController implements Initializable {
 
 //	private void handleBtnLight(ActionEvent e) {
 //		try {
-//			Parent parent=FXMLLoader.load(getClass().getResource("light.fxml"));
+//			Parent parent=FXMLLoader.load(getClass().getResource("Light.fxml"));
 //			stackPane.getChildren().add(parent);
 //			
 //		} catch (IOException ex) {
@@ -82,7 +77,7 @@ public class ControlController implements Initializable {
 //
 //	private void handleBtnGas(ActionEvent e) {
 //		try {
-//			Parent parent=FXMLLoader.load(getClass().getResource("gas.fxml"));
+//			Parent parent=FXMLLoader.load(getClass().getResource("Gas.fxml"));
 //			stackPane.getChildren().add(parent);
 //			
 //		} catch (IOException ex) {
@@ -92,7 +87,7 @@ public class ControlController implements Initializable {
 //
 //	private void handleBtnHeat(ActionEvent e) {
 //		try {
-//			Parent parent=FXMLLoader.load(getClass().getResource("heat.fxml"));
+//			Parent parent=FXMLLoader.load(getClass().getResource("Heat.fxml"));
 //			stackPane.getChildren().add(parent);
 //			
 //			

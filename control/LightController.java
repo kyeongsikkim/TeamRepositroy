@@ -17,6 +17,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -130,7 +132,7 @@ public class LightController implements Initializable {
         } else {
             trigger.setUserData("true");
             trigger.setCenterX(50);
-            background.setFill(Color.WHEAT);
+            background.setFill(Color.LIGHTSALMON);
         }
         
         if (lightvalue.getLblOnOff() == null || lightvalue.getLblOnOff().equals("OFF")) {
@@ -154,8 +156,8 @@ public class LightController implements Initializable {
         switchedOn.addListener((obs, oldState, newState) -> {
             boolean isOn = newState.booleanValue();
             translateAnimation.setByX(isOn ? 50 : -50);
-            fillAnimation.setFromValue(isOn ? Color.WHITE : Color.LIGHTGREEN);
-            fillAnimation.setToValue(isOn ? Color.WHEAT : Color.WHITE);
+            fillAnimation.setFromValue(isOn ? Color.WHITE : Color.LIGHTSALMON);
+            fillAnimation.setToValue(isOn ? Color.LIGHTSALMON : Color.WHITE);
             animation.play();
         });
         trigger.setOnMouseClicked(e -> handletrigger(e));
@@ -251,6 +253,11 @@ public class LightController implements Initializable {
             lblOnOff.setAlignment(Pos.CENTER_RIGHT);
             lightvalue.setLblOnOff(lblOnOff.getText());
                         
+            Media media = new Media(getClass().getResource("media/집_안의_모든_전등이_켜졌습니다..mp3").toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(media); 
+            mediaPlayer.play();
+        
+            
             btnImg1.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg2.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg3.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
@@ -273,6 +280,10 @@ public class LightController implements Initializable {
             lblOnOff.setText("OFF");
             lblOnOff.setAlignment(Pos.CENTER_LEFT);
             lightvalue.setLblOnOff(lblOnOff.getText());
+            
+            Media media = new Media(getClass().getResource("media/집_안의_모든_전등이_꺼졌습니다..mp3").toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(media); 
+            mediaPlayer.play();
             
             btnImg1.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             btnImg2.setImage(new Image(getClass().getResource("images/light_off.png").toString()));

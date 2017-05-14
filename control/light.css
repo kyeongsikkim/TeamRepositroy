@@ -1,3 +1,8 @@
+.label{
+    -fx-text-fill: white;
+   
+}
+
 /*
 .btnOnOff{
     -fx-color: paleturquoise;

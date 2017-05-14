@@ -17,6 +17,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -53,7 +55,7 @@ public class GasController implements Initializable {
         lblWarning.setFont(font1);
         
         if (gasvalue.getGasImage()==null) {
-            gasImage.setImage(new Image(getClass().getResource("images/gasoff.png").toString()));
+            gasImage.setImage(new Image(getClass().getResource("images/gasoff1.png").toString()));
         } else{
             gasImage.setImage(new Image(gasvalue.getGasImage()));
         }
@@ -84,8 +86,8 @@ public class GasController implements Initializable {
         switchedOn.addListener((obs, oldState, newState) -> {
             boolean isOn = newState.booleanValue();
             translateAnimation.setByX(isOn ? 50 : -50);
-            fillAnimation.setFromValue(isOn ? Color.WHITE : Color.LIGHTGREEN);
-            fillAnimation.setToValue(isOn ? Color.WHEAT : Color.WHITE);
+            fillAnimation.setFromValue(isOn ? Color.WHITE : Color.LIGHTSALMON);
+            fillAnimation.setToValue(isOn ? Color.LIGHTSALMON : Color.WHITE);
             animation.play();
         });
         trigger.setOnMouseClicked(e -> handletrigger(e));
@@ -95,15 +97,15 @@ public class GasController implements Initializable {
     private void handleBtnOnOffAction(ActionEvent e) {
         if (btnOnOff.getText().equals("ON")) {
             btnOnOff.setText("OFF");
-            gasImage.setImage(new Image(getClass().getResource("images/gason.png").toString()));
-            gasvalue.setGasImage(getClass().getResource("images/gason.png").toString());
+            gasImage.setImage(new Image(getClass().getResource("images/gason1.png").toString()));
+            gasvalue.setGasImage(getClass().getResource("images/gason1.png").toString());
             gasvalue.setGasOnOff(btnOnOff.getText());
 
             return;
         } else if (btnOnOff.getText().equals("OFF")) {
             btnOnOff.setText("ON");
-            gasImage.setImage(new Image(getClass().getResource("images/gasoff.png").toString()));
-            gasvalue.setGasImage(getClass().getResource("images/gasoff.png").toString());
+            gasImage.setImage(new Image(getClass().getResource("images/gasoff1.png").toString()));
+            gasvalue.setGasImage(getClass().getResource("images/gasoff1.png").toString());
             gasvalue.setGasOnOff(btnOnOff.getText());
 
         }
@@ -120,8 +122,12 @@ public class GasController implements Initializable {
             lblOnOff.setAlignment(Pos.CENTER_RIGHT);
             gasvalue.setLblOnOff(lblOnOff.getText());
             
-            gasImage.setImage(new Image(getClass().getResource("images/gason.png").toString()));
-            gasvalue.setGasImage(getClass().getResource("images/gason.png").toString());
+            Media media = new Media(getClass().getResource("media/가스_밸브가_열렸습니다..mp3").toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(media); 
+            mediaPlayer.play();
+            
+            gasImage.setImage(new Image(getClass().getResource("images/gason1.png").toString()));
+            gasvalue.setGasImage(getClass().getResource("images/gason1.png").toString());
 
             return;
         } else if (trigger.getUserData().equals("true")) {
@@ -132,8 +138,12 @@ public class GasController implements Initializable {
             lblOnOff.setAlignment(Pos.CENTER_LEFT);
             gasvalue.setLblOnOff(lblOnOff.getText());
             
-            gasImage.setImage(new Image(getClass().getResource("images/gasoff.png").toString()));
-            gasvalue.setGasImage(getClass().getResource("images/gasoff.png").toString());
+            Media media = new Media(getClass().getResource("media/가스_밸브가_잠겼습니다..mp3").toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(media); 
+            mediaPlayer.play();
+            
+            gasImage.setImage(new Image(getClass().getResource("images/gasoff1.png").toString()));
+            gasvalue.setGasImage(getClass().getResource("images/gasoff1.png").toString());
         }
     }
 

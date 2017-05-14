@@ -1,17 +1,11 @@
-.controlbackground {
-	-fx-background-radius: 15.0px;
-/*	-fx-background-image: url("images/graybackground.jpg"); */
-        -fx-background-color:white;
-}
-.labelLeft{
-    
-    -fx-font-weight: bold;
+.label{
+    -fx-text-fill: white;
+   
 }
 
 .button{
     -fx-color: paleturquoise;
-     
-    
+ 
     -fx-background-color: linear-gradient(wheat,blanchedalmond);
     -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); 
 }
