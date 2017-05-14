@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="callphone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" stylesheets="@callphone.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="callDisplay.CallPhoneController">
+<BorderPane id="callphone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" stylesheets="@callphone.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.call.CallPhoneController">
    <center>
       <TilePane fx:id="dial" prefHeight="338.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
