@@ -77,18 +77,6 @@ public class Volume2Controller implements Initializable {
 			img2.setImage(new Image(sta.getImg22()));
 		}
 
-//		btnRkind.setOnAction(new EventHandler<ActionEvent>() {
-//			@Override
-//			public void handle(ActionEvent event) {
-//				try {
-//					stack.getChildren().remove(0);
-//					Parent parent = FXMLLoader.load(getClass().getResource("volume2.fxml"));
-//					stack.getChildren().add(parent);		
-//				} catch (IOException ex) {
-//					System.out.print("하하");
-//				}
-//			}
-//		});
 		btnLkind.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -100,7 +88,7 @@ public class Volume2Controller implements Initializable {
 					Parent parent = FXMLLoader.load(getClass().getResource("volume1.fxml"));
 					stack.getChildren().add(parent);
 				} catch (IOException ex) {
-					System.out.print("하하");
+
 				}
 
 			}
@@ -121,7 +109,13 @@ public class Volume2Controller implements Initializable {
 					img1.setImage(setImage);
 				}
 				slidersoundValue1 = newValue.doubleValue();
-
+				if (mediaPlayer != null) {
+					mediaPlayer.dispose();
+				}
+				media = new Media(getClass().getResource("media/call.mp3").toString());
+				mediaPlayer = new MediaPlayer(media);
+				mediaPlayer.play();
+				mediaPlayer.setVolume(slidersoundValue1 / 100.0);
 			}
 
 		});
@@ -140,7 +134,7 @@ public class Volume2Controller implements Initializable {
 					img2.setImage(setImage);
 				}
 				slidersoundValue2 = newValue.doubleValue();
-				if(mediaPlayer!=null){
+				if (mediaPlayer != null) {
 					mediaPlayer.dispose();
 				}
 				media = new Media(getClass().getResource(MusicAddress).toString());

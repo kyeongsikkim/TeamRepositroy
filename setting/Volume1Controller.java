@@ -123,7 +123,13 @@ public class Volume1Controller implements Initializable {
 					img1.setImage(setImage);
 				}
 				slidersoundValue1 = newValue.doubleValue();
-				System.out.println(slidersoundValue1);
+				if (mediaPlayer != null) {
+					mediaPlayer.dispose();
+				}
+				media = new Media(getClass().getResource("media/call.mp3").toString());
+				mediaPlayer = new MediaPlayer(media);
+				mediaPlayer.play();
+				mediaPlayer.setVolume(slidersoundValue1 / 100.0);
 
 			}
 
@@ -143,7 +149,7 @@ public class Volume1Controller implements Initializable {
 					img2.setImage(setImage);
 				}
 				slidersoundValue2 = newValue.doubleValue();
-				if(mediaPlayer!=null){
+				if (mediaPlayer != null) {
 					mediaPlayer.dispose();
 				}
 				media = new Media(getClass().getResource(MusicAddress).toString());
