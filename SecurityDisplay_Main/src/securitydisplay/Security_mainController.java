@@ -40,19 +40,8 @@ public class Security_mainController implements Initializable {
         // togglebutton 텍스트 폰트 설정
         Font font = Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-Medium.otf").toExternalForm(), 14);
         btnExitSettingTab.setFont(font);
- 
-        btnExitSettingTab.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if (CctvsettingController.mediaPlayerApt != null) {
-                    CctvsettingController.mediaPlayerApt.dispose();
-                } else if(CctvsettingController.mediaPlayerDoor != null) {
-                    CctvsettingController.mediaPlayerDoor.dispose();
-                } else if(CctvsettingController.mediaPlayerPlayground != null) {
-                    CctvsettingController.mediaPlayerPlayground.dispose();
-                }
-            }
-        });
+        
+        
         
         // togglebutton 속성 감시(외출방범, 재택방범, CCTV)
         menu.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
@@ -61,11 +50,14 @@ public class Security_mainController implements Initializable {
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
 
                 if (newValue == btnExitSettingTab) {
+                    handle();
                     btnCctv.setDisable(false);
                     btnExitSettingTab.setDisable(true);
                     if (!securityContents.getChildren().isEmpty()) {
                         securityContents.getChildren().remove(0);
-                        
+                        //if (CctvsettingController.mediaPlayer.isAutoPlay()) {
+                        //    CctvsettingController.mediaPlayer.stop();
+                        //}
                     }
                     try {
                         Parent parent = FXMLLoader.load(getClass().getResource("exitsetting.fxml"));
@@ -92,5 +84,17 @@ public class Security_mainController implements Initializable {
                 }
             }
         });
+    }
+    
+    public void handle() {
+        if (CctvsettingController.mediaPlayerApt != null) {
+            CctvsettingController.mediaPlayerApt.dispose();
+        }
+        if (CctvsettingController.mediaPlayerDoor != null) {
+            CctvsettingController.mediaPlayerDoor.dispose();
+        }
+        if (CctvsettingController.mediaPlayerPlayground != null) {
+            CctvsettingController.mediaPlayerPlayground.dispose();
+        }
     }
 }

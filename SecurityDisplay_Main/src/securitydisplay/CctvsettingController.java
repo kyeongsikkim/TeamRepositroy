@@ -121,7 +121,7 @@ public class CctvsettingController implements Initializable {
                             }
                         });
                     }
-                    
+
                     btnList.setOnAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
@@ -148,6 +148,13 @@ public class CctvsettingController implements Initializable {
                 @Override
                 public void handle(ActionEvent event) {
                     popup.hide();
+                    if (btnApt.isSelected()) {
+                        mediaPlayerApt.play();
+                    } else if (btnDoor.isSelected()) {
+                        mediaPlayerDoor.play();
+                    } else if (btnPlayground.isSelected()) {
+                        mediaPlayerPlayground.play();
+                    }
                 }
             });
             popup.setHideOnEscape(true);
