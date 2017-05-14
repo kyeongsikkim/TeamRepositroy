@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="setting.RootController">
+   <children>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <children>
+            <ToggleButton fx:id="scene" mnemonicParsing="false" prefHeight="60.0" prefWidth="270.0" text="화면" HBox.hgrow="ALWAYS">
+               <toggleGroup>
+                  <ToggleGroup fx:id="select" />
+               </toggleGroup></ToggleButton>
+            <ToggleButton fx:id="volume" mnemonicParsing="false" prefHeight="60.0" prefWidth="270.0" text="음량/벨소리" toggleGroup="$select" />
+            <ToggleButton fx:id="admin" mnemonicParsing="false" prefHeight="60.0" prefWidth="270.0" text="관리자" toggleGroup="$select" />
+         </children>
+      </HBox>
+      <StackPane fx:id="stack" layoutY="60.0"  prefHeight="480.0" prefWidth="800.0"/>
+   </children>
+</AnchorPane>
