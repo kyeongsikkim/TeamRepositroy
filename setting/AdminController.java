@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package setting;
+package mainDisplay.setting;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
-import static setting.RootController.sta;
+import static mainDisplay.setting.RootController.sta;
 
 /**
  * FXML Controller class
@@ -75,12 +75,12 @@ public class AdminController implements Initializable {
 			}
 			password=sta.getTxtPass();
 		}else{
-			txtPass.setText("6자리");
+			txtPass.setText("최대6자리");
 		}
 		btn1.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -95,7 +95,7 @@ public class AdminController implements Initializable {
 		btn2.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -110,7 +110,7 @@ public class AdminController implements Initializable {
 		btn3.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -125,7 +125,7 @@ public class AdminController implements Initializable {
 		btn4.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -140,7 +140,7 @@ public class AdminController implements Initializable {
 		btn5.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -155,7 +155,7 @@ public class AdminController implements Initializable {
 		btn6.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -170,7 +170,7 @@ public class AdminController implements Initializable {
 		btn7.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -187,7 +187,7 @@ public class AdminController implements Initializable {
 		btn8.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -204,7 +204,7 @@ public class AdminController implements Initializable {
 		btn9.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -221,7 +221,7 @@ public class AdminController implements Initializable {
 		btn0.setOnAction(e -> {
 			if (txtPass.getText().length() >= 6) {
 			} else {
-				if (txtPass.getText().equals("6자리")) {
+				if (txtPass.getText().equals("최대6자리")) {
 					txtPass.setText("");
 				}
 				if (checkMotion.selectedProperty().get() == true) {
@@ -236,12 +236,11 @@ public class AdminController implements Initializable {
 			}
 		});
 		btnCancle.setOnAction(e -> {
-			txtPass.setText("6자리");
+			txtPass.setText("최대6자리");
 			password="";
-			sta.setTxtPass("1");
+			sta.setTxtPass("cancle");
 		});
 		btnOk.setOnAction(e -> {
-			System.out.println(password);
 			sta.setTxtPass(password);
 			sta.setCheckMotion(checkMotion.selectedProperty().get());
 		});

@@ -1,5 +1,5 @@
 
-package setting;
+package mainDisplay.setting;
 
 public class Status {
 	private static Status sta=new Status();
@@ -31,7 +31,9 @@ public class Status {
 	private String txtPass="";
 	private boolean checkMotion;
 	///////////////Music//////////////////////////
-	private String musicAddress1="media/audio.wav";
+	private String musicAddress1;
+	private String musicAddress2;
+	private String musicAddress3;
 	/////////////////////////////////////////////
 	private Status(){
 		
@@ -204,7 +206,7 @@ public class Status {
 	}
 
 	public void setTxtPass(String txtPass) {
-		if(txtPass.equals("1")){
+		if(txtPass.equals("cancle")){
 			this.txtPass="";
 		}else{
 		this.txtPass=txtPass;	
@@ -226,6 +228,23 @@ public class Status {
 	public void setMusicAddress1(String musicAddress1) {
 		this.musicAddress1 = musicAddress1;
 	}
+
+	public String getMusicAddress2() {
+		return musicAddress2;
+	}
+
+	public void setMusicAddress2(String musicAddress2) {
+		this.musicAddress2 = musicAddress2;
+	}
+
+	public String getMusicAddress3() {
+		return musicAddress3;
+	}
+
+	public void setMusicAddress3(String musicAddress3) {
+		this.musicAddress3 = musicAddress3;
+	}
+	
 	
 	
 	

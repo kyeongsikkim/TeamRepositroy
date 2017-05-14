@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package setting;
+package mainDisplay.setting;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,10 +19,10 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
-import static setting.RootController.sta;
+import static mainDisplay.setting.RootController.sta;
 
 /**
- * FXML Controller class
+ * FXML Controller classs
  *
  * @author KIM
  */
@@ -66,11 +66,8 @@ public class SceneController implements Initializable {
 			@Override
 			public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
 			RadionButton=btnBackground1.selectedProperty().get();
-				System.out.println(btnBackground1.selectedProperty().get());
 			RadionButton1=btnBackground2.selectedProperty().get();
-			System.out.println(btnBackground2.selectedProperty().get());
 			RadionButton2=btnBackground3.selectedProperty().get();
-			System.out.println(btnBackground3.selectedProperty().get());
 			
 			}
 			

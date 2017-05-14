@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package setting;
+package mainDisplay.setting;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +22,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import static setting.RootController.sta;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import static mainDisplay.setting.RootController.mediaPlayer;
+import static mainDisplay.setting.RootController.media;
+import static mainDisplay.setting.RootController.sta;
 
 /**
  * FXML Controller class
@@ -54,23 +58,25 @@ public class Volume2Controller implements Initializable {
 	@FXML
 	private Button btnRmusic;
 
-    private double slidersoundValue1=sta.getSliderCall2();
-	private double slidersoundValue2=sta.getSliderMusic2();
-	
-	
+	private double slidersoundValue1 = sta.getSliderCall2();
+	private double slidersoundValue2 = sta.getSliderMusic2();
+	private String MusicAddress = sta.getMusicAddress3();
+
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		if (MusicAddress == null) {
+			MusicAddress = "media/bell1.mp3";
+		}
 		if (sta.getTxtMusic2() != null) {
 			txtMusic.setText(sta.getTxtMusic2());
 		}
-		if(sta.getSliderCall2()==0)
-		{
+		if (sta.getSliderCall2() == 0) {
 			img1.setImage(new Image(sta.getImag12()));
 		}
-		if(sta.getSliderMusic2()==0){
+		if (sta.getSliderMusic2() == 0) {
 			img2.setImage(new Image(sta.getImg22()));
 		}
-		
+
 //		btnRkind.setOnAction(new EventHandler<ActionEvent>() {
 //			@Override
 //			public void handle(ActionEvent event) {
@@ -83,21 +89,23 @@ public class Volume2Controller implements Initializable {
 //				}
 //			}
 //		});
-			
-			btnLkind.setOnAction(new EventHandler<ActionEvent>() {
+		btnLkind.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-					try {	
-				    stack.getChildren().remove(0);
-					Parent parent= FXMLLoader.load(getClass().getResource("volume1.fxml"));
+				try {
+					if (mediaPlayer != null) {
+						mediaPlayer.dispose();
+					}
+					stack.getChildren().remove(0);
+					Parent parent = FXMLLoader.load(getClass().getResource("volume1.fxml"));
 					stack.getChildren().add(parent);
 				} catch (IOException ex) {
-						System.out.print("하하");
+					System.out.print("하하");
 				}
-					
+
 			}
 		});
-		
+
 		sliderCall.setValue(sta.getSliderCall2());
 		sliderCall.valueProperty().addListener(new ChangeListener<Number>() {
 			@Override
@@ -112,8 +120,7 @@ public class Volume2Controller implements Initializable {
 					sta.setImag12(getClass().getResource("images/speaker.png").toString());
 					img1.setImage(setImage);
 				}
-				    slidersoundValue1=newValue.doubleValue();
-					 System.out.println(slidersoundValue1);
+				slidersoundValue1 = newValue.doubleValue();
 
 			}
 
@@ -132,21 +139,42 @@ public class Volume2Controller implements Initializable {
 					sta.setImg22(getClass().getResource("images/speaker.png").toString());
 					img2.setImage(setImage);
 				}
-				 slidersoundValue2=newValue.doubleValue();	
-				 System.out.println(slidersoundValue2);
+				slidersoundValue2 = newValue.doubleValue();
+				if(mediaPlayer!=null){
+					mediaPlayer.dispose();
+				}
+				media = new Media(getClass().getResource(MusicAddress).toString());
+				mediaPlayer = new MediaPlayer(media);
+				mediaPlayer.play();
+				mediaPlayer.setVolume(slidersoundValue2 / 100.0);
 			}
 
 		});
 		btnRmusic.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
+				if (mediaPlayer != null) {
+					mediaPlayer.dispose();
+				}
 				String str = txtMusic.getText();
-				if (str.equals("도어벨소리")) {
-					txtMusic.setText("교향곡");
-				} else if (str.equals("교향곡")) {
-					txtMusic.setText("댄스곡");
+				if (str.equals("벨소리1")) {
+					txtMusic.setText("벨소리2");
+					MusicAddress = "media/bell2.mp3";
+					media = new Media(getClass().getResource("media/bell2.mp3").toString());
+					mediaPlayer = new MediaPlayer(media);
+					mediaPlayer.play();
+				} else if (str.equals("벨소리2")) {
+					txtMusic.setText("벨소리3");
+					MusicAddress = "media/bell3.mp3";
+					media = new Media(getClass().getResource("media/bell3.mp3").toString());
+					mediaPlayer = new MediaPlayer(media);
+					mediaPlayer.play();
+
 				} else {
-					txtMusic.setText("댄스곡");
+					txtMusic.setText("벨소리3");
+					media = new Media(getClass().getResource("media/bell3.mp3").toString());
+					mediaPlayer = new MediaPlayer(media);
+					mediaPlayer.play();
 				}
 			}
 		});
@@ -154,25 +182,36 @@ public class Volume2Controller implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				String str = txtMusic.getText();
-				if (str.equals("교향곡")) {
-					txtMusic.setText("도어벨소리");
-				} else if (str.equals("댄스곡")) {
-					txtMusic.setText("교향곡");
+				if (str.equals("벨소리3")) {
+					txtMusic.setText("벨소리2");
+					MusicAddress = "media/bell2.mp3";
+					media = new Media(getClass().getResource("media/bell2.mp3").toString());
+					mediaPlayer = new MediaPlayer(media);
+					mediaPlayer.play();
+				} else if (str.equals("벨소리2")) {
+					txtMusic.setText("벨소리1");
+					MusicAddress = "media/bell1.mp3";
+					media = new Media(getClass().getResource("media/bell1.mp3").toString());
+					mediaPlayer = new MediaPlayer(media);
+					mediaPlayer.play();
 				} else {
-					txtMusic.setText("도어벨소리");
+					txtMusic.setText("벨소리1");
+					MusicAddress = "media/bell1.mp3";
+					media = new Media(getClass().getResource("media/bell1.mp3").toString());
+					mediaPlayer = new MediaPlayer(media);
+					mediaPlayer.play();
 				}
 			}
 		});
 		btnAccept.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				sta.setTxtMusic1(txtMusic.getText());
-				System.out.println(slidersoundValue1);
-				System.out.println(slidersoundValue2);
-				sta.setSliderCall2(slidersoundValue1);
-				sta.setSliderMusic2(slidersoundValue2);
-				}
+				sta.setTxtMusic(txtMusic.getText());
+				sta.setSliderCall(slidersoundValue1);
+				sta.setSliderMusic(slidersoundValue2);
+				sta.setMusicAddress3(MusicAddress);
+			}
 		});
-		
+
 	}
 }
