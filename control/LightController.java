@@ -77,10 +77,7 @@ public class LightController implements Initializable {
     @FXML
     private Label lblOnOff;
     
-    public BooleanProperty switchedOnProperty() {
-        return switchedOn;
-    }
-
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 15);
@@ -103,55 +100,54 @@ public class LightController implements Initializable {
         } else{
             btnImg2.setImage(new Image(lightvalue.getBtnImage2()));
         }
+        
         if (lightvalue.getBtnImage3() == null) {
             btnImg3.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
         } else {
             btnImg3.setImage(new Image(lightvalue.getBtnImage3()));
         }
+        
         if (lightvalue.getBtnImage4() == null) {
             btnImg4.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
         } else {
             btnImg4.setImage(new Image(lightvalue.getBtnImage4()));
         }
+        
         if (lightvalue.getBtnImage5() == null) {
             btnImg5.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
         } else {
             btnImg5.setImage(new Image(lightvalue.getBtnImage5()));
         }
+        
         if (lightvalue.getBtnImage6() == null ) {
             btnImg6.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
         } else {
             btnImg6.setImage(new Image(lightvalue.getBtnImage6()));
         }
         
-
-        if (lightvalue.getBtnAllSwitch()==false) {
-            trigger.setUserData("true");
-        } else {
+        if (lightvalue.getBtnAllSwitch() == false) {
             trigger.setUserData("false");
+        } else {
+            trigger.setUserData("true");
             trigger.setCenterX(50);
-           background.setFill(Color.WHEAT);
+            background.setFill(Color.WHEAT);
         }
         
-        if (lightvalue.getLblOnOff()== null || lightvalue.getLblOnOff().equals("OFF") ) {
+        if (lightvalue.getLblOnOff() == null || lightvalue.getLblOnOff().equals("OFF")) {
             lblOnOff.setText("OFF");
             lblOnOff.setAlignment(Pos.CENTER_LEFT);
         } else {
-           lblOnOff.setText("ON");
+            lblOnOff.setText("ON");
             lblOnOff.setAlignment(Pos.CENTER_RIGHT);
         }
-        
-       
-
+             
         btn1.setOnAction(e -> handleBtnAction1(e));
         btn2.setOnAction(e -> handleBtnAction2(e));
         btn3.setOnAction(e -> handleBtnAction3(e));
         btn4.setOnAction(e -> handleBtnAction4(e));
         btn5.setOnAction(e -> handleBtnAction5(e));
         btn6.setOnAction(e -> handleBtnAction6(e));
-
-
-        
+       
         translateAnimation.setNode(trigger);
         fillAnimation.setShape(background);
         
@@ -167,105 +163,100 @@ public class LightController implements Initializable {
     }
 
     private void handleBtnAction1(ActionEvent e) {
-        if (btn1.getId().equals("true")) {
-            btn1.setId("false");
+        if (btn1.getId().equals("false")) {
+            btn1.setId("true");
             btnImg1.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             lightvalue.setBtnImage1(getClass().getResource("images/light_on.png").toString());
             return;
-        } else if (btn1.getId().equals("false")) {
-            btn1.setId("true");
+        } else if (btn1.getId().equals("true")) {
+            btn1.setId("false");
             btnImg1.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             lightvalue.setBtnImage1(getClass().getResource("images/light_off.png").toString());
         }
-
     }
 
     private void handleBtnAction2(ActionEvent e) {
-        if (btn2.getId().equals("true")) {
-            btn2.setId("false");
+        if (btn2.getId().equals("false")) {
+            btn2.setId("true");
             btnImg2.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             lightvalue.setBtnImage2(getClass().getResource("images/light_on.png").toString());
             return;
-        } else if (btn2.getId().equals("false")) {
-            btn2.setId("true");
+        } else if (btn2.getId().equals("true")) {
+            btn2.setId("false");
             btnImg2.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             lightvalue.setBtnImage2(getClass().getResource("images/light_off.png").toString());
         }
     }
 
     private void handleBtnAction3(ActionEvent e) {
-        if (btn3.getId().equals("true")) {
-            btn3.setId("false");
+        if (btn3.getId().equals("false")) {
+            btn3.setId("true");
             btnImg3.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             lightvalue.setBtnImage3(getClass().getResource("images/light_on.png").toString());
             return;
-        } else if (btn3.getId().equals("false")) {
-            btn3.setId("true");
+        } else if (btn3.getId().equals("true")) {
+            btn3.setId("false");
             btnImg3.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             lightvalue.setBtnImage3(getClass().getResource("images/light_off.png").toString());
         }
     }
 
     private void handleBtnAction4(ActionEvent e) {
-        if (btn4.getId().equals("true")) {
-            btn4.setId("false");
+        if (btn4.getId().equals("false")) {
+            btn4.setId("true");
             btnImg4.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             lightvalue.setBtnImage4(getClass().getResource("images/light_on.png").toString());
             return;
-        } else if (btn4.getId().equals("false")) {
-            btn4.setId("true");
+        } else if (btn4.getId().equals("true")) {
+            btn4.setId("false");
             btnImg4.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             lightvalue.setBtnImage4(getClass().getResource("images/light_off.png").toString());
         }
     }
 
     private void handleBtnAction5(ActionEvent e) {
-        if (btn5.getId().equals("true")) {
-            btn5.setId("false");
+        if (btn5.getId().equals("false")) {
+            btn5.setId("true");
             btnImg5.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             lightvalue.setBtnImage5(getClass().getResource("images/light_on.png").toString());
             return;
-        } else if (btn5.getId().equals("false")) {
-            btn5.setId("true");
+        } else if (btn5.getId().equals("true")) {
+            btn5.setId("false");
             btnImg5.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             lightvalue.setBtnImage5(getClass().getResource("images/light_off.png").toString());
         }
     }
 
     private void handleBtnAction6(ActionEvent e) {
-        if (btn6.getId().equals("true")) {
-            btn6.setId("false");
+        if (btn6.getId().equals("false")) {
+            btn6.setId("true");
             btnImg6.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             lightvalue.setBtnImage6(getClass().getResource("images/light_on.png").toString());
             return;
-        } else if (btn6.getId().equals("false")) {
-            btn6.setId("true");
+        } else if (btn6.getId().equals("true")) {
+            btn6.setId("false");
             btnImg6.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             lightvalue.setBtnImage6(getClass().getResource("images/light_off.png").toString());
         }
     }
 
-
     private void handletrigger(MouseEvent e) {
         switchedOn.setValue(!switchedOn.getValue());
         
-        if (trigger.getUserData().equals("true")) {
+        if (trigger.getUserData().equals("false")) {
+            trigger.setUserData("true");
             lightvalue.setBtnAllSwitch(Boolean.valueOf(trigger.getUserData().toString()));
-            
-            trigger.setUserData("false");
             
             lblOnOff.setText("ON");
             lblOnOff.setAlignment(Pos.CENTER_RIGHT);
             lightvalue.setLblOnOff(lblOnOff.getText());
-            
-            
+                        
             btnImg1.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg2.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg3.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg4.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg5.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg6.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
-            
             lightvalue.setBtnImage1(getClass().getResource("images/light_on.png").toString());
             lightvalue.setBtnImage2(getClass().getResource("images/light_on.png").toString());
             lightvalue.setBtnImage3(getClass().getResource("images/light_on.png").toString());
@@ -274,11 +265,10 @@ public class LightController implements Initializable {
             lightvalue.setBtnImage6(getClass().getResource("images/light_on.png").toString());
            
             return;
-        } else if (trigger.getUserData().equals("false")) {
             
+        } else if (trigger.getUserData().equals("true")) {
+            trigger.setUserData("false");
             lightvalue.setBtnAllSwitch(Boolean.valueOf(trigger.getUserData().toString()));
-
-            trigger.setUserData("true");
 
             lblOnOff.setText("OFF");
             lblOnOff.setAlignment(Pos.CENTER_LEFT);
@@ -297,8 +287,6 @@ public class LightController implements Initializable {
             lightvalue.setBtnImage5(getClass().getResource("images/light_off.png").toString());
             lightvalue.setBtnImage6(getClass().getResource("images/light_off.png").toString());
             
-
-            //lightvalue.setBtnAll(lightAll.getText());
         }
     }
 

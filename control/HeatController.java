@@ -85,19 +85,7 @@ public class HeatController implements Initializable {
     @FXML
     private Label lblTempControlC;
 
-    public BooleanProperty switchedOnProperty() {
-        return switchedOn;
-    }
-    public BooleanProperty switchedOnProperty2() {
-        return switchedOn2;
-    }
-    public BooleanProperty switchedOnProperty3() {
-        return switchedOn3;
-    }
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 20);
@@ -127,7 +115,6 @@ public class HeatController implements Initializable {
         lblTempControl.setText(lblTemp.getText());
         btnTempUp.setOnAction(e -> handleBtnTempup(e));
         btnTempDown.setOnAction(e -> handleBtnTempdown(e));
-        
         
         translateAnimation.setNode(trigger1);
         fillAnimation.setShape(background1);
@@ -204,16 +191,12 @@ public class HeatController implements Initializable {
     }
 
     private void handleBtnTempup(ActionEvent e) {
-        
         int tempchange = Integer.parseInt(lblTempControl.getText());
-      
         lblTempControl.setText(String.valueOf(tempchange + 1));
-       
     }
 
     private void handleBtnTempdown(ActionEvent e) {
         int tempchange = Integer.parseInt(lblTempControl.getText());
-      
         lblTempControl.setText(String.valueOf(tempchange - 1));
     }
 

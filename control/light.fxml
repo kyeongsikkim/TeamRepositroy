@@ -12,11 +12,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="light" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.control.LightController">
+<BorderPane fx:id="light" prefHeight="420.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.control.LightController">
    <center>
       <BorderPane prefHeight="210.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <center>
-            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="800.0" spacing="145.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0" spacing="145.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="lblRoomName1" text="Room 1" />
                   <Label fx:id="lblRoomName2" text="Room 2" />
@@ -27,36 +27,33 @@
                </padding></HBox>
          </center>
          <top>
-            <HBox alignment="CENTER_LEFT" prefHeight="175.0" prefWidth="800.0" spacing="30.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="800.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="true" fx:id="btn1" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                  <Button id="false" fx:id="btn1" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fx:id="btnImg1" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/light_off.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button id="true" fx:id="btn2" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                  <Button id="false" fx:id="btn2" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fx:id="btnImg2" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/light_off.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button id="true" fx:id="btn3" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                  <Button id="false" fx:id="btn3" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fx:id="btnImg3" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/light_off.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane>
                      <children>
                         <Rectangle fx:id="background" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" />
-                        <Circle fx:id="trigger" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" userData="true">
+                        <Circle fx:id="trigger" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" userData="false">
                            <effect>
                               <DropShadow />
                            </effect>
@@ -79,17 +76,14 @@
                <padding>
                   <Insets left="50.0" />
                </padding>
-<!--               <padding>`
-                  <Insets left="50.0" />
-               </padding>-->
             </HBox>
          </top>
       </BorderPane>
    </center>
    <bottom>
-      <BorderPane prefHeight="210.0" prefWidth="785.0" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="210.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <center>
-            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="800.0" spacing="145.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="800.0" spacing="145.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="lblRoomName4" text="Room 4" />
                   <Label fx:id="lblRoomName5" text="Room 5" />
@@ -102,27 +96,24 @@
          <top>
             <HBox alignment="CENTER_LEFT" prefHeight="175.0" prefWidth="800.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="true" fx:id="btn4" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                  <Button id="false" fx:id="btn4" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fx:id="btnImg4" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/light_off.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button id="true" fx:id="btn5" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                  <Button id="false" fx:id="btn5" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fx:id="btnImg5" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/light_off.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button id="true" fx:id="btn6" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                  <Button id="false" fx:id="btn6" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fx:id="btnImg6" fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/light_off.png" />
                            </image>
                         </ImageView>
                      </graphic>

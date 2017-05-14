@@ -20,9 +20,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 import static mainDisplay.control.ControlController.gasvalue;
-import static mainDisplay.control.ControlController.lightvalue;
 
 public class GasController implements Initializable {
 
@@ -45,12 +45,13 @@ public class GasController implements Initializable {
     @FXML
     private Label lblOnOff;
     
-    public BooleanProperty switchedOnProperty() {
-        return switchedOn;
-    }
-    
+        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 18);
+
+        lblWarning.setFont(font1);
+        
         if (gasvalue.getGasImage()==null) {
             gasImage.setImage(new Image(getClass().getResource("images/gasoff.png").toString()));
         } else{
@@ -59,9 +60,9 @@ public class GasController implements Initializable {
         
         
         if (gasvalue.getBtnAllSwitch()==false) {
-            trigger.setUserData("true");
-        } else {
             trigger.setUserData("false");
+        } else {
+            trigger.setUserData("true");
             trigger.setCenterX(50);
            background.setFill(Color.WHEAT);
         }
@@ -76,9 +77,6 @@ public class GasController implements Initializable {
         
         lblWarning.setText(" * 경 고 * 외출 시 가스밸브를 잠가 주시기 바랍니다. ");
         lblWarning.setTextFill(Color.DARKRED);
-
-        
-//        btnOnOff.setOnAction(e -> handleBtnOnOffAction(e));
 
         translateAnimation.setNode(trigger);
         fillAnimation.setShape(background);
@@ -114,25 +112,21 @@ public class GasController implements Initializable {
     private void handletrigger(MouseEvent e) {
         switchedOn.setValue(!switchedOn.getValue());
         
-        if (trigger.getUserData().equals("true")) {
+        if (trigger.getUserData().equals("false")) {
+            trigger.setUserData("true");
             gasvalue.setBtnAllSwitch(Boolean.valueOf(trigger.getUserData().toString()));
-            
-            trigger.setUserData("false");
 
             lblOnOff.setText("ON");
             lblOnOff.setAlignment(Pos.CENTER_RIGHT);
-            String direction="Pos.CENTER_RIGHT";
             gasvalue.setLblOnOff(lblOnOff.getText());
             
             gasImage.setImage(new Image(getClass().getResource("images/gason.png").toString()));
             gasvalue.setGasImage(getClass().getResource("images/gason.png").toString());
 
             return;
-        } else if (trigger.getUserData().equals("false")) {
-            
+        } else if (trigger.getUserData().equals("true")) {
+            trigger.setUserData("false");
             gasvalue.setBtnAllSwitch(Boolean.valueOf(trigger.getUserData().toString()));
-
-            trigger.setUserData("true");
 
             lblOnOff.setText("OFF");
             lblOnOff.setAlignment(Pos.CENTER_LEFT);

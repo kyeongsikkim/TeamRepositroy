@@ -19,15 +19,14 @@
                 <Insets left="100.0" />
             </BorderPane.margin>
             <image>
-                <!--            <Image url="@images/gas_off.png" />-->
             </image>
         </ImageView>
     </left>
     <right>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+        <AnchorPane prefHeight="199.0" prefWidth="232.0">
             <children>
                 <Rectangle fx:id="background" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" />
-                <Circle fx:id="trigger" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" userData="true">
+                <Circle fx:id="trigger" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" userData="false">
                     <effect>
                         <DropShadow />
                     </effect>
@@ -45,7 +44,7 @@
                 <Insets left="30.0" top="100.0" />
             </HBox.margin>
          <BorderPane.margin>
-            <Insets top="150.0" />
+            <Insets top="180.0" />
          </BorderPane.margin>
         </AnchorPane>
     </right>
