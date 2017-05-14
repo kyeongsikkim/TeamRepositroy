@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="480.0" prefWidth="800.0" styleClass="controlbackground" stylesheets="@control.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch17.control.ControlController">
+<BorderPane prefHeight="480.0" prefWidth="800.0" styleClass="controlbackground" stylesheets="@control.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.control.ControlController">
    <top>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
@@ -20,7 +20,7 @@
                <graphic>
                   <HBox alignment="CENTER">
                      <children>
-                        <Label text="L i g h t" HBox.hgrow="ALWAYS" />
+                        <Label text="전 등" HBox.hgrow="ALWAYS" />
                         <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@images/toggle_light.png" />

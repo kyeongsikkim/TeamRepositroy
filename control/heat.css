@@ -4,20 +4,19 @@
         -fx-background-color:white;
 }
 .labelLeft{
-    -fx-font: 15 arial;
+    
     -fx-font-weight: bold;
 }
 
 .button{
     -fx-color: paleturquoise;
-    -fx-font: 20 arial; 
-    -fx-font-weight: bold;
-    -fx-text-fill: black;
+     
+    
     -fx-background-color: linear-gradient(wheat,blanchedalmond);
     -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); 
 }
 
-.button:armed{
+.button:focused{
     -fx-background-color:
         -fx-shadow-highlight-color,
         linear-gradient(to bottom, derive(-fx-color,-22%) 0%, derive(-fx-color,-15%) 100%),

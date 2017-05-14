@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ch17.control;
+package mainDisplay.control;
 
-/**
- *
- * @author 602
- */
 public class light {
     private String btnImage1;
     private String btnImage2;
@@ -16,14 +7,23 @@ public class light {
     private String btnImage4;
     private String btnImage5;
     private String btnImage6;
-    private String btnAll;
-    private String btnAllSwitch;
+    
+    private boolean btnAllSwitch;
+    private String lblOnOff;
 
-    public String getBtnAllSwitch() {
+    public String getLblOnOff() {
+        return lblOnOff;
+    }
+
+    public void setLblOnOff(String lblOnOff) {
+        this.lblOnOff = lblOnOff;
+    }
+
+    public boolean getBtnAllSwitch() {
         return btnAllSwitch;
     }
 
-    public void setBtnAllSwitch(String btnAllSwitch) {
+    public void setBtnAllSwitch(boolean btnAllSwitch) {
         this.btnAllSwitch = btnAllSwitch;
     }
 
@@ -74,15 +74,6 @@ public class light {
     public void setBtnImage6(String btnImage6) {
         this.btnImage6 = btnImage6;
     }
-
-    public String getBtnAll() {
-        return btnAll;
-    }
-
-    public void setBtnAll(String btnAll) {
-        this.btnAll = btnAll;
-    }
-
     
     
 }

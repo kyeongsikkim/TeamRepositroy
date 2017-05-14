@@ -1,18 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ch17.control;
+package mainDisplay.control;
 
-/**
- *
- * @author 602
- */
 public class gas {
     private String gasImage;
     private String gasOnOff;
 
+    private boolean btnAllSwitch;
+    private String lblOnOff;
+
+    public String getLblOnOff() {
+        return lblOnOff;
+    }
+
+    public void setLblOnOff(String lblOnOff) {
+        this.lblOnOff = lblOnOff;
+    }
+    
+    public boolean isBtnAllSwitch() {
+        return btnAllSwitch;
+    }
+
+     public boolean getBtnAllSwitch() {
+        return btnAllSwitch;
+    }
+     
+    public void setBtnAllSwitch(boolean btnAllSwitch) {
+        this.btnAllSwitch = btnAllSwitch;
+    }
+    
     public String getGasImage() {
         return gasImage;
     }
