@@ -65,7 +65,7 @@ public class ReceiveMainController implements Initializable {
             mediaPlayer.dispose();
         }
 
-        media = new Media(getClass().getResource("sounds/bell1.mp3").toString());
+        media = new Media(getClass().getResource("sounds/openDoor.mp3").toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
 
