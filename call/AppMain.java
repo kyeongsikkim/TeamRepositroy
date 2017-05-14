@@ -1,4 +1,4 @@
-package callDisplay;
+package mainDisplay.call;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +23,7 @@ public class AppMain extends Application {
             System.out.println("Close...");
         });
         
-        primaryStage.show();
+        primaryStage.show(); 
     }
     
     public static void main(String[] args) {

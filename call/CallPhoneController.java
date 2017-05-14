@@ -1,4 +1,4 @@
-package callDisplay;
+package mainDisplay.call;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -77,13 +77,11 @@ public class CallPhoneController implements Initializable {
                     System.out.println("전화걸기");
                     lblState.setText("연결 중...");
                     imgCall.setImage(new Image(getClass().getResource("images/disconnect.png").toString()));
-                    //btnCall.setText("호출 종료");
                     btnBack.setDisable(true);
                     dial.setDisable(true);
                 } else {
                     System.out.println("전화끊기");
                     btnBack.setDisable(false);
-                    //btnCall.setText("호출");
                     imgCall.setImage(new Image(getClass().getResource("images/connect.png").toString()));
                     lblState.setText("             ");
                     textArea.clear();
