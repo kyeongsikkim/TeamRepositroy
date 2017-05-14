@@ -24,11 +24,10 @@ public class ReceivePopupController implements Initializable {
     @FXML
     private Pane select;
     @FXML
-    private Button btn1;
+    private ToggleButton btn1;
     @FXML
-    private Button btn2;
-    @FXML
-    private Button btn3;
+    private ToggleButton btn2;
+
     @FXML
     private Label lblReceive;
     @FXML
@@ -48,6 +47,10 @@ public class ReceivePopupController implements Initializable {
     private Timeline timeline;
     private Duration time = Duration.ZERO;
     private boolean active;
+    @FXML
+    private ToggleGroup callMenu;
+    @FXML
+    private ToggleButton btn3;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {       
@@ -92,6 +95,8 @@ public class ReceivePopupController implements Initializable {
         btn3.setOnAction(event -> {
             lblReceive.setText("경비실입니다. ");
         });
+        
+        btn2.setSelected(true);
 
         callState.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
