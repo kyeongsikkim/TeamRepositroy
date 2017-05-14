@@ -89,8 +89,8 @@ public class ExitsettingController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // 폰트 설정 
         Font font = new Font(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 14);
-        lblGetinText.setFont(font);
-        lblGetoutText.setFont(font);
+        //lblGetinText.setFont(font);
+        //lblGetoutText.setFont(font);
         checkGas.setFont(font);
         checkHeater.setFont(font);
         checkFlame.setFont(font);
