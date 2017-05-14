@@ -6,13 +6,13 @@
 
 #btnSlide {
     -fx-background-image: url("images/doubleleft.png");
-    -fx-background-size: 100%;
+    -fx-background-size: 100% 90%;
     -fx-background-repeat: no-repeat;
     -fx-background-position: 0 50%;
     -fx-background-color: transparent;
 }
 
-#vboxHome {
-    -fx-background-color: #999999;
-    -fx-opacity: 0.7;
+#hboxHome {
+    -fx-background-color: #aaaaaa;
+    -fx-background-radius: 10 0 0 10;
 }

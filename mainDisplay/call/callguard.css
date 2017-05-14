@@ -1,0 +1,8 @@
+#button{
+    -fx-background-color: transparent;
+}
+
+.label{
+    -fx-text-fill: plum;
+    -fx-font-size: 32;
+}

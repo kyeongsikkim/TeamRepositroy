@@ -19,17 +19,17 @@ import javafx.stage.Popup;
 public class NoticeController implements Initializable {
 
     @FXML
-    private Label labelNoticeName;
-    @FXML
     private Button btnNoticeDelete;
     @FXML
     private Button btnNoticeOpen;
+    @FXML
+    private Label labelNoticeName;
     @FXML
     private TableView<Notice> tableViewNotice;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Font subFont = Font.loadFont(getClass().getResource("fonts/NanumBarunGothic.ttf").toExternalForm(), 12);
+        Font subFont = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 12);
         btnNoticeDelete.setFont(subFont);
         btnNoticeOpen.setFont(subFont);
         labelNoticeName.setFont(subFont);
@@ -38,7 +38,6 @@ public class NoticeController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Notice> observable, Notice oldValue, Notice newValue) {
                 Popup popup = new Popup();
-
                 btnNoticeOpen.setOnAction((e) -> {
                     try {
                         Parent parent = FXMLLoader.load(getClass().getResource("noticePopup.fxml"));
@@ -50,23 +49,24 @@ public class NoticeController implements Initializable {
                         labelTitle.setText("제목: " + newValue.getTitle());
                         labelDate.setText("일시: " + newValue.getDate());
                         areaNotice.setText(newValue.getContent());
-						areaNotice.setEditable(false);
+                        areaNotice.setEditable(false);
 
                         popup.getContent().add(parent);
                         popup.setAutoHide(true);
                         popup.show(AppMain.primaryStage);
-                        
+
                         btnClose.setOnAction((event) -> {
                             popup.hide();
                         });
                     } catch (IOException ex) {
                     }
                 });
-                
+
                 btnNoticeDelete.setOnAction((e) -> {
                     MainDisplayController.list.remove(newValue);
                 });
             }
         });
     }
-}   
+
+}

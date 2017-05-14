@@ -1,0 +1,23 @@
+#call{
+    -fx-background-image:url("images/background01.jpg");
+    -fx-background-size:stretch;
+}
+
+.menu-button{
+    -fx-background-color: rgba(68,68,68,0.5);
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.label{
+    -fx-text-fill: white;
+}
+
+
+.menu-button:selected{
+    -fx-background-color:lightcoral;
+}
+
+
+

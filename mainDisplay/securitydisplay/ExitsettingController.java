@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -22,11 +24,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.scene.text.Font;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import mainDisplay.setting.Status;
 
 public class ExitsettingController implements Initializable {
 
@@ -49,16 +51,16 @@ public class ExitsettingController implements Initializable {
     private ImageView lowerImage2;
 
     @FXML
-    private Button btnExitSetting;
-
-    @FXML
-    private CheckBox checkMotion;
-
-    @FXML
     private CheckBox checkGas;
 
     @FXML
     private CheckBox checkHeater;
+
+    @FXML
+    private CheckBox checkFlame;
+
+    @FXML
+    private Button btnExitSetting;
 
     @FXML
     private Button btnHighEnter;
@@ -73,33 +75,137 @@ public class ExitsettingController implements Initializable {
     private Button btnLowLeave;
 
     @FXML
-    private MediaView soundlock;
-
-    @FXML
-    private MediaView soundunlock;
-
-    @FXML
     private TextField txtGetinTime;
 
     @FXML
     private TextField txtGetoutTime;
 
-    @FXML
-    private CheckBox btnFlame;
+    private MediaPlayer mediaPlayer1;
+
+    private MediaPlayer mediaPlayer2;
+
+    static DataSaved data = new DataSaved();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Font font =
-        // Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-Medium.otf").toExternalForm(),6);
-        // lblGetinText.setFont(font);
+        // 폰트 설정 
+        Font font = new Font(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 14);
+        //lblGetinText.setFont(font);
+        //lblGetoutText.setFont(font);
+        checkGas.setFont(font);
+        checkHeater.setFont(font);
+        checkFlame.setFont(font);
+        btnExitSetting.setFont(font);
+        txtGetinTime.setFont(font);
+        txtGetoutTime.setFont(font);
 
+        // 초기 설정값 불러오기
+        if (data.getTxtGetin() == null) {
+            data.setTxtGetin("10분");
+        }
+        txtGetinTime.setText(data.getTxtGetin());
+        if (data.getTxtGetout() == null) {
+            data.setTxtGetout("5분");
+        }
+        txtGetoutTime.setText(data.getTxtGetout());
+
+        if (data.getCheckGas() == null) {
+            data.setCheckGas(false);
+        }
+        checkGas.selectedProperty().set(data.getCheckGas());
+
+        if (data.getCheckHeater() == null) {
+            data.setCheckHeater(false);
+        }
+        checkHeater.selectedProperty().set(data.getCheckHeater());
+
+        if (data.getCheckFlame() == null) {
+            data.setCheckFlame(false);
+        }
+        checkFlame.selectedProperty().set(data.getCheckFlame());
+
+        if (data.getBtnExitSetting() == null) {
+            data.setBtnExitSetting("설정");
+        }
+        btnExitSetting.setText(data.getBtnExitSetting());
+
+        if (data.getBtnHighEnter() == null) {
+            data.setBtnHighEnter(false);
+        }
+        btnHighEnter.disableProperty().set(data.getBtnHighEnter());
+
+        if (data.getBtnHighLeave() == null) {
+            data.setBtnHighLeave(false);
+        }
+        btnHighLeave.disableProperty().set(data.getBtnHighLeave());
+
+        if (data.getBtnLowEnter() == null) {
+            data.setBtnLowEnter(false);
+        }
+        btnLowEnter.disableProperty().set(data.getBtnLowEnter());
+
+        if (data.getBtnLowLeave() == null) {
+            data.setBtnLowLeave(false);
+        }
+        btnLowLeave.disableProperty().set(data.getBtnLowLeave());
+
+        if (data.getCheckGasDisable() == null) {
+            data.setCheckGasDisable(false);
+        }
+        checkGas.disableProperty().set(data.getCheckGasDisable());
+
+        if (data.getCheckHeaterDisable() == null) {
+            data.setCheckHeaterDisable(false);
+        }
+        checkHeater.disableProperty().set(data.getCheckHeaterDisable());
+
+        if (data.getCheckFlameDisable() == null) {
+            data.setCheckFlameDisable(false);
+        }
+        checkFlame.disableProperty().set(data.getCheckFlameDisable());
+
+        checkGas.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (newValue == true) {
+                    data.setCheckGas(newValue);
+                }
+                data.setCheckGas(newValue);
+            }
+        });
+
+        checkHeater.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (newValue == true) {
+                    data.setCheckHeater(newValue);
+                }
+                data.setCheckHeater(newValue);
+            }
+        });
+
+        checkFlame.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (newValue == true) {
+                    data.setCheckFlame(newValue);
+                }
+                data.setCheckFlame(newValue);
+            }
+        });
+
+        /*
+        Font font = Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-Medium.otf").toExternalForm(), 6);
+        lblGetinText.setFont(font);
+        lblGetoutText.setFont(font);
+         */
         // 입실(퇴실)지연조절 화살표 이미지 처리 코드
-        Image upperImage = new Image(getClass().getResource("image/upper arrow.png").toString());
-        Image lowerImage = new Image(getClass().getResource("image/lower arrow.png").toString());
-        upperImage1.setImage(upperImage);
-        upperImage2.setImage(upperImage);
-        lowerImage1.setImage(lowerImage);
-        lowerImage2.setImage(lowerImage);
+        Image lowerImage = new Image(getClass().getResource("image/arrow_left.png").toString());
+        Image upperImage = new Image(getClass().getResource("image/arrow_right.png").toString());
+        upperImage1.setImage(lowerImage);
+        upperImage2.setImage(lowerImage);
+        lowerImage1.setImage(upperImage);
+        lowerImage2.setImage(upperImage);
 
         btnExitSetting.setOnAction(event -> {
             try {
@@ -114,13 +220,15 @@ public class ExitsettingController implements Initializable {
         btnHighEnter.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                String str = txtGetinTime.getText();
-                String[] str1 = str.split("초");
+                String[] str1 = txtGetinTime.getText().split("분");
                 int second = Integer.parseInt(str1[0]);
-                txtGetinTime.setText(second + 5 + "초");
-                if (second >= 255) {
-                    txtGetinTime.setText("255초");
+                txtGetinTime.setText(second + 1 + "분");
+                data.setTxtGetin(txtGetinTime.getText());
+                if (second >= 20) {
+                    txtGetinTime.setText("20분");
+                    data.setTxtGetin(txtGetinTime.getText());
                 }
+
             }
         });
 
@@ -128,12 +236,13 @@ public class ExitsettingController implements Initializable {
         btnLowEnter.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                String str = txtGetinTime.getText();
-                String[] str1 = str.split("초");
+                String[] str1 = txtGetinTime.getText().split("분");
                 int second = Integer.parseInt(str1[0]);
-                txtGetinTime.setText(second - 5 + "초");
+                txtGetinTime.setText(second - 1 + "분");
+                data.setTxtGetin(txtGetinTime.getText());
                 if (second <= 0) {
-                    txtGetinTime.setText("0초");
+                    txtGetinTime.setText("0분");
+                    data.setTxtGetin(txtGetinTime.getText());
                 }
             }
         });
@@ -142,12 +251,13 @@ public class ExitsettingController implements Initializable {
         btnHighLeave.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                String str = txtGetoutTime.getText();
-                String[] str1 = str.split("초");
+                String[] str1 = txtGetoutTime.getText().split("분");
                 int second = Integer.parseInt(str1[0]);
-                txtGetoutTime.setText(second + 5 + "초");
-                if (second >= 255) {
-                    txtGetoutTime.setText("255초");
+                txtGetoutTime.setText(second + 1 + "분");
+                data.setTxtGetout(txtGetoutTime.getText());
+                if (second >= 20) {
+                    txtGetoutTime.setText("20분");
+                    data.setTxtGetout(txtGetoutTime.getText());
                 }
             }
         });
@@ -157,11 +267,13 @@ public class ExitsettingController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 String str = txtGetoutTime.getText();
-                String[] str1 = str.split("초");
+                String[] str1 = str.split("분");
                 int second = Integer.parseInt(str1[0]);
-                txtGetoutTime.setText(second - 5 + "초");
+                txtGetoutTime.setText(second - 1 + "분");
+                data.setTxtGetout(txtGetoutTime.getText());
                 if (second <= 0) {
-                    txtGetoutTime.setText("0초");
+                    txtGetoutTime.setText("0분");
+                    data.setTxtGetout(txtGetoutTime.getText());
                 }
             }
         });
@@ -169,6 +281,15 @@ public class ExitsettingController implements Initializable {
 
     // 외출/재택방범 설정 버튼 이벤트 처리
     private void handleBtnExitSetting(ActionEvent event) throws IOException {
+
+        // audio파일 재생 초기화
+        if (btnExitSetting.getText().equals("설정")) {
+            Media media = new Media(getClass().getResource("media/외출-재택방범이_설정되었습니다.mp3").toString());
+            mediaPlayer1 = new MediaPlayer(media);
+        } else if (btnExitSetting.getText().equals("해제")) {
+            Media media = new Media(getClass().getResource("media/해제되었습니다.mp3").toString());
+            mediaPlayer2 = new MediaPlayer(media);
+        }
 
         if (btnExitSetting.getText().equals("설정")) {
             Stage primaryStage = (Stage) btnExitSetting.getScene().getWindow();
@@ -189,25 +310,36 @@ public class ExitsettingController implements Initializable {
                 }
 
             });
+
             confirm.setOnAction(new EventHandler<ActionEvent>() {
 
                 @Override
                 public void handle(ActionEvent event) {
-                    if (PasswordController.password.equals(password.getText())) {
-                        btnExitSetting.setText("해제");
-                        Media media = new Media(getClass().getResource("media/외출-재택방범이_설정되었습니다.mp3").toString());
-                        MediaPlayer mediaPlayer = new MediaPlayer(media);
-                        soundlock.setMediaPlayer(mediaPlayer);
-                        mediaPlayer.play();
 
-                        checkMotion.setDisable(true);
+                    if (Status.sta.getTxtPass().equals(password.getText())) {
+                        btnExitSetting.setText("해제");
+                        data.setBtnExitSetting(btnExitSetting.getText());
+                        mediaPlayer1.play();
+
+                        if (mediaPlayer2 != null) {
+                            mediaPlayer2.stop();
+                        }
+
                         checkGas.setDisable(true);
+                        checkFlame.setDisable(true);
                         checkHeater.setDisable(true);
                         btnLowEnter.setDisable(true);
                         btnHighEnter.setDisable(true);
                         btnLowLeave.setDisable(true);
                         btnHighLeave.setDisable(true);
-                        btnFlame.setDisable(true);
+
+                        data.setBtnHighEnter(btnHighEnter.disableProperty().get());
+                        data.setBtnHighLeave(btnHighLeave.disableProperty().get());
+                        data.setBtnLowEnter(btnLowEnter.disableProperty().get());
+                        data.setBtnLowLeave(btnLowLeave.disableProperty().get());
+                        data.setCheckGasDisable(checkGas.disableProperty().get());
+                        data.setCheckHeaterDisable(checkHeater.disableProperty().get());
+                        data.setCheckFlameDisable(checkFlame.disableProperty().get());
 
                         popup.hide();
 
@@ -232,7 +364,7 @@ public class ExitsettingController implements Initializable {
 
                             Timeline timeline = new Timeline();
                             KeyValue keyValue = new KeyValue(parent.translateYProperty(), 20);
-                            KeyFrame keyFrame = new KeyFrame(Duration.millis(1000), keyValue);
+                            KeyFrame keyFrame = new KeyFrame(Duration.millis(10), keyValue);
                             timeline.getKeyFrames().add(keyFrame);
                             timeline.play();
 
@@ -247,21 +379,30 @@ public class ExitsettingController implements Initializable {
 
         } else if (btnExitSetting.getText().equals("해제")) {
 
-            Media media = new Media(getClass().getResource("media/해제되었습니다.mp3").toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(media);
-            soundunlock.setMediaPlayer(mediaPlayer);
-            mediaPlayer.play();
+            mediaPlayer2.play();
 
-            checkMotion.setDisable(false);
+            if (mediaPlayer1 != null) {
+                mediaPlayer1.stop();
+            }
+
             checkGas.setDisable(false);
+            checkFlame.setDisable(false);
             checkHeater.setDisable(false);
             btnLowEnter.setDisable(false);
             btnHighEnter.setDisable(false);
             btnLowLeave.setDisable(false);
             btnHighLeave.setDisable(false);
-            btnFlame.setDisable(false);
+
+            data.setBtnHighEnter(btnHighEnter.disableProperty().get());
+            data.setBtnHighLeave(btnHighLeave.disableProperty().get());
+            data.setBtnLowEnter(btnLowEnter.disableProperty().get());
+            data.setBtnLowLeave(btnLowLeave.disableProperty().get());
+            data.setCheckGasDisable(checkGas.disableProperty().get());
+            data.setCheckHeaterDisable(checkHeater.disableProperty().get());
+            data.setCheckFlameDisable(checkFlame.disableProperty().get());
 
             btnExitSetting.setText("설정");
+            data.setBtnExitSetting(btnExitSetting.getText());
         }
     }
 }

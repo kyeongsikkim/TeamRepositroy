@@ -12,11 +12,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="mainBackground" id="mainBackground" prefHeight="480.0" prefWidth="800.0" stylesheets="@mainDisplay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.MainDisplayController">
+<AnchorPane id="mainBackground" fx:id="mainBackground" prefHeight="480.0" prefWidth="800.0" stylesheets="@mainDisplay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.MainDisplayController">
    <children>
       <StackPane id="stackPane" fx:id="stackPane" prefHeight="480.0" prefWidth="800.0" style="-fx-background-color: transparent;">
          <children>
-            <AnchorPane fx:id="anchorPane" prefHeight="445.0" prefWidth="451.0">
+            <AnchorPane fx:id="anchorPane" prefHeight="480.0" prefWidth="800.0">
                <children>
                   <Label fx:id="labelMainDate" layoutX="468.0" layoutY="14.0" prefHeight="30.0" text="04월 30일(일)" textFill="#dddddd">
                      <font>
@@ -28,9 +28,9 @@
                         <Font name="Franklin Gothic Book" size="56.0" />
                      </font>
                   </Label>
-                  <Button id="mainBtn" fx:id="btnMainElevator" alignment="CENTER" layoutX="95.0" layoutY="145.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+                  <Button fx:id="btnMainElevator" alignment="CENTER" layoutX="95.0" layoutY="145.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" styleClass="mainBtn">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="125.0" prefWidth="125.0">
+                        <Label alignment="CENTER" prefHeight="125.0" prefWidth="125.0" styleClass="mainBtnLabel">
                            <effect>
                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                            </effect>
@@ -48,9 +48,9 @@
                         </Label>
                      </graphic>
                   </Button>
-                  <Button id="mainBtn" fx:id="btnMainOpenDoor" alignment="CENTER" layoutX="325.0" layoutY="145.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+                  <Button fx:id="btnMainOpenDoor" alignment="CENTER" layoutX="325.0" layoutY="145.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" styleClass="mainBtn">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="125.0" prefWidth="125.0">
+                        <Label alignment="CENTER" prefHeight="125.0" prefWidth="125.0" styleClass="mainBtnLabel">
                            <graphic>
                               <Label id="mainBtnColor2" alignment="CENTER" prefHeight="90.0" prefWidth="90.0">
                                  <graphic>
@@ -68,9 +68,9 @@
                         </Label>
                      </graphic>
                   </Button>
-                  <Button id="mainBtn" fx:id="btnMainInterphone" alignment="CENTER" layoutX="555.0" layoutY="145.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+                  <Button fx:id="btnMainInterphone" alignment="CENTER" layoutX="555.0" layoutY="145.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" styleClass="mainBtn">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="125.0" prefWidth="125.0">
+                        <Label alignment="CENTER" prefHeight="125.0" prefWidth="125.0" styleClass="mainBtnLabel">
                            <effect>
                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                            </effect>
@@ -88,14 +88,14 @@
                         </Label>
                      </graphic>
                   </Button>
-                  <Label fx:id="labelMainBtnName5" alignment="BOTTOM_LEFT" layoutX="58.0" layoutY="441.0" prefHeight="30.0" prefWidth="112.0" text="공지서버 연결" textFill="WHITE">
+                  <Label fx:id="labelMainBtnName5" alignment="BOTTOM_LEFT" layoutX="50.0" layoutY="447.0" prefHeight="30.0" prefWidth="112.0" text="공지서버 연결" textFill="WHITE">
                      <padding>
                         <Insets bottom="2.0" left="5.0" />
                      </padding>
                   </Label>
-                  <Button id="mainSubBtn" fx:id="btnMainMenuLock" alignment="CENTER" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="btnMainMenuLock" alignment="CENTER" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" styleClass="mainSubBtn">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="75.0" prefWidth="75.0">
+                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" styleClass="mainBtnLabel">
                            <effect>
                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                            </effect>
@@ -113,9 +113,9 @@
                         </Label>
                      </graphic>
                   </Button>
-                  <Button id="mainSubBtn" fx:id="btnMainMenuSetting" alignment="CENTER" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="btnMainMenuSetting" alignment="CENTER" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" styleClass="mainSubBtn">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="75.0" prefWidth="75.0">
+                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" styleClass="mainBtnLabel">
                            <effect>
                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                            </effect>
@@ -133,9 +133,9 @@
                         </Label>
                      </graphic>
                   </Button>
-                  <Button id="mainSubBtn" fx:id="btnMainMenuControl" alignment="CENTER" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="btnMainMenuControl" alignment="CENTER" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" styleClass="mainSubBtn">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="75.0" prefWidth="75.0">
+                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" styleClass="mainBtnLabel">
                            <effect>
                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                            </effect>
@@ -153,9 +153,9 @@
                         </Label>
                      </graphic>
                   </Button>
-                  <Button id="mainSubBtn" fx:id="btnMainMenuCall" alignment="CENTER" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="btnMainMenuCall" alignment="CENTER" layoutX="356.0" layoutY="381.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" styleClass="mainSubBtn">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="75.0" prefWidth="75.0">
+                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" styleClass="mainBtnLabel">
                            <effect>
                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                            </effect>
@@ -209,9 +209,9 @@
                         <Insets bottom="2.0" />
                      </padding>
                   </Label>
-                  <Button id="mainBtn" fx:id="btnMainMenu" alignment="CENTER" layoutX="345.0" layoutY="360.0" mnemonicParsing="false" prefHeight="112.0" prefWidth="112.0" userData="close">
+                  <Button fx:id="btnMainMenu" alignment="CENTER" layoutX="345.0" layoutY="360.0" mnemonicParsing="false" prefHeight="112.0" prefWidth="112.0" styleClass="mainBtn" userData="close">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="93.75" prefWidth="93.75">
+                        <Label alignment="CENTER" prefHeight="93.75" prefWidth="93.75" styleClass="mainBtnLabel">
                            <effect>
                               <DropShadow blurType="ONE_PASS_BOX" color="#ae9c9c85" height="1.0" offsetX="1.0" offsetY="1.0" radius="0.0" width="0.0" />
                            </effect>
@@ -238,9 +238,9 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button id="mainBtn" fx:id="btnMainConnect" alignment="CENTER" layoutX="13.0" layoutY="426.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" userData="disconnect">
+                  <Button fx:id="btnMainConnect" alignment="CENTER" layoutX="5.0" layoutY="430.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" styleClass="mainBtn" userData="disconnect">
                      <graphic>
-                        <Label id="mainBtnLabel" alignment="CENTER" prefHeight="32.0" prefWidth="32.0">
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="32.0" styleClass="mainConnBtnLabel">
                            <graphic>
                               <Label id="mainBtnColor5" alignment="CENTER" prefHeight="20.0" prefWidth="20.0">
                                  <graphic>
@@ -260,7 +260,7 @@
                         <Font name="MS Gothic" size="15.0" />
                      </font>
                   </Label>
-                  <Label id="labelMainSlide" fx:id="labelMainSlide" layoutX="80.0" layoutY="10.0" opacity="0.3" prefHeight="30.0" prefWidth="365.0" style="-fx-background-color: white;" text="Label">
+                  <Label id="labelMainSlide" fx:id="labelMainSlide" layoutX="80.0" layoutY="-30.0" opacity="0.3" prefHeight="30.0" prefWidth="365.0" style="-fx-background-color: white;" text="Label">
                      <padding>
                         <Insets left="12.0" />
                      </padding>

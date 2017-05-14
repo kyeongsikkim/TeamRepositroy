@@ -9,13 +9,11 @@ import javafx.stage.Stage;
 public class AppMain extends Application {
 
     public static Stage primaryStage;
-    public static AnchorPane mainAnchorPane;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         AppMain.primaryStage = primaryStage;
-        mainAnchorPane = FXMLLoader.load(getClass().getResource("mainDisplay.fxml"));
-
+        AnchorPane mainAnchorPane = FXMLLoader.load(getClass().getResource("mainDisplay.fxml"));
         Scene scene = new Scene(mainAnchorPane);
         primaryStage.setTitle("AppMain");
         primaryStage.setScene(scene);

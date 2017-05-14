@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane fx:id="gas" prefHeight="420.0" prefWidth="800.0" stylesheets="@gas.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.control.GasController">
+    <left>
+        <ImageView fx:id="gasImage" fitHeight="270.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" styleClass="gasImage" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets left="100.0" />
+            </BorderPane.margin>
+            <image>
+            </image>
+        </ImageView>
+    </left>
+    <right>
+        <AnchorPane prefHeight="199.0" prefWidth="232.0">
+            <children>
+                <Rectangle fx:id="background" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" />
+                <Circle fx:id="trigger" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" userData="false">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Label fx:id="lblOnOff" layoutY="60.0" prefWidth="100.0" styleClass="label">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+                </Label>
+            </children>
+            <HBox.margin>
+                <Insets left="30.0" top="100.0" />
+            </HBox.margin>
+         <BorderPane.margin>
+            <Insets top="170.0" />
+         </BorderPane.margin>
+        </AnchorPane>
+    </right>
+   <bottom>
+      <Label fx:id="lblWarning" text="Label" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </bottom>
+</BorderPane>

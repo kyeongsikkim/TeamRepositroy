@@ -22,7 +22,7 @@
         <items>
             <Button fx:id="btnNoticeDelete" mnemonicParsing="false" prefHeight="0.0" prefWidth="45.0" text="삭제" />
             <Button fx:id="btnNoticeOpen" mnemonicParsing="false" prefHeight="0.0" prefWidth="45.0" text="열기" />
-            <Label fx:id="labelNoticeName" nodeOrientation="LEFT_TO_RIGHT" prefHeight="15.0" prefWidth="285.0" text="공지" />
+            <Label fx:id="labelNoticeName" nodeOrientation="LEFT_TO_RIGHT" prefHeight="15.0" prefWidth="277.0" text="공지사항" />
         </items>
          <BorderPane.margin>
             <Insets />

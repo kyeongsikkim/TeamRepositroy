@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" stylesheets="@scene.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.setting.SceneController">
+   <center>
+      <VBox alignment="BOTTOM_RIGHT" prefHeight="614.0" prefWidth="952.0" spacing="10.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <HBox prefHeight="168.0" prefWidth="800.0">
+               <children>
+                  <Label fx:id="lbl1" alignment="CENTER" prefHeight="167.0" prefWidth="206.0" text="밝기" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="15.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <AnchorPane prefHeight="108.0" prefWidth="574.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Slider fx:id="sliderLight" layoutX="155.0" layoutY="64.0" prefHeight="14.0" prefWidth="315.0" showTickLabels="true" showTickMarks="true" />
+                        <ImageView fitHeight="60.0" fitWidth="92.0" layoutX="86.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/light.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="65.0" fitWidth="40.0" layoutX="35.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/substract.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="475.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/add.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="104.0" prefWidth="800.0">
+               <children>
+                  <Label fx:id="lbl2" alignment="CENTER" prefHeight="103.0" prefWidth="206.0" text="절전기능" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="btnSaveModeDown" alignment="CENTER" mnemonicParsing="false" prefHeight="103.0" prefWidth="94.0">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="88.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/left.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="txtSaveMode" alignment="CENTER" editable="false" prefHeight="103.0" prefWidth="295.0" text="3분">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnSaveModeUp" alignment="CENTER" mnemonicParsing="false" prefHeight="103.0" prefWidth="94.0" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fitHeight="88.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/right.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="234.0" prefWidth="800.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="170.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="140.0" prefWidth="800.0" spacing="32.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="lbl3" alignment="CENTER" prefHeight="144.0" prefWidth="206.0" text="배경화면" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <ImageView fitHeight="90.0" fitWidth="140.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@images/background.jpg" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView fitHeight="90.0" fitWidth="140.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@images/background2.jpg" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView fitHeight="91.0" fitWidth="140.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@images/background3.jpg" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <AnchorPane prefHeight="169.0" prefWidth="800.0">
+                           <children>
+                              <RadioButton fx:id="btnBackground1" layoutX="304.0" layoutY="6.0" mnemonicParsing="false" text="배경1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="select" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="btnBackground2" layoutX="478.0" layoutY="6.0" mnemonicParsing="false" text="배경2" toggleGroup="$select" />
+                              <RadioButton fx:id="btnBackground3" layoutX="652.0" layoutY="6.0" mnemonicParsing="false" text="배경3" toggleGroup="$select" />
+                              <Button fx:id="btnAccept" layoutX="685.0" layoutY="35.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="86.0" text="적용" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

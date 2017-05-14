@@ -1,6 +1,5 @@
 package mainDisplay.securitydisplay;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
@@ -20,6 +20,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.scene.text.Font;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
 
 public class CctvsettingController implements Initializable {
 
@@ -36,137 +39,136 @@ public class CctvsettingController implements Initializable {
     private ToggleButton btnPlayground;
 
     @FXML
+    private Label lblVisitlist;
+    
+    @FXML
     private Button btnList;
 
     @FXML
     private ToggleGroup menu1;
 
+    public static MediaPlayer mediaPlayerApt;
+
+    public static MediaPlayer mediaPlayerDoor;
+
+    public static MediaPlayer mediaPlayerPlayground;
+
+    public static AnchorPane listRoot;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnList.setOnAction(event -> handleBtnList(event));
+        
+        // 폰트 설정 코드
+        Font font = new Font(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 14);
+        btnApt.setFont(font);
+        btnDoor.setFont(font);
+        btnPlayground.setFont(font);
+        lblVisitlist.setFont(font);
 
         // ToggleButton ToggleGroup으로 이벤트 처리(mediaPlayer 음소거로 설정하여 영상만 보이게 함)
         menu1.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-                try {
-                    Media media = new Media(getClass().getResource("media/video.mp4").toString());
-                    MediaPlayer mediaPlayer = new MediaPlayer(media);
-                    mediaView.setMediaPlayer(mediaPlayer);
-
-                    //이 버튼이 제대로 작동하지 않음. 이거 질문
-                    Parent root = FXMLLoader.load(getClass().getResource("security_main.fxml"));
-                    ToggleButton btnExitTab = (ToggleButton) root.lookup("#btnExitSettingTab");
 
                     // 공동현관 ToggleButton 눌렀을 때
                     if (newValue == btnApt) {
-
-                        mediaPlayer.play();
+                        Media media = new Media(getClass().getResource("media/공동현관.m4v").toString());
+                        mediaPlayerApt = new MediaPlayer(media);
+                        mediaView.setMediaPlayer(mediaPlayerApt);
+                        mediaPlayerApt.play();
 
                         btnDoor.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
+                                mediaPlayerApt.stop();
                             }
                         });
+
                         btnPlayground.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
+                                mediaPlayerApt.stop();
                             }
                         });
 
-                        btnList.setOnAction(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
-                                try {
-                                    Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
-                                    AnchorPane root = (AnchorPane) btnList.getScene().getRoot();
-                                    root.getChildren().add(visitinglist);
-                                } catch (Exception e) {
-                                    // 개발 끝나면 이거 지워주기!
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
-                    } // 현관문 ToggleButton 눌렀을 때
+                    } // 주차장 ToggleButton 눌렀을 때
                     else if (newValue == btnDoor) {
-
-                        mediaPlayer.play();
+                        Media media = new Media(getClass().getResource("media/주차장.m4v").toString());
+                        mediaPlayerDoor = new MediaPlayer(media);
+                        mediaView.setMediaPlayer(mediaPlayerDoor);
+                        mediaPlayerDoor.play();
 
                         btnApt.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
+                                mediaPlayerDoor.stop();
                             }
                         });
                         btnPlayground.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
-                            }
-                        });
-                        btnList.setOnAction(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
-                                try {
-                                    Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
-                                    AnchorPane root = (AnchorPane) btnList.getScene().getRoot();
-                                    root.getChildren().add(visitinglist);
-                                } catch (Exception e) {
-                                    // 개발 끝나면 이거 지워주기!
-                                    e.printStackTrace();
-                                }
+                                mediaPlayerDoor.stop();
                             }
                         });
                     } // 놀이터 ToggleButton 눌렀을 때
                     else if (newValue == btnPlayground) {
-
-                        mediaPlayer.play();
+                        Media media = new Media(getClass().getResource("media/놀이터.m4v").toString());
+                        mediaPlayerPlayground = new MediaPlayer(media);
+                        mediaView.setMediaPlayer(mediaPlayerPlayground);
+                        mediaPlayerPlayground.play();
 
                         btnApt.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
+                                mediaPlayerPlayground.stop();
                             }
                         });
                         btnDoor.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
-                            }
-                        });
-                        btnList.setOnAction(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                mediaPlayer.stop();
-                                try {
-                                    Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
-                                    AnchorPane root = (AnchorPane) btnList.getScene().getRoot();
-                                    root.getChildren().add(visitinglist);
-                                } catch (Exception e) {
-                                    // 개발 끝나면 이거 지워주기!
-                                    e.printStackTrace();
-                                }
+                                mediaPlayerPlayground.stop();
                             }
                         });
                     }
-                } catch (IOException ioe) {
-                    // 개발 끝나면 지워주기
-                    ioe.printStackTrace();
+
+                    btnList.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            mediaPlayerApt.stop();
+                            mediaPlayerDoor.stop();
+                            mediaPlayerPlayground.stop();
+                            handleBtnList(event);
+                        }
+                    });
                 }
-            }
         });
     }
 
     // 방문목록 버튼 이벤트 처리
     private void handleBtnList(ActionEvent event) {
         try {
+            Stage primaryStage = (Stage) btnList.getScene().getWindow();
+            Popup popup = new Popup();
             Parent visitinglist = FXMLLoader.load(getClass().getResource("visitinglist.fxml"));
-            AnchorPane root = (AnchorPane) btnList.getScene().getRoot();
-            root.getChildren().add(visitinglist);
+            Button popupClose = (Button) visitinglist.lookup("#btnClose");
+            popupClose.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    popup.hide();
+                    if (btnApt.isSelected()) {
+                        mediaPlayerApt.play();
+                    } else if (btnDoor.isSelected()) {
+                        mediaPlayerDoor.play();
+                    } else if (btnPlayground.isSelected()) {
+                        mediaPlayerPlayground.play();
+                    }
+                }
+            });
+            popup.setHideOnEscape(true);
+            popup.getContent().add(visitinglist);
+            popup.show(primaryStage);
+
         } catch (Exception e) {
             // 개발 끝나면 이거 지워주기!
             e.printStackTrace();

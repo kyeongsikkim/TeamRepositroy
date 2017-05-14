@@ -1,12 +1,34 @@
 #mainBackground {
-/*    -fx-background-image: url("images/graybackground.jpg");
-    -fx-background-size: stretch;*/
-    -fx-background-color: #aaaaaa;
+    -fx-background-image: url("images/background01.jpg");
+    -fx-background-size: stretch;
+/*    -fx-background-color: #aaaaaa;*/
+    
 }
 
-#mainBtn {
+.mainBtn{
     -fx-background-radius: 75;
     -fx-border-radius: 75;
+    -fx-padding: 0;
+}
+
+.mainSubBtn {
+    -fx-background-radius: 45;
+    -fx-border-radius: 45;
+}
+
+.mainBtnLabel {
+    -fx-background-color: white;
+    -fx-background-radius: 60;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 60;
+}
+
+.mainConnBtnLabel {
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 30;
+		-fx-padding: 0;
 }
 
 #btnMainNotice {
@@ -36,19 +58,26 @@
 #mainBtnColor5 {
     -fx-background-color: linear-gradient(#ffff66, #ff9900);
     -fx-background-radius: 45;
+		-fx-margin: 0;
 }
 
-#mainBtnLabel {
-    -fx-background-color: white;
-    -fx-background-radius: 60;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 60;
+#btnHome {
+    -fx-background-image: url("images/home.png");
+    -fx-background-size: 100%; 
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-background-position: 0% 50% 
 }
 
-#mainSubBtn {
-    -fx-background-radius: 45;
-    -fx-border-radius: 45; 
+#btnSlide {
+    -fx-background-image: url("images/doubleleft.png");
+    -fx-background-size: 100%; 
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-background-position: 0% 50% 
 }
-/*reference {
-    -fx-background-color:linear-gradient(#00cc00); 
-}*/
+
+#vboxHome {
+    -fx-background-color:#888888;
+    -fx-opacity: 0.7;
+}

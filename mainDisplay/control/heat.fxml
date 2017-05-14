@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="heat" prefHeight="420.0" prefWidth="800.0" stylesheets="@heat.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.control.HeatController">
+   <left>
+      <VBox alignment="CENTER_RIGHT" fillWidth="false" prefHeight="420.0" prefWidth="242.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane>
+              
+               <children>
+                  <Label fx:id="lblPower" layoutX="45.0" layoutY="15.0" styleClass="label" text="전 원" />  
+                  <Rectangle fx:id="background1" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fx:id="trigger1" fill="WHITE" layoutX="125.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" userData="false">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+              
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <Label fx:id="lblOut" layoutX="45.0" layoutY="15.0" styleClass="label" text="외 출" />
+                  <Rectangle fx:id="background2" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fx:id="trigger2" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" AnchorPane.leftAnchor="100.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <Label fx:id="lblHotwater" layoutX="45.0" layoutY="15.0" styleClass="label" text="온 수" />
+                  <Rectangle fx:id="background3" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="50.0" stroke="LIGHTGRAY" strokeType="INSIDE" width="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fx:id="trigger3" fill="WHITE" layoutX="25.0" layoutY="25.0" radius="25.0" stroke="LIGHTGRAY" strokeType="INSIDE" AnchorPane.leftAnchor="100.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Button fx:id="btnLivingroom" mnemonicParsing="false" prefWidth="100.0" styleClass="button" text="거실">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button fx:id="btnRoom1" mnemonicParsing="false" prefWidth="100.0" styleClass="button" text="방 1">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button fx:id="btnRoom2" mnemonicParsing="false" prefWidth="100.0" styleClass="button" text="방 2">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button fx:id="btnRoom3" mnemonicParsing="false" prefWidth="100.0" styleClass="button" stylesheets="@heat.css" text="방 3">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox alignment="CENTER" prefHeight="420.0" prefWidth="275.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="220.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/toggle_heat.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="35.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="lblNowTemp" styleClass="labelLeft" text="현재온도" />
+            <AnchorPane>
+               <children>
+                  <Label fx:id="lblTempC" layoutX="135.0" styleClass="label" text=" ° C" />
+                  <Label fx:id="lblTemp" layoutX="105.0" styleClass="label" text=" ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <BorderPane.margin>
+            <Insets left="30.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <right>
+      <VBox alignment="CENTER" prefHeight="420.0" prefWidth="258.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnTempUp" mnemonicParsing="false" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: transparent;" styleClass="btnup">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <AnchorPane>
+               <children>
+                  <Label fx:id="lblTempControlC" layoutX="130.0" styleClass="label" text=" ° C" />
+                  <Label fx:id="lblTempControl" layoutX="100.0" styleClass="label" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="btnTempDown" mnemonicParsing="false" prefHeight="110.0" prefWidth="120.0" style="-fx-background-color: transparent;" styleClass="btndown">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets right="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>
