@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane layoutY="113.0" prefHeight="330.0" styleClass="mainbackground" stylesheets="@visitinglist.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.securitydisplay.VisitinglistController">
+<AnchorPane layoutY="36.0" prefHeight="450.0" prefWidth="650.0" styleClass="mainbackground" stylesheets="@visitinglist.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.securitydisplay.VisitinglistController">
    <children>
-      <HBox alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" styleClass="listbox">
+      <HBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="650.0" styleClass="listbox">
          <children>
             <TableView id="tableView" fx:id="tableView" focusTraversable="false" prefHeight="200.0" prefWidth="360.0" scaleShape="false">
               <columns>

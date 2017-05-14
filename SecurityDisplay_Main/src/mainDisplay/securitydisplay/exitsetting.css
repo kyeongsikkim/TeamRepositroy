@@ -26,6 +26,11 @@
     -fx-text-fill: #ffffff;
     -fx-border-radius: 5;
 }
+
+.btnExitSetting:pressed {
+      -fx-background-color:lightcoral;
+}
+
 .checkBox {
     -fx-text-fill: #ffffff;
 }
