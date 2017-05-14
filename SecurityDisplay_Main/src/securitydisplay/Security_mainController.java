@@ -38,10 +38,9 @@ public class Security_mainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // togglebutton 텍스트 폰트 설정
-        Font font = Font.loadFont(getClass().getResource("fonts/NotoSansCJKkr-Medium.otf").toExternalForm(), 14);
+        Font font = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 22);
         btnExitSettingTab.setFont(font);
-        
-        
+        btnCctv.setFont(font);
         
         // togglebutton 속성 감시(외출방범, 재택방범, CCTV)
         menu.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {

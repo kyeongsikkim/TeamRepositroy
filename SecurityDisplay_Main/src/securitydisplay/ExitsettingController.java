@@ -89,11 +89,11 @@ public class ExitsettingController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // 초기 설정값 불러오기
         if (data.getTxtGetin() == null) {
-            data.setTxtGetin("20초");
+            data.setTxtGetin("10분");
         }
         txtGetinTime.setText(data.getTxtGetin());
         if (data.getTxtGetout() == null) {
-            data.setTxtGetout("60초");
+            data.setTxtGetout("5분");
         }
         txtGetoutTime.setText(data.getTxtGetout());
 
@@ -208,12 +208,12 @@ public class ExitsettingController implements Initializable {
         btnHighEnter.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                String[] str1 = txtGetinTime.getText().split("초");
+                String[] str1 = txtGetinTime.getText().split("분");
                 int second = Integer.parseInt(str1[0]);
-                txtGetinTime.setText(second + 5 + "초");
+                txtGetinTime.setText(second + 1 + "분");
                 data.setTxtGetin(txtGetinTime.getText());
-                if (second >= 255) {
-                    txtGetinTime.setText("255초");
+                if (second >= 20) {
+                    txtGetinTime.setText("20분");
                     data.setTxtGetin(txtGetinTime.getText());
                 }
 
@@ -224,12 +224,12 @@ public class ExitsettingController implements Initializable {
         btnLowEnter.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                String[] str1 = txtGetinTime.getText().split("초");
+                String[] str1 = txtGetinTime.getText().split("분");
                 int second = Integer.parseInt(str1[0]);
-                txtGetinTime.setText(second - 5 + "초");
+                txtGetinTime.setText(second - 1 + "분");
                 data.setTxtGetin(txtGetinTime.getText());
                 if (second <= 0) {
-                    txtGetinTime.setText("0초");
+                    txtGetinTime.setText("0분");
                     data.setTxtGetin(txtGetinTime.getText());
                 }
             }
@@ -239,12 +239,12 @@ public class ExitsettingController implements Initializable {
         btnHighLeave.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                String[] str1 = txtGetoutTime.getText().split("초");
+                String[] str1 = txtGetoutTime.getText().split("분");
                 int second = Integer.parseInt(str1[0]);
-                txtGetoutTime.setText(second + 5 + "초");
+                txtGetoutTime.setText(second + 1 + "분");
                 data.setTxtGetout(txtGetoutTime.getText());
-                if (second >= 255) {
-                    txtGetoutTime.setText("255초");
+                if (second >= 20) {
+                    txtGetoutTime.setText("20분");
                     data.setTxtGetout(txtGetoutTime.getText());
                 }
             }
@@ -255,12 +255,12 @@ public class ExitsettingController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 String str = txtGetoutTime.getText();
-                String[] str1 = str.split("초");
+                String[] str1 = str.split("분");
                 int second = Integer.parseInt(str1[0]);
-                txtGetoutTime.setText(second - 5 + "초");
+                txtGetoutTime.setText(second - 1 + "분");
                 data.setTxtGetout(txtGetoutTime.getText());
                 if (second <= 0) {
-                    txtGetoutTime.setText("0초");
+                    txtGetoutTime.setText("0분");
                     data.setTxtGetout(txtGetoutTime.getText());
                 }
             }

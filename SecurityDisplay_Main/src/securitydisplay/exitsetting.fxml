@@ -46,7 +46,7 @@
 												</ImageView>
                                  </graphic>
 										</Button>
-										<TextField id="txtGetinTime" fx:id="txtGetinTime" alignment="CENTER" editable="false" prefHeight="27.0" prefWidth="100.0" text="20초" />
+										<TextField id="txtGetinTime" fx:id="txtGetinTime" alignment="CENTER" editable="false" prefHeight="27.0" prefWidth="100.0" text="10분" />
 										<Button id="btnLowEnter" fx:id="btnLowEnter" mnemonicParsing="false" styleClass="btnControl">
 											<graphic>
 												<ImageView fx:id="lowerImage1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="btnImage" />
@@ -62,7 +62,7 @@
 												</ImageView>
 											</graphic>
 										</Button>
-										<TextField fx:id="txtGetoutTime" alignment="CENTER" editable="false" prefHeight="27.0" prefWidth="106.0" text="60초" />
+										<TextField fx:id="txtGetoutTime" alignment="CENTER" editable="false" prefHeight="27.0" prefWidth="106.0" text="5분" />
 										<Button id="btnLowLeave" fx:id="btnLowLeave" mnemonicParsing="false" styleClass="btnControl">
 											<graphic>
 												<ImageView fx:id="lowerImage2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="btnImage" />
