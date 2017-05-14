@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ch17.control;
+package mainDisplay.control;
 
-import static ch17.control.ControlController.lightvalue;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.FillTransition;
@@ -16,7 +10,9 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -24,13 +20,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
+import static mainDisplay.control.ControlController.lightvalue;
 
-/**
- * FXML Controller class
- *
- * @author Administrator
- */
 public class LightController implements Initializable {
 
     @FXML
@@ -59,26 +52,47 @@ public class LightController implements Initializable {
     private Button btn4;
     @FXML
     private ImageView btnImg4;
-    @FXML
-    private Button lightAll;
+    
     @FXML
     private Rectangle background;
     @FXML
     private Circle trigger;
     
-    private BooleanProperty switchedOn = new SimpleBooleanProperty(false);
+    private BooleanProperty switchedOn = new SimpleBooleanProperty(lightvalue.getBtnAllSwitch());
     private TranslateTransition translateAnimation = new TranslateTransition(Duration.seconds(0.25));
     private FillTransition fillAnimation = new FillTransition(Duration.seconds(0.25));
     private ParallelTransition animation = new ParallelTransition(translateAnimation, fillAnimation);
-
+    @FXML
+    private Label lblRoomName4;
+    @FXML
+    private Label lblRoomName5;
+    @FXML
+    private Label lblRoomName6;
+    @FXML
+    private Label lblRoomName1;
+    @FXML
+    private Label lblRoomName2;
+    @FXML
+    private Label lblRoomName3;
+    @FXML
+    private Label lblOnOff;
+    
     public BooleanProperty switchedOnProperty() {
         return switchedOn;
     }
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 15);
+
+        lblRoomName1.setFont(font1);
+        lblRoomName2.setFont(font1);
+        lblRoomName3.setFont(font1);
+        lblRoomName4.setFont(font1);
+        lblRoomName5.setFont(font1);
+        lblRoomName6.setFont(font1);
+       
+            
         if (lightvalue.getBtnImage1() == null) {
             btnImg1.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
         } else{
@@ -110,19 +124,21 @@ public class LightController implements Initializable {
             btnImg6.setImage(new Image(lightvalue.getBtnImage6()));
         }
         
-        if (lightvalue.getBtnAll() != null) {
-            lightAll.setText(lightvalue.getBtnAll());
-        } 
-        
-        if (lightvalue.getBtnAllSwitch()==null && lightvalue.getBtnAllSwitch() =="true") {
+
+        if (lightvalue.getBtnAllSwitch()==false) {
             trigger.setUserData("true");
-            
         } else {
+            trigger.setUserData("false");
             trigger.setCenterX(50);
            background.setFill(Color.WHEAT);
-            
-         
-
+        }
+        
+        if (lightvalue.getLblOnOff()== null || lightvalue.getLblOnOff().equals("OFF") ) {
+            lblOnOff.setText("OFF");
+            lblOnOff.setAlignment(Pos.CENTER_LEFT);
+        } else {
+           lblOnOff.setText("ON");
+            lblOnOff.setAlignment(Pos.CENTER_RIGHT);
         }
         
        
@@ -133,18 +149,18 @@ public class LightController implements Initializable {
         btn4.setOnAction(e -> handleBtnAction4(e));
         btn5.setOnAction(e -> handleBtnAction5(e));
         btn6.setOnAction(e -> handleBtnAction6(e));
-        lightAll.setOnAction(e -> handleBtnAll(e));
 
+
+        
         translateAnimation.setNode(trigger);
         fillAnimation.setShape(background);
         
         switchedOn.addListener((obs, oldState, newState) -> {
             boolean isOn = newState.booleanValue();
-            translateAnimation.setToX(isOn ? 100 - 50 : 0);
+            translateAnimation.setByX(isOn ? 50 : -50);
             fillAnimation.setFromValue(isOn ? Color.WHITE : Color.LIGHTGREEN);
             fillAnimation.setToValue(isOn ? Color.WHEAT : Color.WHITE);
             animation.play();
-            
         });
         trigger.setOnMouseClicked(e -> handletrigger(e));
         background.setOnMouseClicked(e -> handletrigger(e));
@@ -229,61 +245,20 @@ public class LightController implements Initializable {
         }
     }
 
-    private void handleBtnAll(ActionEvent e) {
-        if (lightAll.getText().equals("Turn On")) {
-
-            lightAll.setText("Turn Off");
-
-//            Media media = new Media(getClass().getResource("media/전체 점등 되었습니다.mp3").toString());
-//            MediaPlayer mediaPlayer = new MediaPlayer(media); 
-//            mediaPlayer.play();
-            btnImg1.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
-            btnImg2.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
-            btnImg3.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
-            btnImg4.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
-            btnImg5.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
-            btnImg6.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
-            
-            lightvalue.setBtnImage1(getClass().getResource("images/light_on.png").toString());
-            lightvalue.setBtnImage2(getClass().getResource("images/light_on.png").toString());
-            lightvalue.setBtnImage3(getClass().getResource("images/light_on.png").toString());
-            lightvalue.setBtnImage4(getClass().getResource("images/light_on.png").toString());
-            lightvalue.setBtnImage5(getClass().getResource("images/light_on.png").toString());
-            lightvalue.setBtnImage6(getClass().getResource("images/light_on.png").toString());
-            
-            lightvalue.setBtnAll(lightAll.getText());
-            return;
-        } else if (lightAll.getText().equals("Turn Off")) {
-            lightAll.setText("Turn On");
-
-//            Media media = new Media(getClass().getResource("media/전체 소등 되었습니다.mp3").toString());
-//            MediaPlayer mediaPlayer = new MediaPlayer(media); 
-//            mediaPlayer.play();
-            btnImg1.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
-            btnImg2.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
-            btnImg3.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
-            btnImg4.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
-            btnImg5.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
-            btnImg6.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
-            lightvalue.setBtnImage1(getClass().getResource("images/light_off.png").toString());
-            lightvalue.setBtnImage2(getClass().getResource("images/light_off.png").toString());
-            lightvalue.setBtnImage3(getClass().getResource("images/light_off.png").toString());
-            lightvalue.setBtnImage4(getClass().getResource("images/light_off.png").toString());
-            lightvalue.setBtnImage5(getClass().getResource("images/light_off.png").toString());
-            lightvalue.setBtnImage6(getClass().getResource("images/light_off.png").toString());
-            
-            lightvalue.setBtnAll(lightAll.getText());
-        }
-    }
 
     private void handletrigger(MouseEvent e) {
-        switchedOn.set(!switchedOn.get());
+        switchedOn.setValue(!switchedOn.getValue());
         
         if (trigger.getUserData().equals("true")) {
-            System.out.println(trigger.getUserData());
+            lightvalue.setBtnAllSwitch(Boolean.valueOf(trigger.getUserData().toString()));
+            
             trigger.setUserData("false");
-            System.out.println(trigger.getUserData());
-
+            
+            lblOnOff.setText("ON");
+            lblOnOff.setAlignment(Pos.CENTER_RIGHT);
+            lightvalue.setLblOnOff(lblOnOff.getText());
+            
+            
             btnImg1.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg2.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
             btnImg3.setImage(new Image(getClass().getResource("images/light_on.png").toString()));
@@ -297,16 +272,18 @@ public class LightController implements Initializable {
             lightvalue.setBtnImage4(getClass().getResource("images/light_on.png").toString());
             lightvalue.setBtnImage5(getClass().getResource("images/light_on.png").toString());
             lightvalue.setBtnImage6(getClass().getResource("images/light_on.png").toString());
-            
-            lightvalue.setBtnAllSwitch(trigger.getUserData().toString());
+           
             return;
         } else if (trigger.getUserData().equals("false")) {
-
-            System.out.println(trigger.getUserData());
+            
+            lightvalue.setBtnAllSwitch(Boolean.valueOf(trigger.getUserData().toString()));
 
             trigger.setUserData("true");
-            System.out.println(trigger.getUserData());
 
+            lblOnOff.setText("OFF");
+            lblOnOff.setAlignment(Pos.CENTER_LEFT);
+            lightvalue.setLblOnOff(lblOnOff.getText());
+            
             btnImg1.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             btnImg2.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
             btnImg3.setImage(new Image(getClass().getResource("images/light_off.png").toString()));
@@ -320,7 +297,6 @@ public class LightController implements Initializable {
             lightvalue.setBtnImage5(getClass().getResource("images/light_off.png").toString());
             lightvalue.setBtnImage6(getClass().getResource("images/light_off.png").toString());
             
-            lightvalue.setBtnAllSwitch(trigger.getUserData().toString());
 
             //lightvalue.setBtnAll(lightAll.getText());
         }

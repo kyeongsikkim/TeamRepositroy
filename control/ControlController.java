@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ch17.control;
+package mainDisplay.control;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,12 +13,8 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 
-/**
- * FXML Controller class
- *
- * @author Administrator
- */
 public class ControlController implements Initializable {
 
     @FXML
@@ -36,19 +27,23 @@ public class ControlController implements Initializable {
     private ToggleButton btnHeat;
     @FXML
     private StackPane stackPane;
-    
-    static light lightvalue=new light();
-    static gas gasvalue=new gas();
-    static heat heatvalue=new heat();
-    /**
-     * Initializes the controller class.
-     */
+
+    static light lightvalue = new light();
+    static gas gasvalue = new gas();
+    static heat heatvalue = new heat();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
 //		btnLight.setOnAction(e->handleBtnLight(e));
 //		btnGas.setOnAction(e->handleBtnGas(e));
 //		btnHeat.setOnAction(e->handleBtnHeat(e));
+        Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 35);
+
+        btnLight.setFont(font1);
+        btnGas.setFont(font1);
+        btnHeat.setFont(font1);
+
         btnLight.setSelected(true);
 
         try {

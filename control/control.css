@@ -6,9 +6,8 @@
 
 .toggle{
     -fx-color: paleturquoise;
-    -fx-font: 20 arial; 
-    -fx-font-weight: bold;
-    -fx-text-fill: black;
+
+   
     -fx-background-color: linear-gradient(wheat,blanchedalmond);
     -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); 
 }

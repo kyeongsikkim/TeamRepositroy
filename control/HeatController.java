@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ch17.control;
+package mainDisplay.control;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -24,11 +20,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 
-/**
- * FXML Controller class
- *
- * @author Administrator
- */
 public class HeatController implements Initializable {
 
     @FXML
@@ -109,14 +100,25 @@ public class HeatController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 16);
-//        Font font2 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 20);
-//        Font font3 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 27);
-//        
-//        lblPower.setFont(font1);
-//        lblOut.setFont(font2);
-//        lblHotwater.setFont(font3);
+        Font font1 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 20);
+        Font font2 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 22);
+        Font font3 = Font.loadFont(getClass().getResource("fonts/08SeoulNamsanEB.ttf").toExternalForm(), 27);
         
+        btnLivingroom.setFont(font1);
+        btnRoom1.setFont(font1);
+        btnRoom2.setFont(font1);
+        btnRoom3.setFont(font1);
+        lblPower.setFont(font2);
+        lblOut.setFont(font2);
+        lblHotwater.setFont(font2);
+        
+        lblNowTemp.setFont(font3);
+        lblTemp.setFont(font3);
+        lblTempC.setFont(font3);
+        lblTempControl.setFont(font3);
+        lblTempControlC.setFont(font3);
+        
+
         btnLivingroom.setOnAction(e -> handleBtnLivingroom(e));
         btnRoom1.setOnAction(e -> handleBtnroom1(e));
         btnRoom2.setOnAction(e -> handleBtnroom2(e));
@@ -156,9 +158,20 @@ public class HeatController implements Initializable {
             animation3.play();
         });
 
-        trigger1.setOnMouseClicked(event -> {switchedOn.set(!switchedOn.get());});
-        background1.setOnMouseClicked(event -> {switchedOn.set(!switchedOn.get());});
+        trigger1.setOnMouseClicked(e ->handletrigger1(e));
+        background1.setOnMouseClicked(e ->handletrigger1(e));
 
+        trigger2.setDisable(true);
+        background2.setDisable(true);
+        trigger3.setDisable(true);
+        background3.setDisable(true);
+        btnLivingroom.setDisable(true);
+        btnRoom1.setDisable(true);
+        btnRoom2.setDisable(true);
+        btnRoom3.setDisable(true);
+        btnTempUp.setDisable(true);
+        btnTempDown.setDisable(true);
+        
         trigger2.setOnMouseClicked(event -> {switchedOn2.set(!switchedOn2.get());});
         background2.setOnMouseClicked(event -> {switchedOn2.set(!switchedOn2.get());});
 
@@ -167,25 +180,25 @@ public class HeatController implements Initializable {
     }
 
     private void handleBtnLivingroom(ActionEvent e) {
-        int Temp=(int)(Math.random()*20)+1;
+        int Temp=(int)(Math.random()*9)+17;
         lblTemp.setText(String.valueOf(Temp));
-        
+        lblTempControl.setText(lblTemp.getText());
     }
 
     private void handleBtnroom1(ActionEvent e) {
-        int Temp1=(int)(Math.random()*20)+1;
+        int Temp1=(int)(Math.random()*9)+17;
         lblTemp.setText(String.valueOf(Temp1));
         lblTempControl.setText(lblTemp.getText());
     }
 
     private void handleBtnroom2(ActionEvent e) {
-        int Temp2=(int)(Math.random()*20)+1;
+        int Temp2=(int)(Math.random()*9)+17;
         lblTemp.setText(String.valueOf(Temp2));
         lblTempControl.setText(lblTemp.getText());
     }
 
     private void handleBtnroom3(ActionEvent e) {
-        int Temp3=(int)(Math.random()*20)+1;
+        int Temp3=(int)(Math.random()*9)+17;
         lblTemp.setText(String.valueOf(Temp3));
         lblTempControl.setText(lblTemp.getText());
     }
@@ -202,6 +215,41 @@ public class HeatController implements Initializable {
         int tempchange = Integer.parseInt(lblTempControl.getText());
       
         lblTempControl.setText(String.valueOf(tempchange - 1));
+    }
+
+    private void handletrigger1(MouseEvent e) {
+        switchedOn.set(!switchedOn.get());
+        
+        if (trigger1.getUserData().equals("false")){
+            trigger1.setUserData("true");
+            
+            trigger2.setDisable(false);
+            background2.setDisable(false);
+            trigger3.setDisable(false);
+            background3.setDisable(false);
+            btnLivingroom.setDisable(false);
+            btnRoom1.setDisable(false);
+            btnRoom2.setDisable(false);
+            btnRoom3.setDisable(false);
+            btnTempUp.setDisable(false);
+            btnTempDown.setDisable(false);
+        }
+        else if(trigger1.getUserData().equals("true")){
+            trigger1.setUserData("false");
+            
+            trigger2.setDisable(true);
+            background2.setDisable(true);
+            trigger3.setDisable(true);
+            background3.setDisable(true);
+            btnLivingroom.setDisable(true);
+            btnRoom1.setDisable(true);
+            btnRoom2.setDisable(true);
+            btnRoom3.setDisable(true);
+            btnTempUp.setDisable(true);
+            btnTempDown.setDisable(true);
+            
+            
+        }
     }
        
 }
