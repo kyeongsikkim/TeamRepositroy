@@ -142,7 +142,7 @@ public class VisitinglistController implements Initializable {
 
                     int number = (int) (Math.random() * 8) + 1;
 
-                    list.add(new Visiter(str1, str2, "member0" + number + ".png"));
+                    list.add(new Visiter(str1, str2, "cctvlist0" + number + ".png"));
                     tableView.setItems(list);
                 });
             }

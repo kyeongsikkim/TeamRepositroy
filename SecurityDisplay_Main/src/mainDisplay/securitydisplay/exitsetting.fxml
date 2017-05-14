@@ -40,14 +40,14 @@
 							<children>
 								<HBox prefHeight="30.0" prefWidth="163.0">
 									<children>
-										<Button id="btnHighEnter" fx:id="btnHighEnter" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" styleClass="btnControl">
+										<Button id="btnLowEnter" fx:id="btnLowEnter" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" styleClass="btnControl">
                                  <graphic>
       												<ImageView fx:id="upperImage1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="btnImage">
 												</ImageView>
                                  </graphic>
 										</Button>
 										<TextField id="txtGetinTime" fx:id="txtGetinTime" alignment="CENTER" editable="false" prefHeight="27.0" prefWidth="100.0" text="10분" />
-										<Button id="btnLowEnter" fx:id="btnLowEnter" mnemonicParsing="false" styleClass="btnControl">
+										<Button id="btnHighEnter" fx:id="btnHighEnter" mnemonicParsing="false" styleClass="btnControl">
 											<graphic>
 												<ImageView fx:id="lowerImage1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="btnImage" />
 											</graphic>
@@ -56,14 +56,14 @@
 								</HBox>
 								<HBox>
 									<children>
-										<Button id="btnHighLeave" fx:id="btnHighLeave" mnemonicParsing="false" styleClass="btnControl">
+										<Button id="btnLowLeave" fx:id="btnLowLeave" mnemonicParsing="false" styleClass="btnControl">
 											<graphic>
 												<ImageView fx:id="upperImage2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="btnImage">
 												</ImageView>
 											</graphic>
 										</Button>
 										<TextField fx:id="txtGetoutTime" alignment="CENTER" editable="false" prefHeight="27.0" prefWidth="106.0" text="5분" />
-										<Button id="btnLowLeave" fx:id="btnLowLeave" mnemonicParsing="false" styleClass="btnControl">
+										<Button id="btnHighLeave" fx:id="btnHighLeave" mnemonicParsing="false" styleClass="btnControl">
 											<graphic>
 												<ImageView fx:id="lowerImage2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="btnImage" />
 											</graphic>
@@ -77,7 +77,7 @@
 						</VBox>
 					</children>
 				</HBox>
-				<Button id="btnExitSetting" fx:id="btnExitSetting" layoutX="210.0" layoutY="324.0" mnemonicParsing="false" prefWidth="300.0" text="설정" />
+				<Button styleClass="btnExitSetting" id="btnExitSetting" fx:id="btnExitSetting" layoutX="210.0" layoutY="324.0" mnemonicParsing="false" prefWidth="300.0" text="설정" />
 				<VBox alignment="CENTER" layoutX="115.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0">
 					<children>
 						<ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
@@ -85,7 +85,7 @@
 								<Image url="@image/compter-Construction-crane-oil-gas-valve-fuel-sensor--512.png" />
 							</image>
 						</ImageView>
-						<CheckBox id="checkGas" fx:id="checkGas" mnemonicParsing="false" text="가스닫기" />
+						<CheckBox styleClass="checkBox" id="checkGas" fx:id="checkGas" mnemonicParsing="false" text="가스닫기" />
 					</children>
 				</VBox>
 				<VBox alignment="CENTER" layoutX="315.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0">
@@ -95,7 +95,7 @@
 								<Image url="@image/geyser-512.png" />
 							</image>
 						</ImageView>
-						<CheckBox id="checkHeater" fx:id="checkHeater" mnemonicParsing="false" text="난방닫기" />
+						<CheckBox styleClass="checkBox" id="checkHeater" fx:id="checkHeater" mnemonicParsing="false" text="난방닫기" />
 					</children>
 				</VBox>
 				<VBox alignment="CENTER" layoutX="515.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0">
@@ -105,7 +105,7 @@
 								<Image url="@image/flame.png" />
 							</image>
 						</ImageView>
-						<CheckBox fx:id="checkFlame" mnemonicParsing="false" text="화재/비상경보" />
+						<CheckBox styleClass="checkBox" fx:id="checkFlame" mnemonicParsing="false" text="화재/비상경보" />
 					</children>
 				</VBox>
 			</children>

@@ -1,5 +1,5 @@
 .listbox {
-	-fx-background-radius: 5.0;
+    -fx-background-radius: 5.0;
     -fx-background-color: linear-gradient(#eeeeee, #ffffff);
     -fx-border-radius: 5.0;
     -fx-border-color:#cccccc;

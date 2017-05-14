@@ -17,3 +17,7 @@
 .btnVisit {
     -fx-background-color: transparent;
 }
+
+#lblVisitlist {
+    -fx-text-fill: #ffffff;
+}

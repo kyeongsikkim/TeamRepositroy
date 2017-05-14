@@ -199,12 +199,12 @@ public class ExitsettingController implements Initializable {
         lblGetoutText.setFont(font);
          */
         // 입실(퇴실)지연조절 화살표 이미지 처리 코드
-        Image upperImage = new Image(getClass().getResource("image/upper arrow.png").toString());
-        Image lowerImage = new Image(getClass().getResource("image/lower arrow.png").toString());
-        upperImage1.setImage(upperImage);
-        upperImage2.setImage(upperImage);
-        lowerImage1.setImage(lowerImage);
-        lowerImage2.setImage(lowerImage);
+        Image lowerImage = new Image(getClass().getResource("image/arrow_left.png").toString());
+        Image upperImage = new Image(getClass().getResource("image/arrow_right.png").toString());
+        upperImage1.setImage(lowerImage);
+        upperImage2.setImage(lowerImage);
+        lowerImage1.setImage(upperImage);
+        lowerImage2.setImage(upperImage);
 
         btnExitSetting.setOnAction(event -> {
             try {
@@ -363,7 +363,7 @@ public class ExitsettingController implements Initializable {
 
                             Timeline timeline = new Timeline();
                             KeyValue keyValue = new KeyValue(parent.translateYProperty(), 20);
-                            KeyFrame keyFrame = new KeyFrame(Duration.millis(30), keyValue);
+                            KeyFrame keyFrame = new KeyFrame(Duration.millis(10), keyValue);
                             timeline.getKeyFrames().add(keyFrame);
                             timeline.play();
 

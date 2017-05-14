@@ -10,7 +10,7 @@
    <children>
       <HBox alignment="CENTER">
          <children>
-            <Label id="lblText" text="">
+            <Label id="lblText" text="" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
