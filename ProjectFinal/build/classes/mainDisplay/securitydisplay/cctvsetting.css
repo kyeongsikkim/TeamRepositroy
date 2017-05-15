@@ -1,0 +1,34 @@
+.mainbackground {
+    -fx-border-radius: 5.0;
+    -fx-border-color:#cccccc;
+    -fx-border-width: 10.0px;
+    -fx-background-radius: 20.0;
+}
+
+.cctvbackground {
+}
+
+.mediabox {
+    -fx-border-radius: 5;
+    -fx-border-color:#ffffff;
+    -fx-border-width: 10px;
+}
+
+.btnVisit {
+    -fx-background-color: transparent;
+}
+
+#lblVisitlist {
+    -fx-text-fill: #ffffff;
+}
+
+.btnCctvToggle {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: transparent;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;
+}
+
+.btnCctvToggle:pressed {
+    -fx-background-color:lightcoral;
+}

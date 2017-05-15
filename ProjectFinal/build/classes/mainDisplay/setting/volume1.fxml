@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="stack" prefHeight="420.0" prefWidth="800.0" stylesheets="@volume1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.setting.Volume1Controller">
+   <children>
+      <BorderPane prefHeight="420.0" prefWidth="800.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="101.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lbl1" alignment="CENTER" prefHeight="167.0" prefWidth="206.0" text="통화종류" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button fx:id="btnLkind" alignment="CENTER" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0">
+                           <graphic>
+                              <ImageView fitHeight="79.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/left.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="txtBell" alignment="CENTER" prefHeight="85.0" prefWidth="320.0" text="경비실">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnRkind" alignment="CENTER" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0">
+                           <graphic>
+                              <ImageView fitHeight="79.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/right.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="101.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lbl2" alignment="CENTER" prefHeight="101.0" prefWidth="206.0" text="통화음량" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <AnchorPane prefHeight="103.0" prefWidth="590.0">
+                           <children>
+                              <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="476.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/add.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="65.0" fitWidth="45.0" layoutX="24.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/substract.png" />
+                                 </image>
+                              </ImageView>
+                              <Slider fx:id="sliderCall" layoutX="157.0" layoutY="43.0" prefHeight="14.0" prefWidth="310.0" showTickLabels="true" showTickMarks="true" />
+                              <ImageView fx:id="img1" fitHeight="69.0" fitWidth="92.0" layoutX="78.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/speaker.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lbl3" alignment="CENTER" prefHeight="167.0" prefWidth="206.0" text="벨음량" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <AnchorPane prefHeight="97.0" prefWidth="310.0">
+                           <children>
+                              <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="472.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/add.png" />
+                                 </image>
+                              </ImageView>
+                              <Slider fx:id="sliderMusic" layoutX="153.0" layoutY="42.0" prefHeight="14.0" prefWidth="310.0" showTickLabels="true" showTickMarks="true" />
+                              <ImageView fx:id="img2" fitHeight="69.0" fitWidth="92.0" layoutX="74.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/speaker.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="65.0" fitWidth="45.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/substract.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="122.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lbl4" alignment="CENTER" prefHeight="93.0" prefWidth="206.0" text="벨소리" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button fx:id="btnLmusic" alignment="CENTER" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0">
+                           <graphic>
+                              <ImageView fitHeight="82.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/left.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="txtMusic" alignment="CENTER" prefHeight="85.0" prefWidth="320.0" text="벨소리1">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnRmusic" alignment="CENTER" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0">
+                           <graphic>
+                              <ImageView fitHeight="79.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/right.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <Button fx:id="btnAccept" layoutX="708.0" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="86.0" text="적용" BorderPane.alignment="BASELINE_RIGHT">
+               <BorderPane.margin>
+                  <Insets right="20.0" top="-10.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>

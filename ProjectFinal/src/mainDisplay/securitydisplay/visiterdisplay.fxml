@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@visiterdisplay.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.securitydisplay.VisiterdisplayController">
+   <children>
+      <Button id="btnDelivery" fx:id="btnDelivery" layoutX="163.0" layoutY="179.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="87.0" styleClass="btnCss" text="택배" />
+      <Button id="btnEtc" fx:id="btnEtc" layoutX="342.0" layoutY="179.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="87.0" styleClass="btnCss" text="방문" />
+      <Label alignment="CENTER" layoutX="168.0" layoutY="110.0" text="어떻게 오셨습니까?">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

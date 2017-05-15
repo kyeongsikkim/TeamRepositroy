@@ -1,0 +1,21 @@
+/*.label{
+    -fx-text-fill: white;
+	 -fx-font-size: 20;
+}*/
+#btnBackground1{
+	 -fx-font-weight: bold;
+	-fx-text-fill: white;
+}
+#btnBackground2{
+	 -fx-font-weight: bold;
+	-fx-text-fill: white;
+}
+#btnBackground3{
+	 -fx-font-weight: bold;
+	-fx-text-fill: white;
+}
+.one{
+	 -fx-border-color:white;
+}
+
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="control" prefHeight="480.0" prefWidth="800.0" styleClass="controlbackground" stylesheets="@control.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.control.ControlController">
+   <center>
+      <StackPane fx:id="stackPane" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane />
+         </children>
+      </StackPane>
+   </center>
+   <top>
+      <HBox prefHeight="60.0" BorderPane.alignment="CENTER">
+         <children>
+            <ToggleButton fx:id="btnLight" mnemonicParsing="false" prefHeight="60.0" prefWidth="267.0" styleClass="toggle" stylesheets="@control.css" userData="light">
+               <toggleGroup>
+                  <ToggleGroup fx:id="menuGroup" />
+               </toggleGroup>
+               <graphic>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/toggle_light.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/lightcontrol.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnGas" mnemonicParsing="false" prefHeight="60.0" prefWidth="267.0" styleClass="toggle" stylesheets="@control.css" toggleGroup="$menuGroup" userData="gas">
+               <graphic>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/toggle_gas.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/gascontrol.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="btnHeat" mnemonicParsing="false" prefHeight="60.0" prefWidth="267.0" styleClass="toggle" stylesheets="@control.css" toggleGroup="$menuGroup" userData="heat">
+               <graphic>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <image>
+                              <Image url="@images/toggle_heat.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/heatcontrol.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic></ToggleButton>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

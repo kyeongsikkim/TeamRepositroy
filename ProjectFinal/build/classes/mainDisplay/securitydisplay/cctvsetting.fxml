@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane styleClass="mainbackground" stylesheets="@cctvsetting.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.securitydisplay.CctvsettingController">
+   <center>
+      <AnchorPane prefHeight="365.0" prefWidth="750.0" styleClass="cctvbackground" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnList" alignment="BOTTOM_CENTER" layoutX="25.0" layoutY="8.0" mnemonicParsing="false" styleClass="btnVisit">
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/clipboard.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label id="lblVisitlist" fx:id="lblVisitlist" layoutX="36.0" text="방문기록">
+               <font>
+                  <Font size="12.0" />
+               </font></Label>
+            <HBox alignment="CENTER" layoutX="98.0" layoutY="33.0" prefHeight="300.0" prefWidth="592.0" styleClass="mediabox">
+               <children>
+                  <MediaView fx:id="mediaView" fitHeight="280.0" fitWidth="450.0" preserveRatio="false" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></MediaView>
+                  <VBox prefHeight="280.0" prefWidth="175.0">
+                     <children>
+                        <ToggleButton fx:id="btnApt" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" styleClass="btnCctvToggle" text="공동현관">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="menu1" />
+                           </toggleGroup></ToggleButton>
+                        <ToggleButton fx:id="btnDoor" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" styleClass="btnCctvToggle" text="주차장" toggleGroup="$menu1" />
+                        <ToggleButton fx:id="btnPlayground" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" styleClass="btnCctvToggle" text="놀이터" toggleGroup="$menu1" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,18 @@
+#control {	
+	-fx-background-image: url("images/background01.jpg"); 
+        -fx-background-size:stretch;
+}
+
+.toggle{
+   
+    -fx-background-color: rgba(68,68,68,0.5);
+/*   -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); */
+}
+
+.toggle:selected {
+    -fx-background-color:lightcoral;
+}
+
+.toggle:hover {
+    -fx-background-color:lightcoral;
+}

@@ -1,0 +1,16 @@
+.mainbackground {
+    -fx-background-radius: 15.0px;
+    -fx-background-image: url("image/background01.jpg");
+    -fx-background-size: stretch;    
+}
+
+.btnToggleMain {
+    -fx-background-color: rgba(68,68,68,0.5);
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.btnToggleMain:selected {
+    -fx-background-color:lightcoral;
+}

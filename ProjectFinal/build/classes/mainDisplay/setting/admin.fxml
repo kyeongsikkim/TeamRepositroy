@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@admin.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.setting.AdminController">
+   <center>
+      <TilePane alignment="CENTER" prefHeight="276.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btn1" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="1" />
+            <Button fx:id="btn2" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="2" />
+            <Button fx:id="btn3" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="3" />
+            <Button fx:id="btn4" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="4" />
+            <Button fx:id="btn5" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="5" />
+            <Button fx:id="btn6" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="6" />
+            <Button fx:id="btn7" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="7" />
+            <Button fx:id="btn8" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="8" />
+            <Button fx:id="btn9" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="9" />
+            <Button alignment="CENTER" disable="true" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" />
+            <Button fx:id="btn0" alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" styleClass="dial1" text="0" />
+            <Button alignment="CENTER" disable="true" mnemonicParsing="false" prefHeight="60.0" prefWidth="233.0" />
+         </children>
+      </TilePane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="65.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtPass" disable="true" prefHeight="53.0" prefWidth="395.0" text="최대6자리">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="53.0" prefWidth="80.0">
+               <graphic>
+                  <ImageView fitHeight="52.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/left-arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnFind" alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="164.0" text="비밀번호 보기">
+               <graphic>
+                  <CheckBox fx:id="checkMotion" mnemonicParsing="false" prefHeight="16.0" prefWidth="0.0" />
+               </graphic></Button>
+         </children>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="61.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnOk" mnemonicParsing="false" prefHeight="37.0" prefWidth="111.0" text="적용">
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnCancle" mnemonicParsing="false" prefHeight="37.0" prefWidth="111.0" text="취소" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>

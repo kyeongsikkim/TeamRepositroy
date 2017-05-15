@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" styleClass="mainbackground" stylesheets="@security_main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.securitydisplay.Security_mainController">
+   <children>
+      <ToggleButton id="btnExitSettingTab" fx:id="btnExitSettingTab" layoutY="4.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="400.0" style="-fx-background-radius: 10;" styleClass="btnToggleMain">
+         <toggleGroup>
+            <ToggleGroup fx:id="menu" />
+         </toggleGroup>
+         <graphic>
+            <HBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/padlock.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="69.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/toggleimage_exit.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="1.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton id="btnCctv" fx:id="btnCctv" layoutX="400.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="400.0" style="-fx-background-radius: 10;" styleClass="btnToggleMain" toggleGroup="$menu">
+         <graphic>
+            <HBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+               <children>
+                  <ImageView fitHeight="63.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/eye.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="67.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/toggleimage_cctv.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </graphic></ToggleButton>
+      <Separator id="horizontalSep" layoutX="31.0" layoutY="76.0" prefHeight="5.0" prefWidth="738.0" />
+      <StackPane id="securityDisplay" fx:id="securityContents" layoutX="26.0" layoutY="86.0" prefHeight="381.0" prefWidth="750.0" styleClass="stackContents" />
+   </children>
+</AnchorPane>

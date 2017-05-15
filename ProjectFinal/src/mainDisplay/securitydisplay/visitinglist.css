@@ -1,0 +1,13 @@
+.listbox {
+    -fx-background-radius: 5.0;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 5.0;
+    -fx-border-color:#ffffff;
+    -fx-border-width: 2.0px;
+}
+
+#btnClose {
+    -fx-background-radius: 100;
+    -fx-background-color: #cccccc;
+    -fx-font-family: "Arial";
+}

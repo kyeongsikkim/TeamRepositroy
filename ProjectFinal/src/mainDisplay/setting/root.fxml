@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="800.0" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.setting.RootController">
+   <children>
+      <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="60.0">
+         <children>
+            <ToggleButton fx:id="scene" mnemonicParsing="false" prefHeight="60.0" prefWidth="267.0" styleClass="class1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="select" />
+               </toggleGroup>
+               <graphic>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/toggleDisplay.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/display.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="volume" mnemonicParsing="false" prefHeight="60.0" prefWidth="266.0" styleClass="class1" toggleGroup="$select">
+               <graphic>
+                  <HBox alignment="CENTER" prefHeight="60.0">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/toggleSound.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/sound.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="admin" mnemonicParsing="false" nodeOrientation="INHERIT" prefHeight="60.0" prefWidth="267.0" styleClass="class1" toggleGroup="$select" HBox.hgrow="ALWAYS">
+               <graphic>
+                  <HBox alignment="CENTER" prefHeight="60.0">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/toggleAdmin.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/admin.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic></ToggleButton>
+         </children>
+      </HBox>
+      <StackPane fx:id="stack" layoutY="60.0" prefHeight="420.0" prefWidth="800.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></StackPane>
+   </children>
+</AnchorPane>

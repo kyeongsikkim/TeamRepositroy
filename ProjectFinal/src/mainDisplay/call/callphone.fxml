@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="callphone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="800.0" stylesheets="@callphone.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainDisplay.call.CallPhoneController">
+   <center>
+      <TilePane fx:id="dial" prefHeight="338.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btn1" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="1" />
+            <Button fx:id="btn2" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="2" />
+            <Button fx:id="btn3" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="3" />
+            <Button fx:id="btn4" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="4" />
+            <Button fx:id="btn5" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="5" />
+            <Button fx:id="btn6" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="6" />
+            <Button fx:id="btn7" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="7" />
+            <Button fx:id="btn8" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="8" />
+            <Button fx:id="btn9" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="9" />
+            <Button fx:id="btnStar" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="*" />
+            <Button fx:id="btn0" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="0" />
+            <Button fx:id="btnSharp" mnemonicParsing="false" prefHeight="100.0" prefWidth="140.0" styleClass="dial" text="#" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+         </BorderPane.margin>
+      </TilePane>
+   </center>
+   <right>
+      <VBox prefHeight="360.0" prefWidth="354.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblRequest" contentDisplay="CENTER" prefHeight="63.0" prefWidth="280.0" text="전화번호를 입력해주세요." textAlignment="CENTER" textFill="#3c0000" textOverrun="CENTER_ELLIPSIS" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="57.0" prefWidth="354.0">
+               <children>
+                  <Label fx:id="lblState" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="44.0" prefWidth="172.0" text=" " textFill="#2f0000">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="textArea" alignment="TOP_LEFT" prefHeight="183.0" prefWidth="349.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" right="5.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox prefHeight="89.0" prefWidth="354.0">
+               <children>
+                  <Button id="back-button" fx:id="btnBack" mnemonicParsing="false" prefHeight="89.0" prefWidth="115.0">
+                     <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/back03.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <ToggleButton id="call-button" fx:id="btnCall" mnemonicParsing="false" prefHeight="89.0" prefWidth="235.0" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="callToggle" />
+                     </toggleGroup>
+                     <graphic>
+                        <ImageView fx:id="imgCall" fitHeight="44.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/connect.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets right="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>

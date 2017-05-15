@@ -1,0 +1,36 @@
+.exitbackground {
+    -fx-border-radius: 5.0;
+    -fx-border-color:#cccccc;
+    -fx-border-width: 10.0px;
+    -fx-background-radius: 20.0;
+}
+
+.btnControl {
+    -fx-background-color: transparent;
+    -fx-background-radius: 25.0;
+}
+
+.btnImage {
+    -fx-border-radius: 100.0;
+}
+
+.boxbackground{
+    -fx-background-color: transparent;
+    -fx-background-radius: 25.0;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 25.0;
+}
+.btnExitSetting {
+    -fx-background-color: transparent;
+    -fx-border-color: #ffffff;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 5;
+}
+
+.btnExitSetting:pressed {
+      -fx-background-color:lightcoral;
+}
+
+.checkBox {
+    -fx-text-fill: #ffffff;
+}

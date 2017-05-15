@@ -1,0 +1,8 @@
+.gasImage{
+    -fx-background-size: stretch;
+}
+
+.label{
+    -fx-text-fill: white;
+   
+}
