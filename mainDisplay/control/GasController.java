@@ -122,7 +122,7 @@ public class GasController implements Initializable {
             lblOnOff.setAlignment(Pos.CENTER_RIGHT);
             gasvalue.setLblOnOff(lblOnOff.getText());
             
-            Media media = new Media(getClass().getResource("media/가스_밸브가_열렸습니다..mp3").toString());
+            Media media = new Media(getClass().getResource("../sounds/gasOn.mp3").toString());
             MediaPlayer mediaPlayer = new MediaPlayer(media); 
             mediaPlayer.play();
             
@@ -138,7 +138,7 @@ public class GasController implements Initializable {
             lblOnOff.setAlignment(Pos.CENTER_LEFT);
             gasvalue.setLblOnOff(lblOnOff.getText());
             
-            Media media = new Media(getClass().getResource("media/가스_밸브가_잠겼습니다..mp3").toString());
+            Media media = new Media(getClass().getResource("../sounds/gasOff.mp3").toString());
             MediaPlayer mediaPlayer = new MediaPlayer(media); 
             mediaPlayer.play();
             

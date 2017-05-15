@@ -253,9 +253,12 @@ public class AdminController implements Initializable {
             sta.setCheckMotion(checkMotion.selectedProperty().get());
         });
         btnDelete.setOnAction(e -> {
+           
             int length = password.length();
-            password = password.substring(0, length - 1);
-            txtPass.setText(txtPass.getText().substring(0, length - 1));
+            if (length > 0) {
+                password = password.substring(0, length - 1);
+                txtPass.setText(txtPass.getText().substring(0, length - 1));
+            }
 
         });
         btnFind.setOnAction(new EventHandler<ActionEvent>() {

@@ -253,7 +253,7 @@ public class LightController implements Initializable {
             lblOnOff.setAlignment(Pos.CENTER_RIGHT);
             lightvalue.setLblOnOff(lblOnOff.getText());
                         
-            Media media = new Media(getClass().getResource("media/집_안의_모든_전등이_켜졌습니다..mp3").toString());
+            Media media = new Media(getClass().getResource("../sounds/lightOn.mp3").toString());
             MediaPlayer mediaPlayer = new MediaPlayer(media); 
             mediaPlayer.play();
         
@@ -281,7 +281,7 @@ public class LightController implements Initializable {
             lblOnOff.setAlignment(Pos.CENTER_LEFT);
             lightvalue.setLblOnOff(lblOnOff.getText());
             
-            Media media = new Media(getClass().getResource("media/집_안의_모든_전등이_꺼졌습니다..mp3").toString());
+            Media media = new Media(getClass().getResource("../sounds/lightOff.mp3").toString());
             MediaPlayer mediaPlayer = new MediaPlayer(media); 
             mediaPlayer.play();
             

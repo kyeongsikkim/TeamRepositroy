@@ -73,7 +73,7 @@ public class CctvsettingController implements Initializable {
 
                     // 공동현관 ToggleButton 눌렀을 때
                     if (newValue == btnApt) {
-                        Media media = new Media(getClass().getResource("media/공동현관.m4v").toString());
+                        Media media = new Media(getClass().getResource("../videos/apt.m4v").toString());
                         mediaPlayerApt = new MediaPlayer(media);
                         mediaView.setMediaPlayer(mediaPlayerApt);
                         mediaPlayerApt.play();
@@ -94,7 +94,7 @@ public class CctvsettingController implements Initializable {
 
                     } // 주차장 ToggleButton 눌렀을 때
                     else if (newValue == btnDoor) {
-                        Media media = new Media(getClass().getResource("media/주차장.m4v").toString());
+                        Media media = new Media(getClass().getResource("../videos/parking.m4v").toString());
                         mediaPlayerDoor = new MediaPlayer(media);
                         mediaView.setMediaPlayer(mediaPlayerDoor);
                         mediaPlayerDoor.play();
@@ -113,7 +113,7 @@ public class CctvsettingController implements Initializable {
                         });
                     } // 놀이터 ToggleButton 눌렀을 때
                     else if (newValue == btnPlayground) {
-                        Media media = new Media(getClass().getResource("media/놀이터.m4v").toString());
+                        Media media = new Media(getClass().getResource("../videos/playground.m4v").toString());
                         mediaPlayerPlayground = new MediaPlayer(media);
                         mediaView.setMediaPlayer(mediaPlayerPlayground);
                         mediaPlayerPlayground.play();

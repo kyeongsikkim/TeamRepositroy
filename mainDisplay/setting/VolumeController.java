@@ -90,7 +90,7 @@ public class VolumeController implements Initializable {
         btnAccept.setFont(font4);
         
         if (MusicAddress == null) {
-            MusicAddress = "media/bell1.mp3";
+            MusicAddress = "../sounds/bell1.mp3";
         }
         if (sta.getTxtMusic() != null) {
             txtMusic.setText(sta.getTxtMusic());
@@ -137,7 +137,7 @@ public class VolumeController implements Initializable {
                 if (mediaPlayer != null) {
                     mediaPlayer.dispose();
                 }
-                media = new Media(getClass().getResource("media/call.mp3").toString());
+                media = new Media(getClass().getResource("../sounds/call.mp3").toString());
                 mediaPlayer = new MediaPlayer(media);
                 mediaPlayer.play();
                 mediaPlayer.setVolume(slidersoundValue1 / 100.0);
@@ -180,20 +180,20 @@ public class VolumeController implements Initializable {
                 String str = txtMusic.getText();
                 if (str.equals("벨소리1")) {
                     txtMusic.setText("벨소리2");
-                    MusicAddress = "media/bell2.mp3";
-                    media = new Media(getClass().getResource("media/bell2.mp3").toString());
+                    MusicAddress = "../sounds/bell2.mp3";
+                    media = new Media(getClass().getResource("../sounds/bell2.mp3").toString());
                     mediaPlayer = new MediaPlayer(media);
                     mediaPlayer.play();
                 } else if (str.equals("벨소리2")) {
                     txtMusic.setText("벨소리3");
-                    MusicAddress = "media/bell3.mp3";
-                    media = new Media(getClass().getResource("media/bell3.mp3").toString());
+                    MusicAddress = "../sounds/bell3.mp3";
+                    media = new Media(getClass().getResource("../sounds/bell3.mp3").toString());
                     mediaPlayer = new MediaPlayer(media);
                     mediaPlayer.play();
 
                 } else {
                     txtMusic.setText("벨소리3");
-                    media = new Media(getClass().getResource("media/bell3.mp3").toString());
+                    media = new Media(getClass().getResource("../sounds/bell3.mp3").toString());
                     mediaPlayer = new MediaPlayer(media);
                     mediaPlayer.play();
                 }
@@ -208,20 +208,20 @@ public class VolumeController implements Initializable {
                 String str = txtMusic.getText();
                 if (str.equals("벨소리3")) {
                     txtMusic.setText("벨소리2");
-                    MusicAddress = "media/bell2.mp3";
-                    media = new Media(getClass().getResource("media/bell2.mp3").toString());
+                    MusicAddress = "../sounds/bell2.mp3";
+                    media = new Media(getClass().getResource("../sounds/bell2.mp3").toString());
                     mediaPlayer = new MediaPlayer(media);
                     mediaPlayer.play();
                 } else if (str.equals("벨소리2")) {
                     txtMusic.setText("벨소리1");
-                    MusicAddress = "media/bell1.mp3";
-                    media = new Media(getClass().getResource("media/bell1.mp3").toString());
+                    MusicAddress = "../sounds/bell1.mp3";
+                    media = new Media(getClass().getResource("../sounds/bell1.mp3").toString());
                     mediaPlayer = new MediaPlayer(media);
                     mediaPlayer.play();
                 } else {
                     txtMusic.setText("벨소리1");
-                    MusicAddress = "media/bell1.mp3";
-                    media = new Media(getClass().getResource("media/bell1.mp3").toString());
+                    MusicAddress = "../sounds/bell1.mp3";
+                    media = new Media(getClass().getResource("../sounds/bell1.mp3").toString());
                     mediaPlayer = new MediaPlayer(media);
                     mediaPlayer.play();
                 }

@@ -66,7 +66,7 @@ public class VisiterdisplayController implements Initializable {
         executorService = Executors.newFixedThreadPool(100);
         try {
             serverSocket = new ServerSocket();
-            serverSocket.bind(new InetSocketAddress("localhost", 50002));
+            serverSocket.bind(new InetSocketAddress("192.168.3.129", 50002));
             System.out.println("Server is running...");
         } catch (IOException ex) {
             System.out.println("1");

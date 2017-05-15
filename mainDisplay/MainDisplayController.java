@@ -650,7 +650,7 @@ public class MainDisplayController implements Initializable {
             public void run() {
                 try {
                     socket = new Socket();
-                    socket.connect(new InetSocketAddress("192.168.43.213", 50001));
+                    socket.connect(new InetSocketAddress("192.168.3.129", 50001));
 
                     Platform.runLater(() -> {
                         btnMainConnect.setUserData("connect");

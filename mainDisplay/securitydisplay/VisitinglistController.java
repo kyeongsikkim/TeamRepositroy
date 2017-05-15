@@ -80,7 +80,7 @@ public class VisitinglistController implements Initializable {
                 try {
                     System.out.println("Client start");
                     socket = new Socket();
-                    socket.connect(new InetSocketAddress("localhost", 50002));
+                    socket.connect(new InetSocketAddress("192.168.3.129", 50002));
                     receive();
                 } catch (Exception e) {
                     return;

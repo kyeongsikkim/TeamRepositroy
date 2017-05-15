@@ -284,10 +284,10 @@ public class ExitsettingController implements Initializable {
 
         // audio파일 재생 초기화
         if (btnExitSetting.getText().equals("설정")) {
-            Media media = new Media(getClass().getResource("media/외출-재택방범이_설정되었습니다.mp3").toString());
+            Media media = new Media(getClass().getResource("../videos/lock.mp3").toString());
             mediaPlayer1 = new MediaPlayer(media);
         } else if (btnExitSetting.getText().equals("해제")) {
-            Media media = new Media(getClass().getResource("media/해제되었습니다.mp3").toString());
+            Media media = new Media(getClass().getResource("../videos/unlock.mp3").toString());
             mediaPlayer2 = new MediaPlayer(media);
         }
 

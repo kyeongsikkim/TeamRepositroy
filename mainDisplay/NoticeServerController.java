@@ -57,7 +57,7 @@ public class NoticeServerController implements Initializable {
 
         try {
             serverSocket = new ServerSocket();
-            serverSocket.bind(new InetSocketAddress("192.168.43.213", 50001));
+            serverSocket.bind(new InetSocketAddress("192.168.3.129", 50001));
         } catch (IOException ex) {
             stopServer();
             return;
