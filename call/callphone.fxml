@@ -41,7 +41,7 @@
             </Label>
             <HBox prefHeight="57.0" prefWidth="354.0">
                <children>
-                  <Label fx:id="lblState" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="44.0" prefWidth="172.0" text=" " textFill="#2f0000">
+                  <Label fx:id="lblState" contentDisplay="TOP" prefHeight="74.0" prefWidth="172.0" textFill="#2f0000">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -49,6 +49,13 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
+                  <Label fx:id="lblCallTime" alignment="BASELINE_RIGHT" contentDisplay="TOP" prefHeight="74.0" prefWidth="172.0" textAlignment="RIGHT">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin></Label>
                </children>
             </HBox>
             <TextField fx:id="textArea" alignment="TOP_LEFT" prefHeight="183.0" prefWidth="349.0">
