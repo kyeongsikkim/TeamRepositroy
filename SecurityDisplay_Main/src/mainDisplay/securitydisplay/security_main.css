@@ -11,6 +11,6 @@
     -fx-font-weight: bold;
 }
 
-.btnToggleMain:pressed {
+.btnToggleMain:selected {
     -fx-background-color:lightcoral;
 }

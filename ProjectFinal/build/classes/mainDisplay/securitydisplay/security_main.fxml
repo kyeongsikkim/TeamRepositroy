@@ -14,7 +14,7 @@
             <ToggleGroup fx:id="menu" />
          </toggleGroup>
          <graphic>
-            <HBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+            <HBox alignment="CENTER">
                <children>
                   <ImageView fitHeight="65.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -35,9 +35,9 @@
       </ToggleButton>
       <ToggleButton id="btnCctv" fx:id="btnCctv" layoutX="400.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="400.0" style="-fx-background-radius: 10;" styleClass="btnToggleMain" toggleGroup="$menu">
          <graphic>
-            <HBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
+            <HBox alignment="CENTER">
                <children>
-                  <ImageView fitHeight="63.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/eye.png" />
                      </image>
@@ -45,7 +45,7 @@
                         <Insets bottom="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="67.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="65.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/toggleimage_cctv.png" />
                      </image>

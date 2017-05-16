@@ -1,7 +1,5 @@
 package mainDisplay.securitydisplay;
 
-import javafx.scene.control.CheckBox;
-
 public class DataSaved {
 
     private String txtGetin;

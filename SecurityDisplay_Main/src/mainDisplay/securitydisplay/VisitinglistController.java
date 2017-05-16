@@ -124,11 +124,11 @@ public class VisitinglistController implements Initializable {
                 Platform.runLater(() -> {
                     TableColumn tcVisiterName = tableView.getColumns().get(0);
                     tcVisiterName.setCellValueFactory(new PropertyValueFactory<Visiter, String>("visiter"));
-                    tcVisiterName.setStyle("-fx-alignment: CENTER;");
+                    //tcVisiterName.setStyle("-fx-alignment: CENTER;");
 
                     TableColumn tcDate = tableView.getColumns().get(1);
                     tcDate.setCellValueFactory(new PropertyValueFactory<Visiter, String>("date"));
-                    tcDate.setStyle("-fx-alignment: CENTER;");
+                    //tcDate.setStyle("-fx-alignment: CENTER;");
 
                     int number = (int) (Math.random() * 2) + 1;
 

@@ -165,7 +165,7 @@ public class CctvsettingController implements Initializable {
                     }
                 }
             });
-            popup.setHideOnEscape(true);
+            popup.setHideOnEscape(false);
             popup.getContent().add(visitinglist);
             popup.show(primaryStage);
 

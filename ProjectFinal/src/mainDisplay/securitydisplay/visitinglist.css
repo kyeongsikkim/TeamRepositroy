@@ -11,3 +11,9 @@
     -fx-background-color: #cccccc;
     -fx-font-family: "Arial";
 }
+
+#btnListDelete {
+    -fx-background-radius: 100;
+    -fx-background-color: #cccccc;
+    -fx-font-family: "Arial";
+}

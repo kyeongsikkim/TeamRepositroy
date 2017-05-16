@@ -6,7 +6,6 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 
@@ -15,19 +14,14 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 
@@ -41,7 +35,8 @@ public class VisitinglistController implements Initializable {
     private StackPane imageBackground;
     @FXML
     private Button btnClose;
-    
+    @FXML
+    private Button btnListDelete;
 
     private SimpleDateFormat sdf;
     private Socket socket;
@@ -50,10 +45,12 @@ public class VisitinglistController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        btnListDelete.setOnAction(event -> handleBtnListDelete(event));
+
         // 폰트 설정
-          Font font = new Font(getClass().getResource("fonts/Seoulnamsan_EB.otf").toExternalForm(), 14);
-          btnClose.setFont(font);
-          
+        Font font = new Font(getClass().getResource("fonts/Seoulnamsan_EB.otf").toExternalForm(), 14);
+        btnClose.setFont(font);
+
         // 클라이언트 시작
         startClient();
 
@@ -124,11 +121,11 @@ public class VisitinglistController implements Initializable {
                 Platform.runLater(() -> {
                     TableColumn tcVisiterName = tableView.getColumns().get(0);
                     tcVisiterName.setCellValueFactory(new PropertyValueFactory<Visiter, String>("visiter"));
-                    //tcVisiterName.setStyle("-fx-alignment: CENTER;");
+                    tcVisiterName.setStyle("-fx-alignment: CENTER;");
 
                     TableColumn tcDate = tableView.getColumns().get(1);
                     tcDate.setCellValueFactory(new PropertyValueFactory<Visiter, String>("date"));
-                    //tcDate.setStyle("-fx-alignment: CENTER;");
+                    tcDate.setStyle("-fx-alignment: CENTER;");
 
                     int number = (int) (Math.random() * 2) + 1;
 
@@ -139,5 +136,9 @@ public class VisitinglistController implements Initializable {
         } catch (IOException ioe) {
 
         }
+    }
+
+    private void handleBtnListDelete(ActionEvent event) {
+        list.clear();
     }
 }
