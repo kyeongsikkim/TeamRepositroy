@@ -55,8 +55,8 @@ public class MotorGaugeController extends Application {
         btn3 = new Button();
         btn4 = new Button();
 
-        coapClientS.setURI("coap://192.168.3.46/backtire");
-        coapClientA.setURI("coap://192.168.3.46/fronttire");
+        coapClientS.setURI("coap://192.168.3.44/backtire");
+        coapClientA.setURI("coap://192.168.3.44/fronttire");
 
         speedGauge.getSpeedGauge().setValue((int) sensorValue.getBacktireSpeed());
         angleGauge.getAngleGauge().setValue((int) sensorValue.getFronttireAngle());
@@ -218,11 +218,7 @@ public class MotorGaugeController extends Application {
             jsonObjectS.put("direction", sensorValue.getBacktireDirection());
             jsonObjectS.put("speed", String.valueOf(speed));
             jsonS = jsonObjectS.toString();
-            CoapResponse response = coapClientS.post(jsonS, MediaTypeRegistry.APPLICATION_JSON);
-            String result = response.getResponseText();
-            jsonObjectS = new JSONObject(result);
-            String value = jsonObjectS.getString("speed");
-            speedGauge.getSpeedGauge().setValue(Double.parseDouble(value));
+            
             postS();
         }
         shutDownS();
