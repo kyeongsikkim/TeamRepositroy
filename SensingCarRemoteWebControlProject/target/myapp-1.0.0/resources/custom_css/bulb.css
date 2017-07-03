@@ -1,0 +1,151 @@
+
+.wrapper {
+  height: 600px;
+  width: 320px;
+  position: absolute;
+  top: 750px;
+  left: 82%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  filter: drop-shadow(0 0 42px #FFC524);
+}
+.wrapper .lightbulb {
+  height: 150px;
+  position: relative;
+}
+.wrapper .lightbulb .head {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 100%;
+  background: #FFC524;
+  perspective: 75px;
+  perspective-origin: 50px 300px;
+}
+.wrapper .lightbulb .head::after {
+  content: "";
+  height: 50px;
+  width: 62px;
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #FFC524;
+  transform: rotateX(25deg);
+  z-index: 4;
+}
+.wrapper .lightbulb .head::before {
+  content: "";
+  height: 50px;
+  width: 57px;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #FFC524;
+  transform: rotateX(45deg);
+  border-radius: 16px;
+  z-index: 4;
+}
+.wrapper .lightbulb .head .wire {
+  height: 5px;
+  width: 33px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  border-bottom: 2px #333 solid;
+}
+.wrapper .lightbulb .head .wire::before, .wrapper .lightbulb .head .wire::after {
+  content: "";
+  height: 75px;
+  width: 5px;
+  position: absolute;
+  top: 5px;
+  border-radius: 50%;
+  z-index: 12;
+}
+.wrapper .lightbulb .head .wire::before {
+  border-right: 1px #333 solid;
+}
+.wrapper .lightbulb .head .wire::after {
+  border-left: 1px #333 solid;
+  right: 0;
+}
+.wrapper .lightbulb .body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.wrapper .lightbulb .body .el {
+  z-index: 2;
+}
+.wrapper .lightbulb .body .el * {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom: 1px #333 solid;
+}
+
+
+
+
+
+
+.wrapper .lightbulb .body .el__one {
+  height: 20px;
+  width: 54px;
+  bottom: 5px;
+  background: #FFC524;
+  z-index: 6;
+}
+.wrapper .lightbulb .body .el__two {
+  height: 20px;
+  width: 54px;
+  bottom: 0;
+  background: #BBBBBB;
+  z-index: 5;
+}
+.wrapper .lightbulb .body .el__three {
+  height: 20px;
+  width: 53px;
+  bottom: -5px;
+  background: #BBBBBB;
+  z-index: 4;
+}
+.wrapper .lightbulb .body .el__four {
+  height: 20px;
+  width: 54px;
+  bottom: -10px;
+  background: #BBBBBB;
+  z-index: 3;
+}
+.wrapper .lightbulb .body .el__five {
+  height: 20px;
+  width: 51px;
+  bottom: -15px;
+  background: #BBBBBB;
+  z-index: 2;
+}
+.wrapper .lightbulb .body .el__six {
+  height: 20px;
+  width: 40px;
+  bottom: -20px;
+  background: #a2a2a2;
+}

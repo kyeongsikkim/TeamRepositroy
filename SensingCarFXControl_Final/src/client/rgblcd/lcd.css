@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Lilly";
+    src: url(../fonts/Lilly.ttf);
+}
+
+#lcd {
+    -fx-background-image: url("../images/darkbackground.jpg");
+    -fx-background-size: stretch;
+}
+
+.back {
+    -fx-background-color: rgba( 255,255, 255, 0.1);
+}
+
+.textfield {
+    -fx-background-color:blue;
+    -fx-text-fill: cyan;
+}
+
+#sendBtn {
+    -fx-background-color: transparent;
+}
+
+#submit {
+     -fx-font-family: "Lilly";
+     -fx-font-size:"26";
+}
+
+#btnLcdReturn {
+    -fx-background-image: url("../images/return.png");
+    -fx-background-size: stretch;
+    -fx-background-color: transparent;
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane styleClass="chartBackground" id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.chart.GasChartController">
+    <stylesheets>
+        <URL value="@customchart.css" />
+    </stylesheets>
+    <children>
+      <VBox layoutX="10.0" layoutY="5.0" prefHeight="360.0" prefWidth="40.0">
+         <children>
+            <Label alignment="BOTTOM_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text=" " />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="250" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="225" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="200" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="175" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="150" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="125" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="100" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="75" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="50" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="25" />
+            <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="40.0" styleClass="xlabel" text="0" />
+         </children>
+      </VBox>
+      <Line layoutX="50.0" layoutY="350.0" startX="500.0" />
+      <Line layoutX="50.0" layoutY="320.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="290.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="260.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="230.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="200.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="170.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="140.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="110.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="80.0" startX="500.0" styleClass="gridlinex" />
+      <Line layoutX="50.0" layoutY="50.0" startX="500.0" styleClass="gridlinex" />
+      <Line endY="300.0" layoutX="50.0" layoutY="50.0" />
+      <Line endY="300.0" layoutX="100.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="150.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="200.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="250.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="300.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="350.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="400.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="450.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="500.0" layoutY="50.0" styleClass="gridliney" />
+      <Line endY="300.0" layoutX="550.0" layoutY="50.0" styleClass="gridliney" />
+      <AnchorPane fx:id="chartPane" prefHeight="400.0" prefWidth="600.0" />
+      <HBox layoutX="75.0" layoutY="350.0" prefHeight="25.0" prefWidth="500.0">
+         <children>
+            <Label fx:id="ylabel1" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel2" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel3" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel4" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel5" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel6" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel7" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel8" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel9" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+            <Label fx:id="ylabel10" prefHeight="25.0" prefWidth="50.0" styleClass="ylabel" />
+         </children>
+      </HBox>
+      <Label alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="600.0" text="GasConcentrate Chart." styleClass="titlelabel" />
+   </children>
+</AnchorPane>

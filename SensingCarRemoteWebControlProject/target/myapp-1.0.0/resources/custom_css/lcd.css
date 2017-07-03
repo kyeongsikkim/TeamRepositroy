@@ -1,0 +1,61 @@
+
+.inputlcd::-webkit-input-placeholder, .buttonlcd {
+  font-family: Contrail One;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.divlcd {
+  text-align: center;
+  border-radius: 3px;
+  padding-right:40px;
+  padding-top:15px;
+}
+
+.inputlcd {
+  margin: 20px 25px;
+  width: 90%;
+  display: block;
+  border: none;
+  padding: 5px 0;
+  border-bottom: solid 1px #cccccc;
+  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #cccccc 4%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #cccccc 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+  font-size:20px;
+}
+.inputlcd:focus, .inputlcd:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+.inputlcd:focus::-webkit-input-placeholder, .inputlcd:valid::-webkit-input-placeholder {
+  color: #cccccc;
+  font-size: 16px;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  visibility: visible !important;
+}
+
+.buttonlcd {
+  border: none;
+  background: #cccccc;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-top: 15px;
+  margin-left: 25px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.buttonlcd:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}

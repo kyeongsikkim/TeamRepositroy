@@ -1,0 +1,36 @@
+#background{
+    -fx-background-image:url("../images/darkbackground.jpg");
+    -fx-background-size:100%;
+    -fx-background-color:rgba(255,255,255,0.1);
+}
+
+.btnClass{
+    -fx-background-radius: 100 100 100 100;
+    -fx-background-color:white;
+}
+#center{
+    -fx-background-radius: 100 100 100 100;
+    -fx-background-color:white;
+}
+#controllerPane{
+    -fx-background-color:rgba(255,255,255,0.2)
+}
+#view{
+    -fx-background-color:rgba(255,255,255,0.2)
+}
+#cameraScene{
+    -fx-background-image:url("../images/loding.png");
+    -fx-background-size:100%;
+}
+#closeBackground{
+    -fx-background-color:black;
+}
+
+#btnCameraReturn {
+    -fx-background-image: url("../images/return.png");
+    -fx-background-size: stretch;
+    -fx-background-color: transparent;
+}
+
+
+
