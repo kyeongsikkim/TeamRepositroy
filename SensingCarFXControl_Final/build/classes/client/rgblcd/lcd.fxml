@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="lcd" fx:id="lcd" prefHeight="480.0" prefWidth="800.0" stylesheets="@lcd.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.rgblcd.LcdController">
+   <children>
+       <Pane id="back" layoutX="16.0" layoutY="14.0" prefHeight="453.0" prefWidth="770.0" styleClass="back">
+         <children>
+            <ImageView fitHeight="173.0" fitWidth="533.0" layoutX="76.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/lcd2.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="120.0" layoutY="56.0" prefHeight="80.0" prefWidth="420.0">
+               <children>
+                  <TextField fx:id="line0" prefHeight="39.0" prefWidth="414.0" styleClass="textfield" text="Input 1st line." />
+                  <TextField fx:id="line1" prefHeight="39.0" prefWidth="414.0" styleClass="textfield" text="Input 2nd line." />
+               </children>
+            </VBox>
+            <Button fx:id="sendBtn" layoutX="592.0" layoutY="33.0" mnemonicParsing="false" prefHeight="147.0" prefWidth="139.0">
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="135.0" prefWidth="145.0">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/smile.png" />
+                           </image>
+                        </ImageView>
+                        <Label id="submit" alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="91.0" text="Submit" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font name="Lilly" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic></Button>
+         </children></Pane>
+       <Button id="btnLcdReturn" layoutX="25.0" layoutY="20.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" />
+   </children>
+   
+</AnchorPane>

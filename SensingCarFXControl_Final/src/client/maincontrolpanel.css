@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Aldrich';
+    src: url('fonts/Aldrich-Regular.ttf');
+}
+
+.mainBackground {
+    -fx-background-image: url("images/darkbackground.jpg");
+    -fx-background-size: stretch;
+}
+
+.mainSection {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mainSectionImage {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-image: url("images/team4.jpg");
+		-fx-background-size: stretch;
+}
+
+.labeltitle {
+    -fx-text-fill: black;
+    -fx-font-family: 'Aldrich';
+    -fx-font-size: 20px;
+    -fx-alignment: center;
+		-fx-font-style: bold;
+}
+
+.labelDateContent {
+    -fx-text-fill: #cccccc;
+    -fx-font-family: 'Aldrich';
+    -fx-font-size: 28px;
+    -fx-alignment: center-right;
+    -fx-padding: 10px 10px 0px 0px;
+}
+
+.labelTimeContent {
+    -fx-text-fill: #cccccc;
+    -fx-font-family: 'Aldrich';
+    -fx-font-size: 30px;
+    -fx-alignment: center-right;
+    -fx-padding: 0px 10px 10px 0px;
+}
+
+.labelContent {
+    -fx-text-fill: #cccccc;
+    -fx-font-family: 'Aldrich';
+    -fx-font-size: 20px;
+    -fx-alignment: center;
+}
+
+.labelChartContent {
+    -fx-text-fill: #cccccc;
+    -fx-font-family: 'Aldrich';
+    -fx-font-size: 24px;
+    -fx-alignment: center;
+}
+
+.labelTrackingContent {
+    -fx-margin: 10px 25px 10px 25px;
+    -fx-border-radius: 50%;
+    -fx-background-radiut: 50%;
+}
+
+.labelRgbContent {
+    -fx-text-fill: #cccccc;
+    -fx-font-family: 'Aldrich';
+    -fx-font-size: 20px;
+    -fx-alignment: CENTER;
+}
+
+.labellcdContent {
+    -fx-text-fill: #cccccc;
+    -fx-font-family: 'Aldrich';
+    -fx-font-size: 20px;
+    -fx-alignment: CENTER;
+}
+
+.labelDrivingContent {
+    -fx-text-fill: #cccccc;
+    -fx-font-family: 'Aldrich';
+    -fx-font-size: 20px;
+    -fx-alignment: center;
+    -fx-padding: 0px 0px 5px 0px;
+}

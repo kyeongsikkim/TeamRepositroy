@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "Lilly";
+    src: url(../fonts/Lilly.ttf);
+}
+
+#rgb {
+    -fx-background-image: url("../images/darkbackground.jpg");
+    -fx-background-size: stretch;
+}
+
+#pane {
+    -fx-background-color: rgba( 255,255, 255, 0.1 );
+}
+
+.back {
+    -fx-background-color: rgba( 255,255, 255, 0.1 );
+}
+
+#front {
+    -fx-background-color: rgba( 255,255, 255, 0.1 );
+}
+
+#touchme {
+     -fx-font-family: "Lilly";
+}
+
+.textfield {
+    -fx-background-color:blue;
+     -fx-text-fill: cyan;
+}
+
+#btnRgbReturn {
+    -fx-background-image: url("../images/return.png");
+    -fx-background-size: stretch;
+    -fx-background-color: transparent;
+}
+

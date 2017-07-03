@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="primaryAnchorPane" prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.MainControlPanelController">
+   <children>
+      <StackPane fx:id="stackPane" prefHeight="480.0" prefWidth="800.0">
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="800.0" styleClass="mainBackground">
+                <stylesheets>
+                    <URL value="@maincontrolpanel.css" />
+                </stylesheets>
+               <children>
+                  <VBox fx:id="vboxTemperature" layoutX="15.0" layoutY="15.0" prefHeight="110.0" prefWidth="120.0" styleClass="mainSection">
+                     <children>
+                        <Label fx:id="labelTemperature" prefHeight="40.0" prefWidth="120.0" styleClass="labeltitle" text="Temp." />
+                        <Label fx:id="labelTemperatureValue" prefHeight="70.0" prefWidth="120.0" styleClass="labelChartContent" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vboxBrightness" layoutX="150.0" layoutY="15.0" prefHeight="110.0" prefWidth="120.0" styleClass="mainSection">
+                     <children>
+                        <Label fx:id="labelPhotoresistor" prefHeight="40.0" prefWidth="120.0" styleClass="labeltitle" text="Brightness" />
+                        <Label fx:id="labelPhotoresistorValue" prefHeight="70.0" prefWidth="120.0" styleClass="labelChartContent" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="455.0" layoutY="15.0" prefHeight="150.0" prefWidth="330.0" styleClass="mainSection">
+                     <children>
+                        <Label fx:id="labelDate" prefHeight="75.0" prefWidth="330.0" styleClass="labelDateContent" text="Label" />
+                        <Label fx:id="labelTime" prefHeight="75.0" prefWidth="330.0" styleClass="labelTimeContent" text="Label" />
+                     </children>
+                  </VBox>
+                  <AnchorPane id="btnLaserOnOff" fx:id="btnLaserOnOff" layoutX="285.0" layoutY="15.0" prefHeight="150.0" prefWidth="70.0" styleClass="mainSection" userData="off">
+                     <children>
+                        <Label id="lblLaserOnOff" fx:id="lblLaserOnOff" layoutY="75.0" prefHeight="75.0" prefWidth="70.0" style="-fx-background-color: rgba(255, 255, 255, 0.6);" text=" " />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="btnBuzzerOnOff" fx:id="btnBuzzerOnOff" layoutX="370.0" layoutY="15.0" prefHeight="150.0" prefWidth="70.0" styleClass="mainSection" userData="off">
+                     <children>
+                        <Label id="lblBuzzerOnOff" fx:id="lblBuzzerOnOff" layoutY="75.0" prefHeight="75.0" prefWidth="70.0" style="-fx-background-color: rgba(255, 255, 255, 0.6);" text=" " />
+                     </children>
+                  </AnchorPane>
+                  <VBox fx:id="vboxRgb" layoutX="655.0" layoutY="180.0" prefHeight="140.0" prefWidth="130.0" styleClass="mainSection">
+                     <children>
+                        <HBox>
+                           <children>
+                              <Rectangle fx:id="recRgbStatus" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" stroke="BLACK" strokeType="INSIDE" width="50.0">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Rectangle>
+                              <VBox>
+                                 <children>
+                                    <Label prefHeight="41.0" prefWidth="80.0" styleClass="labeltitle" text="RGB" />
+                                    <Label fx:id="labelR" prefHeight="33.0" prefWidth="80.0" styleClass="labelRgbContent" text="Label" />
+                                    <Label fx:id="labelG" prefHeight="33.0" prefWidth="80.0" styleClass="labelRgbContent" text="Label" />
+                                    <Label fx:id="labelB" prefHeight="33.0" prefWidth="80.0" styleClass="labelRgbContent" text="Label" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vboxLcd" layoutX="285.0" layoutY="335.0" prefHeight="130.0" prefWidth="245.0" styleClass="mainSection">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="245.0" styleClass="labeltitle" text="LCD Display" />
+                        <Label fx:id="labelline0" prefHeight="45.0" prefWidth="245.0" styleClass="labellcdContent" text="Label" />
+                        <Label fx:id="labelline1" prefHeight="45.0" prefWidth="245.0" styleClass="labellcdContent" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vboxDriving" layoutX="430.0" layoutY="180.0" prefHeight="140.0" prefWidth="210.0" styleClass="mainSection">
+                     <children>
+                        <Label prefHeight="34.0" prefWidth="210.0" styleClass="labeltitle" text="Driving" />
+                        <Label fx:id="labelSpeed" prefHeight="35.0" prefWidth="210.0" styleClass="labelDrivingContent" text="Label" />
+                        <Label fx:id="labelDirection" prefHeight="35.0" prefWidth="210.0" styleClass="labelDrivingContent" text="Label" />
+                        <Label fx:id="labelFrontAngle" prefHeight="35.0" prefWidth="210.0" styleClass="labelDrivingContent" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vboxPicture" layoutX="545.0" layoutY="335.0" prefHeight="130.0" prefWidth="240.0" styleClass="mainSectionImage" />
+                  <VBox fx:id="vboxCamera" layoutX="15.0" layoutY="266.0" prefHeight="200.0" prefWidth="255.0" styleClass="mainSection" />
+                  <VBox fx:id="vboxGas" layoutX="15.0" layoutY="140.0" prefHeight="110.0" prefWidth="120.0" styleClass="mainSection">
+                     <children>
+                        <Label fx:id="labelGas" prefHeight="40.0" prefWidth="120.0" styleClass="labeltitle" text="Gas Con." />
+                        <Label fx:id="labelGasValue" prefHeight="70.0" prefWidth="120.0" styleClass="labelChartContent" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vboxDistance" layoutX="150.0" layoutY="140.0" prefHeight="110.0" prefWidth="120.0" styleClass="mainSection">
+                     <children>
+                        <Label fx:id="labelDistance" prefHeight="40.0" prefWidth="120.0" styleClass="labeltitle" text="Distance" />
+                        <Label fx:id="labelDistanceValue" prefHeight="70.0" prefWidth="120.0" styleClass="labelChartContent" text="Label" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="285.0" layoutY="180.0" prefHeight="140.0" prefWidth="130.0" styleClass="mainSection">
+                     <children>
+                        <Label fx:id="labelTracking" prefHeight="40.0" prefWidth="130.0" styleClass="labeltitle" text="Tracking" />
+                        <Circle fx:id="labelTrackingValue" radius="45.0" styleClass="labelChartContent">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                           </VBox.margin></Circle>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

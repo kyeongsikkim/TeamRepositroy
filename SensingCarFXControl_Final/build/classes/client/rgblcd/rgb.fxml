@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="rgb" fx:id="rgb" prefHeight="480.0" prefWidth="800.0" stylesheets="@rgb.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.rgblcd.RgbController">
+   <children>
+      <Pane id="pane" layoutX="17.0" layoutY="12.0" prefHeight="457.0" prefWidth="771.0">
+         <children>
+            <TilePane alignment="CENTER" layoutX="193.0" layoutY="50.0" prefHeight="398.0" prefWidth="569.0">
+               <children>
+                  <Button fx:id="b0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(246, 239, 227);">
+                     <TilePane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </TilePane.margin>
+                  </Button>
+                  <Button fx:id="b1" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 230, 230);" />
+                  <Button fx:id="b2" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(217, 179, 255);" />
+                  <Button fx:id="b3" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 128, 128);" />
+                  <Button fx:id="b4" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 170, 0);" />
+                  <Button fx:id="b5" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 255, 204);" />
+                  <Button fx:id="b6" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(0, 204, 0);" />
+                  <Button fx:id="b7" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(0, 0, 255);" />
+                  <Button fx:id="b8" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 179, 255);" />
+                  <Button fx:id="b9" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(223, 159, 159);" />
+                  <Button fx:id="b10" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(242, 221, 217);" />
+                  <Button fx:id="b11" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 204, 204);" />
+                  <Button fx:id="b12" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(213, 128, 255);" />
+                  <Button fx:id="b13" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 153, 128);" />
+                  <Button fx:id="b14" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 204, 102);" />
+                  <Button fx:id="b15" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 255, 153);" />
+                  <Button fx:id="b16" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(0, 204, 153);" />
+                  <Button fx:id="b17" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(128, 0, 255);" />
+                  <Button fx:id="b18" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 153, 255);" />
+                  <Button fx:id="b19" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 128, 102);" />
+                  <Button fx:id="b20" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(231, 195, 182);" />
+                  <Button fx:id="b21" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 229, 204);" />
+                  <Button fx:id="b22" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(170, 128, 255);" />
+                  <Button fx:id="b23" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 77, 136);" />
+                  <Button fx:id="b24" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 133, 26);" />
+                  <Button fx:id="b25" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255,255,0);" />
+                  <Button fx:id="b26" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(0, 128, 96);" />
+                  <Button fx:id="b27" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(191, 0, 255);" />
+                  <Button fx:id="b28" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(204, 153, 255);" />
+                  <Button fx:id="b29" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 153, 102);" />
+                  <Button fx:id="b30" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(221, 184, 152);" />
+                  <Button fx:id="b31" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 215, 179);" />
+                  <Button fx:id="b32" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 102, 217);" />
+                  <Button fx:id="b33" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 128, 170);" />
+                  <Button fx:id="b34" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 184, 77);" />
+                  <Button fx:id="b35" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(213, 255, 128);" />
+                  <Button fx:id="b36" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(45, 134, 45);" />
+                  <Button fx:id="b37" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(99, 31, 122);" />
+                  <Button fx:id="b38" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(230, 153, 255);" />
+                  <Button fx:id="b39" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(102, 153, 102);" />
+                  <Button fx:id="b40" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(209, 189, 164);" />
+                  <Button fx:id="b41" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 201, 153);" />
+                  <Button fx:id="b42" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 0, 153);" />
+                  <Button fx:id="b43" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 128, 128);" />
+                  <Button fx:id="b44" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 133, 51);" />
+                  <Button fx:id="b45" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 204, 0);" />
+                  <Button fx:id="b46" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(45, 134, 112);" />
+                  <Button fx:id="b47" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(31, 99, 122);" />
+                  <Button fx:id="b48" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 153, 255);" />
+                  <Button fx:id="b49" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(128, 102, 153);" />
+                  <Button fx:id="b50" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 218, 179);" />
+                  <Button fx:id="b51" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 179, 179);" />
+                  <Button fx:id="b52" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(204, 102, 153);" />
+                  <Button fx:id="b53" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 71, 26);" />
+                  <Button fx:id="b54" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(179, 71, 0);" />
+                  <Button fx:id="b55" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 153, 51);" />
+                  <Button fx:id="b56" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(45, 112, 134);" />
+                  <Button fx:id="b57" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(31, 122, 99);" />
+                  <Button fx:id="b58" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 153, 204);" />
+                  <Button fx:id="b59" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 102, 140);" />
+                  <Button fx:id="b60" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 194, 102);" />
+                  <Button fx:id="b61" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 179, 255);" />
+                  <Button fx:id="b62" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 0, 51);" />
+                  <Button fx:id="b63" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 0, 0);" />
+                  <Button fx:id="b64" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(204, 102, 0);" />
+                  <Button fx:id="b65" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(46, 184, 46);" />
+                  <Button fx:id="b66" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(45, 67, 134);" />
+                  <Button fx:id="b67" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(0, 102, 51);" />
+                  <Button fx:id="b68" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(255, 153, 153);" />
+                  <Button fx:id="b69" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: rgb(153, 102, 102);" />
+               </children>
+            </TilePane>
+         </children>
+      </Pane>
+      <Label id="touchme" layoutX="423.0" layoutY="16.0" text="Touch me!" textFill="WHITE">
+         <font>
+            <Font name="Lilly" size="26.0" />
+         </font>
+      </Label>
+      <Ellipse fx:id="bulbColor" fill="WHITE" layoutX="111.0" layoutY="222.0" radiusX="29.0" radiusY="34.0" stroke="#ffffff00" strokeType="INSIDE" style="-fx-fill: transparent;" />
+      <ImageView fitHeight="159.0" fitWidth="128.0" layoutX="47.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bulb.png" />
+         </image>
+      </ImageView>
+      <Button id="btnRgbReturn" layoutX="25.0" layoutY="20.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="48.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+
+		.button{
+			background-image: -webkit-linear-gradient(top, #f4f1ee, #bbbbbb);
+			background-image: linear-gradient(top, #f4f1ee, #bbbbbb);
+			border-radius: 50%;
+			box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+			float:left;
+			height: 84px;
+			position: relative;
+			width: 84px;			
+			-webkit-transition: all .1s linear;
+			transition: all .1s linear;
+		}
+
+		.button:after{
+			color:#afaeae;
+			content: "";
+			display: block;
+			font-size: 32px;
+      font-style: bold;
+			height: 30px;
+			text-decoration: none;
+			text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+			position: absolute;
+			width: 30px;
+		}
+
+		.go:after{
+			content: "GO";
+			left: 26px;
+			top: 25px;
+		}
+		
+		.backward:after{
+			content: "back";
+			left: 12px;
+			top: 25px;
+		}
+		
+		.left:after{
+			content: "left";
+			left: 17px;
+			top: 25px;
+		}
+		
+		.right:after{
+			content: "right";
+			left: 9px;
+			top: 24px;
+		}
+
+		.button:hover{
+			background-image: -webkit-linear-gradient(top, #bcb5b5, #f4f1ee);
+			background-image: linear-gradient(top, #fff, #f4f1ee);
+			color:#0088cc;
+		}
+
+		.go:hover:after{
+			color:#eb2f2f;
+			text-shadow:0px 0px 3px #eb2f2f;
+		}
+		
+		.backward:hover:after{
+			color:#eb2f2f;
+			text-shadow:0px 0px 3px #eb2f2f;
+		}
+		
+		.left:hover:after{
+			color:#2e47ea;
+			text-shadow:0px 0px 3px #2e47ea;
+		}
+
+		.right:hover:after{
+			color:#2e47ea;
+			text-shadow:0px 0px 3px #2e47ea;
+		}
+		
+		.button:active{
+			background-image: -webkit-linear-gradient(top, #c1b6b6, #a09898);
+			background-image: linear-gradient(top, #c1b6b6, #a09898);
+			box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(204,198,197,.5);
+		}
+
+		.button:active:after{
+			color:#dbd2d2;
+			text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+		}
