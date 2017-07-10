@@ -1,0 +1,85 @@
+		.button2{
+			background-image: -webkit-linear-gradient(top, #f4f1ee, #bbbbbb);
+			background-image: linear-gradient(top, #f4f1ee, #bbbbbb);
+			box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+			float:left;
+			height: 84px;
+			position: relative;
+			width: 168px;			
+			-webkit-transition: all .1s linear;
+			transition: all .1s linear;
+		}
+
+		.button2:after{
+			color:#afaeae;
+			content: "";
+			display: block;
+			font-size: 32px;
+      font-style: bold;
+			height: 30px;
+			text-decoration: none;
+			text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+			position: absolute;
+			width: 30px;
+		}
+
+		.accelerate:after{
+			content: "accelerate";
+			left: 14px;
+			top: 25px;
+		}
+		
+		.break:after{
+			content: "break";
+			left: 45px;
+			top: 25px;
+		}
+		
+		.zero:after{
+			content: "0";
+			left: 73px;
+			top: 12px;
+		}
+		
+		.button2:hover{
+			background-image: -webkit-linear-gradient(top, #bcb5b5, #f4f1ee);
+			background-image: linear-gradient(top, #fff, #f4f1ee);
+			color:#0088cc;
+		}
+
+		.accelerate:hover:after{
+			color:#2e47ea;
+			text-shadow:0px 0px 3px #2e47ea;
+		}
+		
+		.break:hover:after{
+			color:#eb2f2f;
+			text-shadow:0px 0px 3px #eb2f2f;
+		}
+		
+		.zero:hover:after{
+			color:black;
+			text-shadow:0px 0px 3px #2e47ea;
+		}
+
+		.button2:active{
+			background-image: -webkit-linear-gradient(top, #c1b6b6, #a09898);
+			background-image: linear-gradient(top, #c1b6b6, #a09898);
+			box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(204,198,197,.5);
+		}
+
+		.accelerate:active:after{
+			color:#2e47ea;
+			text-shadow: 0px -1px 1px #2e47ea, 0px 1px 1px white;
+		}
+		
+		.break:active:after{
+			color:#eb2f2f;
+			text-shadow: 0px -1px 1px #eb2f2f, 0px 1px 1px white;
+		}
+		
+		.zero:active:after{
+			color:black;
+			text-shadow: 0px -1px 1px black, 0px 1px 1px white;
+		}
+		
