@@ -2,6 +2,7 @@ package com.mycompany.myapp.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,6 +20,7 @@ import com.mycompany.myapp.util.RSSFeedParser;
 public class HomeController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
+	private List<FeedMessage> list;	
 
 	@RequestMapping("/")
 	public String home() {
@@ -29,23 +31,19 @@ public class HomeController {
 	public String calander() {
 		return "calander";
 	}
-
+	
 	@RequestMapping("/news")
 	public void news(HttpServletResponse response) throws IOException {
 		RSSFeedParser parser = new RSSFeedParser("https://news.google.com/news/rss/headlines?hl=ko&ned=kr");
 		Feed feed = parser.readFeed();
-		System.out.println(feed);
-		for (FeedMessage message : feed.getMessages()) {
-			System.out.println(message);
+		
+		if(list != null) {
+			list.clear();
 		}
+		list = feed.getMessages();
 		
 		JSONObject jsonObject = new JSONObject();
-//		jsonObject.put("size", feed.getMessages().size());
-//		for(int i=0; i<feed.getMessages().size(); i++) {
-//			String title = "title" + i;
-//			jsonObject.put(title, feed.getMessages().get(i));
-//		}
-		jsonObject.put("titleList", feed.getMessages());
+		jsonObject.put("titleList", list);
 		String json = jsonObject.toString();
 		
 		response.setContentType("application/json; charset=UTF-8");

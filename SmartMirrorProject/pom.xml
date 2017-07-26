@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
-	<artifactId>myapp</artifactId>
-	<name>IoTWebProgramming</name>
+	<artifactId>SmartMirrorProject</artifactId>
+	<name>SmartMirrorProject</name>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
 	<properties>
@@ -126,11 +126,13 @@
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<version>2.3.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
+			
 		</dependency>
 	
 		<!-- Oracle JDBC Driver -->
@@ -173,19 +175,55 @@
 			<artifactId>spring-websocket</artifactId>
 			<version>4.3.8.RELEASE</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-websocket</artifactId>
 			<version>8.0.44</version>
-		</dependency>  
-		
+		</dependency> -->
+		 
 		<!-- JSON -->
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20170516</version>
 		</dependency>
-		  
+		
+		<!-- CoAP & MQTT -->
+		<dependency>
+		    <groupId>org.eclipse.californium</groupId>
+		    <artifactId>californium-proxy</artifactId>
+		    <version>1.0.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.eclipse.californium</groupId>
+		    <artifactId>californium-core</artifactId>
+		    <version>1.0.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.eclipse.californium</groupId>
+		    <artifactId>californium-osgi</artifactId>
+		    <version>1.0.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.eclipse.californium</groupId>
+		    <artifactId>scandium</artifactId>
+		    <version>1.0.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.eclipse.californium</groupId>
+		    <artifactId>element-connector</artifactId>
+		    <version>1.0.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpmime</artifactId>
+		    <version>4.5.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.eclipse.paho</groupId>
+		    <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
 	</dependencies>
 	
 	<repositories>
